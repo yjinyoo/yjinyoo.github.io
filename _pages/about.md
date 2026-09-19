@@ -62,7 +62,8 @@ Across the design stage: TCAD for devices, DFT for materials, FEM for electrosta
     <p style="flex:1 1 240px; font-size:.95rem; line-height:1.6; margin:0; opacity:.8;">
       Design, simulation and fabrication scripting across every project: device
       simulation, photomask layouts, and measurement analysis. Almost every repository
-      is private, so the days fill in without naming what is in them.
+      is private, so the days fill in without naming what is in them. It counts what
+      reaches version control, not time in the cleanroom.
     </p>
   </div>
 </div>
