@@ -16,8 +16,46 @@ OUT = os.path.dirname(os.path.abspath(__file__))
 BIB = os.path.join(os.path.dirname(OUT), "_bibliography", "papers.bib")
 ME = "Young Jin Yoo"
 
-# Records where OpenAlex is behind the publisher. Keyed by the DOI OpenAlex has.
-# Values replace the rendered fields outright.
+# Equal first authorship, taken from the CV. No bibliographic database records
+# it, so it can only come from there: OpenAlex and Crossref both give author
+# order and nothing about contribution.
+CO_FIRST = {
+    "10.1038/s41928-026-01681-6",   # Nat. Electron. 2026, co-packaged optics
+    "10.1002/advs.202304310",       # Adv. Sci. 2023, Fano resonance
+    "10.1016/j.nantod.2023.101968", # Nano Today 2023, DeepGT
+    "10.1002/adhm.202301104",       # Adv. Healthc. Mater. 2023, outdoor worker
+    "10.20517/ss.2023.04",          # Soft Sci. 2023, thermal management
+    "10.3390/nano13020319",         # Nanomaterials 2023, trilayered GT
+    "10.1016/j.isci.2022.104727",   # iScience 2022, tunable photonics
+    "10.3390/s22093455",            # Sensors 2022, light-field camera
+    "10.1038/s41467-022-29602-z",   # Nat. Commun. 2022, perovskite microcells
+    "10.1515/nanoph-2020-0062",     # Nanophotonics 2020, mechanotunable filters
+    "10.1002/adfm.201908592",       # Adv. Funct. Mater. 2020, covert polarization
+    "10.1364/ome.9.003342",         # Opt. Mater. Express 2019, sRGB
+    "10.1155/2017/2738015",         # J. Nanomater. 2017, porous ZnO/TiO2
+    "10.1364/oe.24.0a1033",         # Opt. Express 2016, nanophotonic surfaces
+}
+
+# On the CV but absent from OpenAlex, which does not index either venue.
+ADDITIONS = [
+    {
+        "authors": ["Joo Ho Yun", "Young Jin Yoo", "Hye Ryun Kim", "Young Min Song"],
+        "title": "Recent progress in thermal management for flexible/wearable devices",
+        "journal": "Soft Science", "year": 2023, "volume": "3", "number": "12",
+        "doi": "10.20517/ss.2023.04", "pages": "", "pdf": "", "abstract": "",
+        "type": "article", "cites": 0,
+    },
+    {
+        "authors": ["Young Jin Yoo", "Young Min Song"],
+        "title": "Editorial for the Topic on Micromachining for Advanced Biological Imaging",
+        "journal": "Micromachines", "year": 2022, "volume": "13", "number": "474",
+        "doi": "10.3390/mi13030474", "pages": "", "pdf": "", "abstract": "",
+        "type": "article", "cites": 0,
+    },
+]
+
+# Records where OpenAlex is behind the publisher. Keyed by the DOI OpenAlex has;
+# the values replace the rendered fields outright.
 OVERRIDES = {
     "10.21203/rs.3.rs-5801345/v1": {
         "authors": ["Joo Hwan Ko", "Hyo Eun Jeong", "Serim Kim", "Doeun Kim",
@@ -66,7 +104,7 @@ def fields_for(w):
 
 
 works = json.load(open(os.path.join(OUT, "works_mine.json"), encoding="utf-8"))
-flat = [fields_for(w) for w in works]
+flat = [fields_for(w) for w in works] + ADDITIONS
 flat.sort(key=lambda f: (f["year"] or 0, f["cites"]), reverse=True)
 
 total = len(flat)
@@ -99,6 +137,8 @@ for i, f in enumerate(flat):
         ("url", f"https://doi.org/{f['doi']}" if f["doi"] else ""),
         ("abstract", tex_escape(f["abstract"])),
     ]
+    if f["doi"] in CO_FIRST:
+        rows.append(("additional_info", "Equal first-author contribution."))
     if f["pdf"]:
         rows.append(("pdf", f["pdf"]))          # a free copy, never the publisher PDF
     rows.append(("bibtex_show", "true"))
