@@ -54,9 +54,9 @@ Across the design stage: TCAD for devices, DFT for materials, FEM for electrosta
   <a href="https://github.com/yjinyoo" target="_blank" rel="noopener" aria-label="GitHub profile">
     <img src="{{ '/assets/img/activity.svg' | relative_url }}"
          alt="Contribution activity for the current year"
-         style="width:100%; display:block;">
+         style="width:100%; max-width:540px; display:block;">
   </a>
-  <p style="font-size:.88rem; line-height:1.6; margin:.9rem 0 0; opacity:.8;">
+  <p style="font-size:.95rem; line-height:1.65; margin:1rem 0 0; opacity:.85;">
     Each square is one day, darkening with the number of commits. What is in them is
     the daily substance of the work above: electromagnetic and drift-diffusion
     simulations, photomask layouts, process flows, and the analysis that turns a
