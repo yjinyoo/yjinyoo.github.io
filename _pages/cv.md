@@ -31,7 +31,7 @@ Dirk R. Englund on the CMOS integrated photonics work.
 
 #### Postdoctoral researcher, Gwangju Institute of Science and Technology
 
-*School of Electrical Engineering and Computer Science. Mar 2021 to Feb 2022.*
+*School of Electrical Engineering and Computer Science. Mar 2021 to Feb 2023.*
 
 ## Education
 
