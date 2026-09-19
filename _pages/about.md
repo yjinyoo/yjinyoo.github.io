@@ -43,7 +43,7 @@ I work in the [Jeehwan Kim group](https://jeehwanlab.mit.edu/) at MIT, and am co
 
 Deep research sets the target and the benchmark to beat. Coupled, cross-validated multi-physics simulation derives the device and its fabrication window, inside the CMOS design rules, with inverse design and machine-learning surrogates. Fabrication realizes that window, with DFT-guided interface engineering and membrane transfer. Device and optical measurement, read out with coupled-mode theory, closes the loop and calibrates the model.
 
-Across the design stage: TCAD for devices, DFT for materials, FEM for electrostatics and mechanics, and FDTD, RCWA, mode solving and ray optics for photonics. Each pass de-risks the next fabrication and sharpens the model.
+Across the design stage: TCAD for devices, DFT for materials, Landau-Devonshire thermodynamics for ferroelectric response, FEM for electrostatics and mechanics, and FDTD, RCWA, mode solving and ray optics for photonics. Each pass de-risks the next fabrication and sharpens the model.
 
 #### Activity
 

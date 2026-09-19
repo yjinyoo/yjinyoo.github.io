@@ -55,8 +55,9 @@ the CMOS design rules, with inverse design and machine-learning surrogates.
 Build it with DFT-guided interface engineering and membrane transfer. Prove it
 by device and optical measurement read out with coupled-mode theory. Each pass
 calibrates the model and de-risks the next fabrication run. Across the design
-stage: TCAD for devices, DFT for materials, FEM for electrostatics and
-mechanics, and FDTD, RCWA, mode solving and ray optics for photonics.
+stage: TCAD for devices, DFT for materials, Landau-Devonshire thermodynamics
+for ferroelectric response, FEM for electrostatics and mechanics, and FDTD,
+RCWA, mode solving and ray optics for photonics.
 
 These feed optical interconnects and co-packaged optics for computing,
 resonant-cavity LED microdisplays, and quantum photonic integrated circuits. Our
