@@ -14,6 +14,19 @@
 
 내부 링크 깨진 것 없음. DOI 45개 확인됨. 매일 활동 그래프 자동 갱신.
 
+## 바로 다음 두 가지
+
+1. **tools 페이지를 만든다.** nav 순서는 about → research → publications → **tools** → cv
+   (user 가 `software` 대신 `tools` 로 확정). 각 항목은 무엇을 하는가 / 왜 만들었는가(숫자가
+   있으면 그 숫자) / 저장소 링크 세 줄. 지금 올라간 셋:
+   - <https://github.com/yjinyoo/beol-eo-prescreen> 전압 분배·경사 전극 쐐기장·1차 섭동
+   - <https://github.com/yjinyoo/refcheck> 참고문헌 3색인 대조
+   - <https://github.com/yjinyoo/harness-budget> 컨텍스트 예산·메모리 무결성·죽은 경로·recall@K
+2. **about 설계 루프 문단 끝에 한 절만 붙인다.** user 확정 문구:
+   `The loop is scripted end to end and run by coding agents.`
+   **주장은 쓰지 않는다.** AI 역량은 tools 페이지가 증거로 보여주는 구성이고,
+   about 에서 대놓고 말하지 않기로 했다. `AI-driven` 류 수식어 금지.
+
 ## 열린 것
 
 1. **Search Console 은 2026-09-19 에 소유권 인증까지 끝났다** (HTML 파일 방식).
@@ -46,3 +59,14 @@ python scripts/update_publications.py     # 재수집 → 동명이인 분리 �
 
 공동 1저자면 `scripts/make_bib.py` 의 `CO_FIRST` 에 DOI 를 추가한다. 서지 DB 에는 그 정보가
 없어서 자동으로는 절대 안 들어온다. CV 가 정본이다.
+
+## 공개 저장소 후속
+
+- **내부본에 이관할 버그 3건** (공개본에서 고쳤고 내부본은 아직 옛 상태):
+  `tools/refcheck_crossref.py` 의 저널명 정규식과 `guess_title`, `tools/link_lint.py` 의
+  하드코딩된 폴더명. **실제 교정지로 공개본을 한 번 돌려 본 뒤** 이관할 것. 내부본은
+  Science 양식에서 검증된 상태라 무턱대고 덮으면 그 경로가 깨질 수 있다.
+- **다음 공개 후보:** `device_assert.py`(661줄, 프로젝트 기대값 제거 필요),
+  `fab_check.py`(308줄, 엔진만 내고 `fab_constraints.md` 29항목은 예시로 대체).
+- **올리지 않기로 한 것:** `leak_check.py`(패턴이 곧 협업자·프로젝트 목록),
+  카이랄 두 건(원고 미발표).
