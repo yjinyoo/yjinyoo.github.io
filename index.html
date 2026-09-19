@@ -52,9 +52,12 @@
   }
 
   /* The theme bolds the given name only, which reads as a mistake rather than
-     as a device. One weight for the whole name. */
+     as a device. One weight for the whole name, in the page title and in the
+     navbar, where the anchor also carries font-weight-lighter. */
   .post-title,
-  .post-title .font-weight-bold {
+  .post-title .font-weight-bold,
+  .navbar-brand.title,
+  .navbar-brand.title .font-weight-bold {
     font-weight: 700;
   }
   .post-header .desc {
