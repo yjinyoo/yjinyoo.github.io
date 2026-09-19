@@ -22,7 +22,7 @@ investigator: Prof. Dirk R. Englund.*
 
 Photonic integrated circuit testing and heterogeneous device integration, with
 the design and fabrication of membrane-based active photonic devices carried out
-jointly between the Englund and Kim groups.
+jointly between the Kim and Englund groups.
 
 #### Pre-patterned freestanding single-crystalline lithium niobate photonic components for advanced quantum photonic integrated circuits
 

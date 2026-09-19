@@ -2,7 +2,7 @@
 layout: about
 title: about
 permalink: /
-subtitle: Postdoctoral researcher, <a href="https://www.rle.mit.edu/">Research Laboratory of Electronics</a>, MIT. Co-advised by <a href="https://jeehwanlab.mit.edu/">Jeehwan Kim</a> and <a href="https://qp.mit.edu/">Dirk R. Englund</a>.
+subtitle: Postdoctoral researcher, <a href="https://www.rle.mit.edu/">Research Laboratory of Electronics</a>, MIT. <a href="https://jeehwanlab.mit.edu/">Jeehwan Kim Group</a>.
 
 profile:
   align: right
@@ -34,17 +34,13 @@ I build active photonic devices on silicon. Silicon does not host the materials 
 - III-V and III-N for on-chip lasers and resonant-cavity LEDs, integrated as coupons at high density
 - Heterogeneous integration onto CMOS, photonic ICs, and other platforms through 2D-material-assisted epitaxy and transfer
 
-I am co-advised by [Jeehwan Kim](https://jeehwanlab.mit.edu/) and [Dirk R. Englund](https://qp.mit.edu/), and the membrane-based active photonics work runs jointly across the two groups. [Current projects and funding](/research/).
+The membrane-based active photonics work is carried out jointly with the [Englund group](https://qp.mit.edu/) at MIT. [Current projects and funding](/research/).
 
 #### From target to measured device, one loop
 
 Deep research sets the target and the benchmark to beat. Coupled, cross-validated multi-physics simulation derives the device and its fabrication window, inside the CMOS design rules, with inverse design and machine-learning surrogates. Fabrication realizes that window, with DFT-guided interface engineering and membrane transfer. Device and optical measurement, read out with coupled-mode theory, closes the loop and calibrates the model.
 
 Across the design stage: TCAD for devices, DFT for materials, FEM for electrostatics and mechanics, and FDTD, RCWA, mode solving and ray optics for photonics. Each pass de-risks the next fabrication and sharpens the model.
-
-#### Before MIT
-
-I did my Ph.D. in Electrical Engineering and Computer Science at GIST with [Young Min Song](https://www.gist-foel.net/), in the Flexible OptoElectronics Laboratory, on ultra-thin film resonators. A few tens of nanometers of absorbing dielectric on a mirror forms a Gires-Tournois cavity, sharp enough to read single bioparticles out of an ordinary bright-field micrograph, and the same structure retuned gives structural color displays, colorimetric sensors, and daytime radiative coolers.
 
 #### Activity
 
