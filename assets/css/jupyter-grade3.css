@@ -296,6 +296,13 @@ div.modal-footer > button:hover {
   outline: none;
 }
 
+.modal-content h4 {
+  font-family: sans-serif;
+  font-size: 16pt;
+  color: #303030;
+  padding: 5px;
+}
+
 .modal-body {
   background-color: #ffffff;
   position: relative;
@@ -385,6 +392,7 @@ li,
 h1,
 h2,
 h3,
+h4,
 pre,
 code,
 form,

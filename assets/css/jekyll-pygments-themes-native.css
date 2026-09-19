@@ -27,11 +27,7 @@
 } /* Other */
 .highlight .p {
   color: #d0d0d0;
-} /* Punctuation */
-.highlight .cm {
-  color: #999999;
-  font-style: italic;
-} /* Comment.Multiline */ /* Comment.Preproc */ /* Comment.Single */ /* Comment.Special */ /* Generic.Deleted */ /* Generic.Emph */ /* Generic.Error */ /* Generic.Heading */ /* Generic.Inserted */
+} /* Punctuation */ /* Comment.Multiline */ /* Comment.Preproc */ /* Comment.Single */ /* Comment.Special */ /* Generic.Deleted */ /* Generic.Emph */ /* Generic.Error */ /* Generic.Heading */ /* Generic.Inserted */
 .highlight .go {
   color: #cccccc;
 } /* Generic.Output */ /* Generic.Prompt */ /* Generic.Strong */ /* Generic.Subheading */
