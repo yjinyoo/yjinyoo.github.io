@@ -57,12 +57,10 @@ Across the design stage: TCAD for devices, DFT for materials, FEM for electrosta
          style="width:100%; max-width:540px; display:block;">
   </a>
   <p style="font-size:.95rem; line-height:1.65; margin:1rem 0 0; opacity:.85;">
-    Each square is one day, darkening with the number of commits. What is in them is
-    the daily substance of the work above: electromagnetic and drift-diffusion
-    simulations, photomask layouts, process flows, and the analysis that turns a
-    measured spectrum back into model parameters. Almost every repository is private,
-    so the days fill in without naming what is in them. It counts what reaches version
-    control, which is most of the design and analysis and none of the cleanroom time.
+    Each square is one day, darkening with the number of commits: simulations, mask
+    layouts, process flows, and the analysis behind the work above. Almost every
+    repository is private, so the days fill in without naming what is in them, and the
+    count covers what reaches version control, not time in the cleanroom.
   </p>
 </div>
 

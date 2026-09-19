@@ -85,14 +85,16 @@ National Science Foundation. Principal investigator: Prof. Jeehwan Kim.*
 Proposal preparation and day-to-day charge of the project, developing
 pre-patterned lithium niobate photonic components.
 
-#### Pre-patterned freestanding single-crystalline lithium niobate photonic components for an etch-free integration process
+#### Pre-patterned freestanding single-crystalline lithium niobate photonic components for advanced quantum photonic integrated circuits
 
 *May 2024 to Jan 2026. MIT-Imperial College London Seed Fund, MIT Global Seed
 Funds (MISTI). Principal investigator: Prof. Jeehwan Kim. International
 collaborator: Prof. Myungshik Kim, Imperial College London.*
 
-Proposal preparation and reporting, and the etch-free integration route for
-pre-patterned lithium niobate components.
+The seed-fund collaboration behind the project above, assessing the feasibility
+of an etch-free route to freestanding lithium niobate components for quantum
+photonic circuits: MIT on materials growth and membrane fabrication, Imperial on
+the modeling. Proposal preparation and reporting.
 
 #### Entire-life implantable nanomesh brain-machine integration interface for neurological disorders
 
