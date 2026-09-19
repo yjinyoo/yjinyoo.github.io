@@ -26,7 +26,7 @@ latest_posts:
 
 {% include site_styles.liquid %}
 
-**Membrane-based integrated photonics. Multi-physics simulation-driven design-to-fab.**
+**Membrane-based integrated photonics. <span style="white-space:nowrap">Multi-physics</span> <span style="white-space:nowrap">simulation-driven</span> <span style="white-space:nowrap">design-to-fab</span>.**
 
 I build active photonic devices on silicon. Silicon does not host the materials that modulate, emit, or store light, so I release those materials as single-crystalline freestanding membranes, transfer them onto CMOS-compatible platforms, and design and fabricate the resulting devices in house or by CMOS foundry tape-out. The most immediate applications are optical interconnects and co-packaged optics for computing, but the same approach reaches resonant-cavity LED microdisplays and quantum photonic integrated circuits.
 
@@ -51,17 +51,18 @@ Across the design stage: TCAD for devices, DFT for materials, FEM for electrosta
     <strong style="font-size:1.02rem;">Contribution activity</strong>
     <a href="https://github.com/yjinyoo" target="_blank" rel="noopener" style="font-size:.85rem;">github.com/yjinyoo</a>
   </div>
-  <a href="https://github.com/yjinyoo" target="_blank" rel="noopener" aria-label="GitHub profile">
-    <img src="{{ '/assets/img/activity.svg' | relative_url }}"
-         alt="Contribution activity for the current year"
-         style="width:100%; max-width:540px; display:block;">
-  </a>
-  <p style="font-size:.95rem; line-height:1.65; margin:1rem 0 0; opacity:.85;">
-    Each square is one day, darkening with the number of commits: simulations, mask
-    layouts, process flows, and the analysis behind the work above. Almost every
-    repository is private, so the days fill in without naming what is in them, and the
-    count covers what reaches version control, not time in the cleanroom.
-  </p>
+  <div style="display:flex; gap:1.5rem; align-items:flex-start; flex-wrap:wrap;">
+    <a href="https://github.com/yjinyoo" target="_blank" rel="noopener" aria-label="GitHub profile"
+       style="flex:0 0 auto; max-width:100%;">
+      <img src="{{ '/assets/img/activity.svg' | relative_url }}"
+           alt="Contribution activity for the current year"
+           style="width:508px; max-width:100%; display:block;">
+    </a>
+    <p style="flex:1 1 220px; font-size:.95rem; line-height:1.6; margin:0; opacity:.8;">
+      Design, simulation and fabrication scripting across every project. Almost every
+      repository is private, so the days fill in without naming what is in them.
+    </p>
+  </div>
 </div>
 
 Reach me at <a href="mailto:yjyoo@mit.edu">yjyoo@mit.edu</a>.
