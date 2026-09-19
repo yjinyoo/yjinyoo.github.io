@@ -137,34 +137,32 @@ for i, f in enumerate(flat):
     key = make_key({"authorships": [{"author": {"display_name": a}} for a in authors],
                     "publication_year": f["year"], "title": f["title"]}, seen)
 
+    # The layout renders "<journal>, <year>" and nothing for volume, number or
+    # pages. additional_info is the only slot in between, but it is run through
+    # markdownify, which eats the leading space and leaves a trailing newline
+    # ("Nature Electronics9, 853-867 , 2026"). So the locator is carried in the
+    # journal string, and the separate fields are dropped rather than repeated,
+    # which would make a reference manager print the volume twice.
+    journal = f["journal"] if "\\&" in f["journal"] else tex_escape(f["journal"])
+    vol, num = f["volume"], f["number"]
+    pages = f["pages"].replace("--", "–")
+    if vol and pages:
+        journal = f"{journal} {vol}, {pages}"
+    elif vol and num:
+        journal = f"{journal} {vol}, {num}"   # article number, not a page range
+    elif vol:
+        journal = f"{journal} {vol}"
+
     rows = [
         ("abbr", str(number)),
         ("author", " and ".join(authors)),
         ("title", tex_escape(f["title"])),
-        ("journal", f["journal"] if "\\&" in f["journal"] else tex_escape(f["journal"])),
+        ("journal", journal),
         ("year", str(f["year"] or "")),
-        ("volume", f["volume"]),
-        ("number", f["number"]),
-        ("pages", f["pages"]),
         ("doi", f["doi"]),
         ("url", f"https://doi.org/{f['doi']}" if f["doi"] else ""),
         ("abstract", tex_escape(f["abstract"])),
     ]
-    # The layout builds "<journal><additional_info>, <year>" and renders nothing
-    # for the volume, number or pages fields, so the locator goes here.
-    vol, num = f["volume"], f["number"]
-    pages = f["pages"].replace("--", "–")
-    if vol and pages:
-        locator = f" {vol}, {pages}"
-    elif vol and num:
-        locator = f" {vol}, {num}"      # article number rather than a page range
-    elif vol:
-        locator = f" {vol}"
-    else:
-        locator = ""
-    if locator:
-        rows.append(("additional_info", locator))
-
     if f["doi"] in CO_FIRST:
         # `note` gets its own line in the theme's entry layout; `additional_info`
         # is appended to the journal name and reads as part of the venue.
