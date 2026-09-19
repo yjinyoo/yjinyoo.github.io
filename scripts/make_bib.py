@@ -66,9 +66,14 @@ for w in works:
     is_preprint = (w.get("type") == "preprint") or venue in ("Research Square",
                                                              "SSRN Electronic Journal")
 
-    # Front-page highlights: own first-author papers that landed, plus the
-    # high-visibility group papers.
-    selected = (first_author and cites >= 20) or cites >= 100 or venue.startswith("Nature")
+    # Front-page highlights. Citations alone are a bad rule: it promotes large
+    # group papers where the contribution was one author slot out of twenty.
+    # Lead authorship, or a leading slot at a top venue, or a genuine outlier.
+    position = next((i + 1 for i, a in enumerate(authors) if a == ME), len(authors))
+    top_venue = venue.startswith("Nature") or venue.startswith("Light")
+    selected = ((first_author and cites >= 20)
+                or (top_venue and position <= 6)
+                or cites >= 200)
     if selected:
         n_selected += 1
 

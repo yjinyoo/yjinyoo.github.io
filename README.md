@@ -39,8 +39,10 @@ That does five things:
    new co-author group appears, because a genuinely new collaboration has no
    shared co-author yet and will be dropped until the affiliation catches it.
 3. `make_bib.py` writes the BibTeX. `selected={true}` controls which papers show
-   on the front page; the current rule is first-author with 20+ citations, or
-   100+ citations, or a Nature-family venue.
+   on the front page. The rule is first-author with 20+ citations, or a leading
+   slot (top six) at a Nature-family venue, or 200+ citations. Citation count on
+   its own is deliberately not enough: it would promote large group papers where
+   the contribution was one author slot out of twenty.
 4. `fix_stale.py` applies manual corrections where OpenAlex is behind the
    publisher. There is one right now: the Gires-Tournois monopixel paper, which
    OpenAlex still lists only as a Research Square preprint with the author order
