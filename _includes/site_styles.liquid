@@ -44,4 +44,25 @@ no explicit size, so h2 and h4 sat too close to body text to separate sections.
     font-size: 0.98rem;
     line-height: 1.55;
   }
+
+  /* Publication numbers. The theme renders `abbr` as a filled pill, which was
+     right for a venue label and wrong for a running number. Plain digits. */
+  .publications .abbr .badge {
+    background: none !important;
+    background-color: transparent !important;
+    color: #8b929c;
+    font-size: 0.95rem;
+    font-weight: 600;
+    padding: 0;
+    width: auto !important;
+    text-align: left;
+    border-radius: 0;
+  }
+
+  /* Equal-contribution note: its own line, set back from the citation. */
+  .publications .periodical + .periodical {
+    font-size: 0.88rem;
+    color: #8b929c;
+    margin-top: 0.15rem;
+  }
 </style>
