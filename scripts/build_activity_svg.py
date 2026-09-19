@@ -31,9 +31,9 @@ SITE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # edited when the year rolls over.
 OUT = os.path.join(SITE, "assets", "img", "activity.svg")
 
-CELL, GAP = 11, 3
+CELL, GAP = 13, 3
 PITCH = CELL + GAP
-LEFT, TOP = 30, 34          # room for weekday labels and the month row
+LEFT, TOP = 36, 40          # room for weekday labels and the month row
 # Empty days are drawn semi-transparent so the chart reads on a light or a dark
 # page without needing to know which one it is sitting on.
 EMPTY = ("#8b929c", 0.20)
@@ -82,7 +82,7 @@ def build(year):
     first_col = start - dt.timedelta(days=(start.weekday() + 1) % 7)
     n_cols = ((end - first_col).days // 7) + 1
     width = LEFT + n_cols * PITCH + 8
-    height = TOP + 7 * PITCH + 26
+    height = TOP + 7 * PITCH + 30
 
     out = [f'<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}" '
            f'viewBox="0 0 {width} {height}" role="img" '
@@ -91,7 +91,7 @@ def build(year):
            f'<style>text{{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif}}</style>']
 
     # Year, set large enough to be the first thing read.
-    out.append(f'<text x="0" y="17" font-size="15" font-weight="700" fill="{LABEL}">{year}</text>')
+    out.append(f'<text x="0" y="19" font-size="18" font-weight="700" fill="{LABEL}">{year}</text>')
 
     # Month labels, placed at the first column whose week contains the 1st.
     seen = set()
@@ -102,12 +102,12 @@ def build(year):
             if d.year == year and d.day <= 7 and d.month not in seen and start <= d <= end:
                 seen.add(d.month)
                 out.append(f'<text x="{LEFT + col * PITCH}" y="{TOP - 8}" '
-                           f'font-size="10" fill="{LABEL}">{MONTHS[d.month - 1]}</text>')
+                           f'font-size="12" fill="{LABEL}">{MONTHS[d.month - 1]}</text>')
                 break
 
     for row, name in ((1, "Mon"), (3, "Wed"), (5, "Fri")):
         out.append(f'<text x="0" y="{TOP + row * PITCH + CELL - 2}" '
-                   f'font-size="9" fill="{LABEL}">{name}</text>')
+                   f'font-size="11" fill="{LABEL}">{name}</text>')
 
     total = 0
     for col in range(n_cols):
@@ -126,18 +126,18 @@ def build(year):
             out.append(f'<rect x="{x}" y="{y}" width="{CELL}" height="{CELL}" rx="2" '
                        f'fill="{fill}"{extra}><title>{key}: {counts.get(key, 0)}</title></rect>')
 
-    base = TOP + 7 * PITCH + 15
-    out.append(f'<text x="0" y="{base}" font-size="10" fill="{LABEL}">'
+    base = TOP + 7 * PITCH + 18
+    out.append(f'<text x="0" y="{base}" font-size="12" fill="{LABEL}">'
                f'{year_total:,} contributions in {year}</text>')
 
-    lx = width - (5 * PITCH + 62)
-    out.append(f'<text x="{lx}" y="{base}" font-size="10" fill="{LABEL}">Less</text>')
+    lx = width - (5 * PITCH + 76)
+    out.append(f'<text x="{lx}" y="{base}" font-size="12" fill="{LABEL}">Less</text>')
     out.append(f'<rect x="{lx + 28}" y="{base - 9}" width="{CELL}" height="{CELL}" rx="2" '
                f'fill="{EMPTY[0]}" opacity="{EMPTY[1]}"/>')
     for i, c in enumerate(SCALE):
         out.append(f'<rect x="{lx + 28 + (i + 1) * PITCH}" y="{base - 9}" '
                    f'width="{CELL}" height="{CELL}" rx="2" fill="{c}"/>')
-    out.append(f'<text x="{lx + 28 + 5 * PITCH + 4}" y="{base}" font-size="10" fill="{LABEL}">More</text>')
+    out.append(f'<text x="{lx + 28 + 5 * PITCH + 4}" y="{base}" font-size="12" fill="{LABEL}">More</text>')
     out.append("</svg>")
 
     os.makedirs(os.path.dirname(OUT), exist_ok=True)
