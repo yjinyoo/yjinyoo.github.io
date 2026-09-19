@@ -60,10 +60,11 @@ Across the design stage: TCAD for devices, DFT for materials, FEM for electrosta
            style="width:508px; max-width:100%; display:block;">
     </a>
     <p style="flex:1 1 240px; font-size:.95rem; line-height:1.6; margin:0; opacity:.8;">
-      Design, simulation and fabrication scripting across every project: device
-      simulation, photomask layouts, and measurement analysis. Almost every repository
-      is private, so the days fill in without naming what is in them. It counts what
-      reaches version control, not time in the cleanroom.
+      Design, simulation and fabrication scripting across every project:
+      electromagnetic and drift-diffusion simulation, photomask layouts, process
+      flows, and the analysis that turns a measured spectrum back into model
+      parameters. Almost every repository is private, so the days fill in without
+      naming what is in them.
     </p>
   </div>
 </div>
