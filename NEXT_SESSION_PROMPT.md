@@ -27,6 +27,25 @@
    **주장은 쓰지 않는다.** AI 역량은 tools 페이지가 증거로 보여주는 구성이고,
    about 에서 대놓고 말하지 않기로 했다. `AI-driven` 류 수식어 금지.
 
+## CV 원본 수정 (user 가 새 세션에서 하라고 지시, 2026-09-19)
+
+`OneDrive/Career/CV/Curriculum Vitae_YJYOO_081926.docx` 의 Work Experience 절,
+`School of Electrical Engineering and Computer Science, Mar. 2021 ~ Feb. 2022` 줄.
+GIST 포닥 종료일이 `Feb. 2022` 로 적혀 있는데 실제는 **`Feb. 2023`** 이다 (user 진술).
+
+지금은 `scripts/build_public_cv.py` 의 `CORRECTIONS` 가 매 빌드마다 PDF 에서 그 날짜를
+고쳐 내보낸다. 사이트와 공개 PDF 는 맞지만 **원본을 지원서나 협업자에게 보내면 틀린 채로
+나간다.**
+
+순서:
+
+1. docx 를 고친다. **Word COM 은 이 문서에서 두 번 다 무응답이었다** (`Documents.Open`
+   에서 멈춤, 2026-09-19). python-docx 로 해당 런의 텍스트만 바꾸는 쪽이 빠를 수 있다.
+2. 고친 docx 에서 PDF 를 새로 뽑아 같은 폴더에 둔다.
+3. `scripts/build_public_cv.py` 의 `DEFAULT_SRC` 를 새 PDF 로 바꾸고, `CORRECTIONS` 에서
+   그 항목을 **지운다.** 원본이 맞아진 뒤에도 남겨 두면 이중 수정이 된다.
+4. `python scripts/build_public_cv.py` 를 돌리고 1쪽을 눈으로 확인한 뒤 배포한다.
+
 ## 열린 것
 
 1. **Search Console 은 2026-09-19 에 소유권 인증까지 끝났다** (HTML 파일 방식).
