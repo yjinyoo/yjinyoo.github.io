@@ -69,4 +69,6 @@ Across the design stage: TCAD for devices, DFT for materials, FEM for electrosta
   </div>
 </div>
 
-Reach me at <a href="mailto:yjyoo@mit.edu">yjyoo@mit.edu</a>.
+Young Jin Yoo (유영진). Reach me at <a href="mailto:yjyoo@mit.edu">yjyoo@mit.edu</a>.
+
+{% include person_schema.liquid %}
