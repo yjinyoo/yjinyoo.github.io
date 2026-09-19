@@ -6,6 +6,18 @@ Measured before changing: body was 1rem / 1.5 line-height, and headings carried
 no explicit size, so h2 and h4 sat too close to body text to separate sections.
 {%- endcomment -%}
 <style>
+  /* Accent colour. The theme ships magenta in light mode and cyan in dark, which
+     left the page with two unrelated accents: magenta links against the green
+     activity chart. One accent now, taken from the chart. */
+  :root {
+    --global-theme-color: #2f6f4e;
+    --global-hover-color: #24563d;
+  }
+  html[data-theme="dark"] {
+    --global-theme-color: #7cc39b;
+    --global-hover-color: #a5dabd;
+  }
+
   /* Body copy: a touch larger and more open than the 1rem / 1.5 default. */
   .post article p,
   .post article li {

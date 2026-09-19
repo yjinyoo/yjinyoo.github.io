@@ -9,6 +9,8 @@ nav_order: 4
 
 {% include site_styles.liquid %}
 
+[Download the full CV (PDF)]({{ '/assets/pdf/cv.pdf' | relative_url }}) &nbsp;·&nbsp; publications are listed on the [publications]({{ '/publications/' | relative_url }}) page.
+
 ## Positions
 
 #### Postdoctoral researcher, Massachusetts Institute of Technology
