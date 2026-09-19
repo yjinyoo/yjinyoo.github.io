@@ -7,6 +7,8 @@ nav: true
 nav_order: 2
 ---
 
+{% include site_styles.liquid %}
+
 Silicon does not host the materials that modulate, emit, or store light. Those
 materials are released as single-crystalline freestanding membranes, transferred
 onto CMOS-compatible platforms, and the resulting devices are designed and
@@ -43,9 +45,7 @@ The transfer step decides whether any of the above survives a process flow.
 Remote and 2D-material-assisted epitaxy grows the film through an intervening
 layer so it registers to the substrate lattice yet releases cleanly, and the
 substrate can be reused. Whether release is clean is an interface problem, which
-is where first-principles calculation earns its cost. Our work on improving
-remote epitaxy of perovskite complex oxides is in
-[ACS Nano](https://doi.org/10.1021/acsnano.4c09445) (2024).
+is where first-principles calculation earns its cost.
 
 #### The design-to-fab loop
 
@@ -59,7 +59,9 @@ stage: TCAD for devices, DFT for materials, FEM for electrostatics and
 mechanics, and FDTD, RCWA, mode solving and ray optics for photonics.
 
 These feed optical interconnects and co-packaged optics for computing,
-resonant-cavity LED microdisplays, and quantum photonic integrated circuits.
+resonant-cavity LED microdisplays, and quantum photonic integrated circuits. Our
+review of co-packaged optics for high-performance computing and AI is in
+[Nature Electronics](https://doi.org/10.1038/s41928-026-01681-6) (2026).
 
 ## Funded projects
 
@@ -82,6 +84,15 @@ National Science Foundation. Principal investigator: Prof. Jeehwan Kim.*
 
 Proposal preparation and day-to-day charge of the project, developing
 pre-patterned lithium niobate photonic components.
+
+#### Pre-patterned freestanding single-crystalline lithium niobate photonic components for an etch-free integration process
+
+*May 2024 to Jan 2026. MIT-Imperial College London Seed Fund, MIT Global Seed
+Funds (MISTI). Principal investigator: Prof. Jeehwan Kim. International
+collaborator: Prof. Myungshik Kim, Imperial College London.*
+
+Proposal preparation and reporting, and the etch-free integration route for
+pre-patterned lithium niobate components.
 
 #### Entire-life implantable nanomesh brain-machine integration interface for neurological disorders
 

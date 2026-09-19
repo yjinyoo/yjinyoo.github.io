@@ -1,0 +1,47 @@
+{%- comment -%}
+Typography overrides. The theme's stylesheet lives inside the al-folio gem, so
+it is not edited here; these rules are layered on top from each page instead.
+
+Measured before changing: body was 1rem / 1.5 line-height, and headings carried
+no explicit size, so h2 and h4 sat too close to body text to separate sections.
+{%- endcomment -%}
+<style>
+  /* Body copy: a touch larger and more open than the 1rem / 1.5 default. */
+  .post article p,
+  .post article li {
+    font-size: 1.05rem;
+    line-height: 1.7;
+  }
+  .post article li {
+    margin-bottom: 0.35rem;
+  }
+
+  /* The address block under the photo is a caption, not body copy. */
+  .post .more-info p {
+    font-size: 0.85rem;
+    line-height: 1.45;
+  }
+
+  /* Section headings, sized to step down clearly from the page title. */
+  .post article h2 {
+    font-size: 1.55rem;
+    font-weight: 700;
+    margin: 2.4rem 0 0.8rem;
+  }
+  .post article h4 {
+    font-size: 1.16rem;
+    font-weight: 600;
+    margin: 1.9rem 0 0.55rem;
+  }
+
+  /* The theme bolds the given name only, which reads as a mistake rather than
+     as a device. One weight for the whole name. */
+  .post-title,
+  .post-title .font-weight-bold {
+    font-weight: 700;
+  }
+  .post-header .desc {
+    font-size: 0.98rem;
+    line-height: 1.55;
+  }
+</style>
