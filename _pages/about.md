@@ -9,7 +9,7 @@ profile:
   image: prof_pic.jpg
   image_circular: false
   more_info: >
-    <p>Room 38-160</p>
+    <p>Room 38-276</p>
     <p>Massachusetts Institute of Technology</p>
     <p>50 Vassar Street</p>
     <p>Cambridge, MA 02139</p>
@@ -34,7 +34,7 @@ I build active photonic devices on silicon. Silicon does not host the materials 
 - III-V and III-N for on-chip lasers and resonant-cavity LEDs, integrated as coupons at high density
 - Heterogeneous integration onto CMOS, photonic ICs, and other platforms through 2D-material-assisted epitaxy and transfer
 
-The membrane-based active photonics work is carried out jointly with the [Englund group](https://qp.mit.edu/) at MIT. [Current projects and funding](/research/).
+I work in the [Jeehwan Kim group](https://jeehwanlab.mit.edu/) at MIT. Some of the projects, on the quantum photonic integrated circuit side, are co-advised by [Dirk R. Englund](https://qp.mit.edu/) and run jointly across the two groups. [Current projects and funding](/research/).
 
 #### From target to measured device, one loop
 
@@ -46,12 +46,12 @@ Across the design stage: TCAD for devices, DFT for materials, FEM for electrosta
 
 <div style="border:1px solid rgba(128,128,128,.35); border-radius:10px; padding:1.1rem 1.25rem; margin:1.2rem 0 1.6rem;">
   <div style="display:flex; align-items:baseline; justify-content:space-between; flex-wrap:wrap; gap:.5rem; margin-bottom:.9rem;">
-    <strong style="font-size:1.02rem;">Commits over the past year</strong>
+    <strong style="font-size:1.02rem;">Contribution activity</strong>
     <a href="https://github.com/yjinyoo" target="_blank" rel="noopener" style="font-size:.85rem;">github.com/yjinyoo</a>
   </div>
   <a href="https://github.com/yjinyoo" target="_blank" rel="noopener" aria-label="GitHub profile">
-    <img src="https://ghchart.rshah.org/2f6f4e/yjinyoo"
-         alt="Commit activity over the past year"
+    <img src="{{ '/assets/img/activity.svg' | relative_url }}"
+         alt="Contribution activity for the current year"
          style="width:100%; display:block;">
   </a>
   <p style="font-size:.85rem; line-height:1.5; margin:.9rem 0 0; opacity:.75;">
