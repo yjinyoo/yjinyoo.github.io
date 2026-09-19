@@ -1,119 +1,119 @@
-"""Turn the curated OpenAlex record into the BibTeX file al-folio renders from."""
+"""Turn the curated OpenAlex record into the BibTeX file al-folio renders from.
+
+The `abbr` field drives the badge in the left margin. It carries a publication
+number, not a journal abbreviation: the journal name is already spelled out in
+the citation itself, so a venue badge was duplicate ink. Numbering runs from the
+oldest paper, so a paper keeps its number when a new one is published and the
+number at the top of the page is the total count.
+"""
 
 import json
 import os
-import re
 
 from fetch_pubs import tex_escape, invert_abstract, make_key
 
 OUT = os.path.dirname(os.path.abspath(__file__))
-works = json.load(open(os.path.join(OUT, "works_mine.json"), encoding="utf-8"))
-
+BIB = os.path.join(os.path.dirname(OUT), "_bibliography", "papers.bib")
 ME = "Young Jin Yoo"
 
-# Badge text shown in the left margin of each entry.
-ABBR = {
-    "Nature Electronics": "Nat. Electron.",
-    "Nature Nanotechnology": "Nat. Nanotech.",
-    "Nature Communications": "Nat. Commun.",
-    "Advanced Materials": "Adv. Mater.",
-    "Advanced Optical Materials": "Adv. Opt. Mater.",
-    "Advanced Functional Materials": "Adv. Funct. Mater.",
-    "Advanced Science": "Adv. Sci.",
-    "Advanced Healthcare Materials": "Adv. Healthc. Mater.",
-    "ACS Nano": "ACS Nano",
-    "ACS Applied Materials & Interfaces": "ACS AMI",
-    "ACS Applied Nano Materials": "ACS ANM",
-    "ACS Energy Letters": "ACS Energy Lett.",
-    "Optics Express": "Opt. Express",
-    "Optical Materials Express": "Opt. Mater. Express",
-    "Optical and Quantum Electronics": "Opt. Quantum Electron.",
-    "Nanophotonics": "Nanophotonics",
-    "Nanoscale": "Nanoscale",
-    "Nano Today": "Nano Today",
-    "Nano Research": "Nano Res.",
-    "Scientific Reports": "Sci. Rep.",
-    "Biosensors and Bioelectronics": "Biosens. Bioelectron.",
-    "iScience": "iScience",
-    "Sensors": "Sensors",
-    "Nanomaterials": "Nanomaterials",
-    "Coatings": "Coatings",
-    "Journal of Nanomaterials": "J. Nanomater.",
-    "Journal of Visualized Experiments": "JoVE",
-    "Applied Spectroscopy Reviews": "Appl. Spectrosc. Rev.",
-    "Research Square": "preprint",
-    "SSRN Electronic Journal": "preprint",
+# Records where OpenAlex is behind the publisher. Keyed by the DOI OpenAlex has.
+# Values replace the rendered fields outright.
+OVERRIDES = {
+    "10.21203/rs.3.rs-5801345/v1": {
+        "authors": ["Joo Hwan Ko", "Hyo Eun Jeong", "Serim Kim", "Doeun Kim",
+                    "Se Yeon Kim", "Young Jin Yoo", "Hyeon-Ho Jeong", "Young Min Song"],
+        "title": "Sub-1-volt, reconfigurable Gires-Tournois resonators for full-coloured monopixel array",
+        "journal": "Light: Science \\& Applications",
+        "year": 2026,
+        "volume": "15",
+        "number": "134",
+        "doi": "10.1038/s41377-026-02228-2",
+        "pdf": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12949994/",
+        "abstract": ("An electrically reconfigurable Gires-Tournois resonator integrated with "
+                     "polyaniline produces colour shifts beyond complementary hue ranges at "
+                     "sub-1-volt drive and 90 uW/cm2, scaling from ~16,900 PPI pixel densities "
+                     "to centimetre-scale arrays, with memory-in-pixel operation."),
+        "type": "article",
+    },
 }
 
-entries, seen = [], set()
-n_selected = 0
 
-for w in works:
-    key = make_key(w, seen)
-    authors = [a.get("author", {}).get("display_name", "")
-               for a in (w.get("authorships") or [])]
-    authors = [a for a in authors if a]
-    first_author = bool(authors) and authors[0] == ME
-
+def fields_for(w):
+    """Flatten one OpenAlex work into the fields we render, overrides applied."""
     loc = w.get("primary_location") or {}
     src = loc.get("source") or {}
-    venue = src.get("display_name") or ""
     biblio = w.get("biblio") or {}
-    doi = (w.get("doi") or "").replace("https://doi.org/", "")
     oa = w.get("best_oa_location") or {}
-    oa_url = oa.get("pdf_url") or oa.get("landing_page_url") or ""
-    cites = w.get("cited_by_count") or 0
-    is_preprint = (w.get("type") == "preprint") or venue in ("Research Square",
-                                                             "SSRN Electronic Journal")
+    doi = (w.get("doi") or "").replace("https://doi.org/", "")
 
-    # Front-page highlights. Citations alone are a bad rule: it promotes large
-    # group papers where the contribution was one author slot out of twenty.
-    # Lead authorship, or a leading slot at a top venue, or a genuine outlier.
-    position = next((i + 1 for i, a in enumerate(authors) if a == ME), len(authors))
-    top_venue = venue.startswith("Nature") or venue.startswith("Light")
-    selected = ((first_author and cites >= 20)
+    f = {
+        "authors": [a.get("author", {}).get("display_name", "")
+                    for a in (w.get("authorships") or []) if a.get("author")],
+        "title": w.get("title") or "",
+        "journal": src.get("display_name") or "",
+        "year": w.get("publication_year"),
+        "volume": biblio.get("volume") or "",
+        "number": biblio.get("issue") or "",
+        "pages": "--".join(p for p in [biblio.get("first_page"), biblio.get("last_page")] if p),
+        "doi": doi,
+        "pdf": oa.get("pdf_url") or oa.get("landing_page_url") or "",
+        "abstract": invert_abstract(w.get("abstract_inverted_index")),
+        "type": w.get("type") or "article",
+        "cites": w.get("cited_by_count") or 0,
+    }
+    f.update(OVERRIDES.get(doi, {}))
+    return f
+
+
+works = json.load(open(os.path.join(OUT, "works_mine.json"), encoding="utf-8"))
+flat = [fields_for(w) for w in works]
+flat.sort(key=lambda f: (f["year"] or 0, f["cites"]), reverse=True)
+
+total = len(flat)
+seen, entries, n_selected = set(), [], 0
+
+for i, f in enumerate(flat):
+    number = total - i                       # oldest paper is 1
+    authors = f["authors"]
+    first_author = bool(authors) and authors[0] == ME
+    position = next((k + 1 for k, a in enumerate(authors) if a == ME), len(authors))
+    top_venue = f["journal"].startswith(("Nature", "Light"))
+    selected = ((first_author and f["cites"] >= 20)
                 or (top_venue and position <= 6)
-                or cites >= 200)
-    if selected:
-        n_selected += 1
+                or f["cites"] >= 200)
+    n_selected += bool(selected)
 
-    fields = [
-        ("abbr", ABBR.get(venue, "")),
+    key = make_key({"authorships": [{"author": {"display_name": a}} for a in authors],
+                    "publication_year": f["year"], "title": f["title"]}, seen)
+
+    rows = [
+        ("abbr", str(number)),
         ("author", " and ".join(authors)),
-        ("title", tex_escape(w.get("title"))),
-        ("journal", tex_escape(venue)),
-        ("year", str(w.get("publication_year") or "")),
-        ("volume", biblio.get("volume") or ""),
-        ("number", biblio.get("issue") or ""),
-        ("pages", "--".join(p for p in [biblio.get("first_page"),
-                                        biblio.get("last_page")] if p)),
-        ("doi", doi),
-        ("url", f"https://doi.org/{doi}" if doi else (loc.get("landing_page_url") or "")),
-        ("abstract", tex_escape(invert_abstract(w.get("abstract_inverted_index")))),
+        ("title", tex_escape(f["title"])),
+        ("journal", f["journal"] if "\\&" in f["journal"] else tex_escape(f["journal"])),
+        ("year", str(f["year"] or "")),
+        ("volume", f["volume"]),
+        ("number", f["number"]),
+        ("pages", f["pages"]),
+        ("doi", f["doi"]),
+        ("url", f"https://doi.org/{f['doi']}" if f["doi"] else ""),
+        ("abstract", tex_escape(f["abstract"])),
     ]
-    if oa_url:
-        fields.append(("pdf", oa_url))          # free-to-read copy, not the publisher PDF
-    fields.append(("bibtex_show", "true"))
+    if f["pdf"]:
+        rows.append(("pdf", f["pdf"]))          # a free copy, never the publisher PDF
+    rows.append(("bibtex_show", "true"))
     if selected:
-        fields.append(("selected", "true"))
+        rows.append(("selected", "true"))
 
-    body = "\n".join(f"  {k:<12}= {{{v}}}," for k, v in fields if v)
-    entries.append(f"@{'misc' if is_preprint else 'article'}{{{key},\n{body}\n}}")
+    body = "\n".join(f"  {k:<12}= {{{v}}}," for k, v in rows if v)
+    kind = "misc" if f["type"] == "preprint" else "article"
+    entries.append(f"@{kind}{{{key},\n{body}\n}}")
 
-header = (
-    "---\n"
-    "# Publication record for Young Jin Yoo (ORCID 0000-0002-6490-2324).\n"
-    "# Generated from OpenAlex; regenerate with scripts/make_bib.py.\n"
-    "# 'selected' marks the papers shown on the front page.\n"
-    "---\n\n"
-)
-BIB = os.path.join(os.path.dirname(OUT), "_bibliography", "papers.bib")
+header = ("% Publication record for Young Jin Yoo (ORCID 0000-0002-6490-2324).\n"
+          "% Generated from OpenAlex; regenerate with scripts/update_publications.py.\n"
+          "% 'abbr' is the publication number, counted from the oldest paper.\n\n")
 with open(BIB, "w", encoding="utf-8") as f:
-    f.write(header.replace("---\n", "").replace("# ", "% ") + "\n\n".join(entries) + "\n")
+    f.write(header + "\n\n".join(entries) + "\n")
 
-print(f"wrote {len(entries)} entries, {n_selected} marked selected")
-
-# Which papers can legally be self-hosted right now, per OpenAlex OA status
-oa_yes = [w for w in works if (w.get("best_oa_location") or {})]
-print(f"already open access (free copy exists) : {len(oa_yes)} / {len(works)}")
-print(f"closed access (link to DOI only)       : {len(works) - len(oa_yes)}")
+print(f"wrote {total} entries, numbered {total} down to 1, {n_selected} marked selected")
+print(f"open access copies linked: {sum(1 for f in flat if f['pdf'])} / {total}")

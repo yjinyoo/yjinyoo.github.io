@@ -14,6 +14,6 @@ import sys
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
 
-for step in ["fetch_pubs.py", "curate.py", "make_bib.py", "fix_stale.py", "check_dois.py"]:
+for step in ["fetch_pubs.py", "curate.py", "make_bib.py", "check_dois.py"]:
     print(f"\n=== {step} ===")
     runpy.run_path(os.path.join(HERE, step), run_name="__main__")
