@@ -23,6 +23,15 @@ DEFAULT_SRC = r"C:\Users\YJ\OneDrive\Career\CV\Curriculum Vitae_YJYOO_Aug_2026.p
 
 # Lines to remove entirely, matched case-insensitively against the page text.
 DROP_PREFIXES = ("phone:",)
+
+# Corrections applied to the source PDF. These exist because the source CV
+# itself is wrong; fix the .docx as well, or every rebuild re-applies them.
+#   (page index, text to find, replacement, y-range that isolates the right line)
+CORRECTIONS = [
+    # GIST postdoc ran to Feb 2023, not Feb 2022. The y-range keeps this off the
+    # Georgia Tech line above it, which legitimately ends Oct. 2022.
+    (0, "Feb. 2022", "Feb. 2023", (655, 680)),
+]
 # Anything matching these must not survive into the output.
 FORBIDDEN = [
     re.compile(r"\+82[\s-]?10[\s-]?\d{3,4}[\s-]?\d{4}"),
@@ -36,6 +45,36 @@ def main():
         raise SystemExit(f"source not found: {src}")
 
     doc = fitz.open(src)
+
+    # Corrections first: redaction carries its own replacement text, so the old
+    # string is removed and the new one drawn in its place.
+    fixed = 0
+    for page_no, old, new, (y0, y1) in CORRECTIONS:
+        page = doc[page_no]
+        hits = [r for r in page.search_for(old) if y0 <= r.y0 <= y1]
+        if len(hits) != 1:
+            raise SystemExit(
+                f"correction {old!r} -> {new!r} matched {len(hits)} places on page "
+                f"{page_no} within y {y0}-{y1}; refusing to guess")
+        rect = hits[0]
+
+        # Take the baseline and size from the span being replaced. Letting the
+        # redaction annotation carry the text instead makes PyMuPDF shrink it to
+        # fit the box, which came out looking like a superscript.
+        origin, size = None, 10.0
+        for block in page.get_text("dict")["blocks"]:
+            for line in block.get("lines", []):
+                for span in line["spans"]:
+                    if fitz.Rect(span["bbox"]).intersects(rect) and old.split()[-1] in span["text"]:
+                        origin, size = span["origin"], span["size"]
+        if origin is None:
+            raise SystemExit(f"could not locate the span carrying {old!r}")
+
+        page.add_redact_annot(rect)
+        page.apply_redactions()
+        page.insert_text((rect.x0, origin[1]), new, fontname="tiro", fontsize=size)
+        fixed += 1
+
     marked = 0
     for page in doc:
         for block in page.get_text("dict")["blocks"]:
@@ -58,9 +97,12 @@ def main():
     check.close()
 
     leaks = [p.pattern for p in FORBIDDEN if p.search(body)]
+    for _, old, new, _ in CORRECTIONS:
+        if new not in body:
+            raise SystemExit(f"correction did not take: {new!r} absent from the output")
     print(f"source : {src}")
     print(f"output : {OUT}  ({pages} pages, {os.path.getsize(OUT) / 1024:.0f} KB)")
-    print(f"lines redacted: {marked}")
+    print(f"lines redacted: {marked}   corrections applied: {fixed}")
     print(f"still present  : mit.edu={'yjyoo@mit.edu' in body}  "
           f"gmail={'yjyoo0601@gmail.com' in body}  ORCID={'0000-0002-6490-2324' in body}")
     if leaks:
