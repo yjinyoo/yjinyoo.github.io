@@ -17,6 +17,9 @@
 - **CV PDF 를 원본 그대로 올리지 않기.** 전화번호가 들어 있다. `scripts/build_public_cv.py` 가 지우고, 저장한 파일을 다시 읽어 남아 있으면 출력을 삭제하고 실패한다.
 - **`co-advised by Kim and Englund` 를 공개 페이지에 쓰지 않기.** CV 에는 그렇게 적혀 있으나 공개물에서는 Kim 이 먼저·단독, Englund 는 범위를 한정해서 (`on the CMOS integrated photonics work`). 근거 = memory `user_joint_kim_englund_appointment`.
 - **미공개 프로젝트의 소자 구조·수치·파트너를 적지 않기.** NDA 건, 투고 중 원고, 프로그램 상세가 섞여 있다. 안전선은 이미 공개된 GitHub 프로필 수준.
+- **`google2cef4b219e13a627.html` 를 지우지 않기.** 쓰레기 파일처럼 보이지만 Google Search Console
+  소유권 인증 파일이다. 지우면 인증이 풀리고 색인 상태 보고가 끊긴다. 테마가 `google_site_verification`
+  설정 키를 렌더하지 않아서 메타 태그 방식이 안 되고, 이 파일 방식으로 인증돼 있다 (2026-09-19).
 - **공식 과제 제목을 줄이지 않기.** 2026-09-19 에 MISTI 제목을 줄였다가 하필 `advanced quantum photonic integrated circuits` 를 잘랐다. 정본은 최종 보고서.
 
 ## 배포와 확인

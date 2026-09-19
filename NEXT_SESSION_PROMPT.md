@@ -16,14 +16,19 @@
 
 ## 열린 것
 
-1. **user 손으로만 되는 것** (여러 번 안내했고 완료 여부 미확인):
-   GitHub 프로필 Website 칸, Google Scholar Homepage 칸, LinkedIn Contact info Website 칸,
-   Google Search Console 등록 + sitemap 제출. 랩 멤버 페이지(`jeehwanlab.mit.edu`) 링크가
-   MIT 도메인이라 효과가 가장 크지만 관리자에게 요청해야 한다.
-2. **검색 노출 확인.** 새 주소라 색인에 며칠~몇 주 걸린다. 다음 세션에서
+1. **Search Console 은 2026-09-19 에 소유권 인증까지 끝났다** (HTML 파일 방식).
+   남은 것: sitemap 제출과 홈 주소 색인 요청을 user 가 눌렀는지 미확인.
+   `site:yjinyoo.github.io` 로 색인 여부부터 보고 판단할 것.
+2. **아직 user 손으로만 되는 것:** GitHub 프로필 Website 칸, Google Scholar Homepage 칸,
+   LinkedIn Contact info Website 칸. 랩 멤버 페이지(`jeehwanlab.mit.edu`) 링크가 MIT 도메인이라
+   효과가 가장 크지만 관리자에게 요청해야 한다.
+3. **CV 원본이 아직 틀렸다.** `Curriculum Vitae_YJYOO_081926.docx` 의 GIST 포닥 종료일이
+   Feb. 2022 인데 실제는 Feb. 2023. `scripts/build_public_cv.py` 의 `CORRECTIONS` 가 매 빌드마다
+   고쳐서 내보내는 중. 원본을 고치면 그 항목을 지울 것.
+4. **검색 노출 확인.** 새 주소라 색인에 며칠~몇 주 걸린다. 다음 세션에서
    `site:yjinyoo.github.io` 로 색인 여부를 먼저 보고, 안 잡혔으면 1번이 됐는지 묻는다.
-3. **특허 10건·국제학회 15건.** CV 에 있고 사이트에는 없다. 특허만 넣는 쪽을 권했고 답 미정.
-4. **cv 페이지 MIT 항목이 research 와 중복.** user 가 알고 그대로 두기로 했다. 먼저 꺼내지 말 것.
+5. **특허 10건·국제학회 15건.** CV 에 있고 사이트에는 없다. 특허만 넣는 쪽을 권했고 답 미정.
+6. **cv 페이지 MIT 항목이 research 와 중복.** user 가 알고 그대로 두기로 했다. 먼저 꺼내지 말 것.
 
 ## 하지 말 것
 
