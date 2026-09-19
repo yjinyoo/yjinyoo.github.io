@@ -100,7 +100,10 @@ def fields_for(w):
         "year": w.get("publication_year"),
         "volume": biblio.get("volume") or "",
         "number": biblio.get("issue") or "",
-        "pages": "--".join(p for p in [biblio.get("first_page"), biblio.get("last_page")] if p),
+        # Journals that number articles rather than paginate report the same
+        # value as first and last page; print it once.
+        "pages": "--".join(dict.fromkeys(
+            p for p in [biblio.get("first_page"), biblio.get("last_page")] if p)),
         "doi": doi,
         "pdf": oa.get("pdf_url") or oa.get("landing_page_url") or "",
         "abstract": invert_abstract(w.get("abstract_inverted_index")),
@@ -147,6 +150,21 @@ for i, f in enumerate(flat):
         ("url", f"https://doi.org/{f['doi']}" if f["doi"] else ""),
         ("abstract", tex_escape(f["abstract"])),
     ]
+    # The layout builds "<journal><additional_info>, <year>" and renders nothing
+    # for the volume, number or pages fields, so the locator goes here.
+    vol, num = f["volume"], f["number"]
+    pages = f["pages"].replace("--", "–")
+    if vol and pages:
+        locator = f" {vol}, {pages}"
+    elif vol and num:
+        locator = f" {vol}, {num}"      # article number rather than a page range
+    elif vol:
+        locator = f" {vol}"
+    else:
+        locator = ""
+    if locator:
+        rows.append(("additional_info", locator))
+
     if f["doi"] in CO_FIRST:
         # `note` gets its own line in the theme's entry layout; `additional_info`
         # is appended to the journal name and reads as part of the venue.
