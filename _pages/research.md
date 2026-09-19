@@ -2,70 +2,66 @@
 layout: page
 permalink: /research/
 title: research
-description: Active photonic devices built from freestanding single-crystalline membranes, and the design-to-fabrication loop behind them.
+description: Ongoing projects at MIT, and what the work involves.
 nav: true
 nav_order: 2
 ---
 
-Silicon photonics is built from a material that neither modulates nor emits light
-well. The materials that do, complex oxides and compound semiconductors, do not
-grow on silicon. My work is on getting them there anyway, as freestanding
-single-crystalline membranes, and on designing the devices that result so they
-survive a real process flow.
+Silicon does not host the materials that modulate, emit, or store light. Those
+materials are released as single-crystalline freestanding membranes, transferred
+onto CMOS-compatible platforms, and the resulting devices are designed and
+fabricated in house or by CMOS foundry tape-out.
 
-#### Low-voltage electro-optic modulation from complex-oxide membranes
+## Ongoing projects
 
-Lithium niobate and barium titanate have large Pockels coefficients, which is
-what a modulator needs, and neither grows on silicon. Grown instead on a
-lattice-matched substrate and released as a membrane, the film can be transferred
-onto a silicon photonic platform, including the back end of a finished CMOS
-wafer, where nothing can be grown at temperature.
+#### TOPCHIP: photonic integrated circuit testing and heterogeneous device integration for quantum information science
 
-Put into a photonic-crystal cavity, the same phase shift is reached over a much
-shorter interaction length, which is what brings the drive voltage down toward
-the logic supply. The design question is where the field actually falls: the
-fraction of the drive voltage that lands across the active film, and the overlap
-between the optical mode and that film, decide the answer well before anything is
-fabricated.
+*Feb 2026 to present. Quantum Information Sciences Branch, Air Force Research
+Laboratory Information Directorate (AFRL/RITQ), US Air Force. Principal
+investigator: Prof. Dirk R. Englund.*
 
-The ultra-thin-film lithium niobate side of this is joint with the
-[Englund group](https://qp.mit.edu/) at MIT RLE.
+Photonic integrated circuit testing and heterogeneous device integration, with
+the design and fabrication of membrane-based active photonic devices carried out
+jointly between the Englund and Kim groups.
 
-#### On-chip light sources from III-V and III-N membranes
+#### Pre-patterned freestanding single-crystalline lithium niobate photonic components for advanced quantum photonic integrated circuits
 
-Silicon does not emit, so a light source has to be brought in. Compound
-semiconductor membranes integrated as coupons, many small pieces at high density
-rather than whole bonded wafers, give lasers and resonant-cavity LEDs on a
-silicon platform without spending III-V area on the parts of the chip that do not
-need it.
+*Sep 2024 to present. Electronics, Photonics and Magnetic Devices (EPMD),
+National Science Foundation. Principal investigator: Prof. Jeehwan Kim.*
 
-A low-order cavity built around a thin emitter narrows the emission spectrum and
-steers the pattern. That matters as soon as the light has to couple into a
-waveguide or a fiber, where a broad Lambertian emitter wastes most of what it
-makes.
+Proposal preparation and day-to-day charge of the project, developing
+pre-patterned lithium niobate photonic components.
 
-#### Heterogeneous integration onto CMOS
+#### Entire-life implantable nanomesh brain-machine integration interface for neurological disorders
 
-The transfer step decides whether any of the above survives contact with a
-process flow. Remote epitaxy grows the film through an intervening
-two-dimensional layer, so the film registers to the substrate lattice yet
-releases from it cleanly, and the substrate can be reused.
+*Jul 2024 to present. STEAM Research Business, Korea Global Cooperative
+Convergence Research Program, National Research Foundation of Korea, funded by
+the Ministry of Science and ICT. Principal investigator: Prof. Jeehwan Kim.*
 
-Whether release is clean is an interface problem, and it is one where
-first-principles calculation earns its cost: what sits between the film and the
-substrate governs both the epitaxial registry and the separation energy. Our work
-on improving remote epitaxy of perovskite complex oxides is in
-[ACS Nano](https://doi.org/10.1021/acsnano.4c09445) (2024).
+Proposal preparation and day-to-day charge of the project, developing a
+neuronal-resolution micro-LED array.
 
-#### How the design work runs
+## What the work involves
 
-Every device above is decided by more than one kind of physics at once, so the
-simulations have to be coupled and cross-validated rather than run in isolation:
-TCAD for carrier transport, density functional theory for interfaces, finite
-element for electrostatics and mechanics, and FDTD, RCWA, mode solving and ray
-optics for the photonics. The output that matters is not a single optimum but a
-fabrication window, stated inside the design rules of the process that will build
-it, and narrow enough to be worth taping out.
+- **Complex-oxide membranes**, lithium niobate and barium titanate: PLD growth,
+  crystallographic orientation and interface engineering, DFT-guided defect and
+  oxygen-vacancy control
+- **Electro-optic modulators** built on photonic-crystal cavities, nanobeams and
+  microrings
+- **III-V and III-N** on-chip lasers and resonant-cavity LEDs, integrated as
+  coupons at high density
+- **Heterogeneous integration** onto CMOS and photonic ICs by remote and
+  2D-material-assisted epitaxy and membrane transfer
 
-Measurement closes the loop. A resonance read out with coupled-mode theory
-calibrates the model, and each pass de-risks the next fabrication.
+The applications this feeds are optical interconnects and co-packaged optics for
+computing, resonant-cavity LED microdisplays, and quantum photonic integrated
+circuits.
+
+#### The design-to-fab loop
+
+Scope the target and the benchmark to beat. Design the device and its
+fabrication window by coupled, cross-validated multi-physics simulation inside
+the CMOS design rules, with inverse design and machine-learning surrogates.
+Build it with DFT-guided interface engineering and membrane transfer. Prove it by
+device and optical measurement read out with coupled-mode theory. Each pass
+calibrates the model and de-risks the next fabrication run.

@@ -2,7 +2,7 @@
 layout: page
 permalink: /publications/
 title: publications
-description: Reverse chronological. Every entry links to its DOI; where a free version exists, a PDF link is shown next to it.
+description: Reverse chronological and numbered from the first paper. Every entry links to its DOI; where a free version exists, a PDF link sits next to it. Equal first authorship is noted on the entry.
 nav: true
 nav_order: 3
 ---

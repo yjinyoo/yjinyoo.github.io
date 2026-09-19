@@ -2,7 +2,7 @@
 layout: about
 title: about
 permalink: /
-subtitle: Postdoctoral Associate, <a href="https://jeehwanlab.mit.edu/">Jeehwan Kim Group</a>, MIT.
+subtitle: Postdoctoral researcher, <a href="https://www.rle.mit.edu/">Research Laboratory of Electronics</a>, MIT. Co-advised by <a href="https://jeehwanlab.mit.edu/">Jeehwan Kim</a> and <a href="https://qp.mit.edu/">Dirk R. Englund</a>.
 
 profile:
   align: right
@@ -26,7 +26,7 @@ latest_posts:
 
 **Membrane-based integrated photonics. Multi-physics simulation-driven design-to-fab.**
 
-I build active photonic devices on silicon. The materials that modulate and emit light do not grow on it, so I move them onto CMOS-compatible platforms as thin freestanding membranes, then design and fabricate the devices, in house or by CMOS foundry tape-out. The most immediate application is optical interconnects, moving data on and between chips, but the same approach extends across active photonics.
+I build active photonic devices on silicon. Silicon does not host the materials that modulate, emit, or store light, so I release those materials as single-crystalline freestanding membranes, transfer them onto CMOS-compatible platforms, and design and fabricate the resulting devices in house or by CMOS foundry tape-out. The most immediate applications are optical interconnects and co-packaged optics for computing, but the same approach reaches resonant-cavity LED microdisplays and quantum photonic integrated circuits.
 
 #### What I work on
 
@@ -34,7 +34,7 @@ I build active photonic devices on silicon. The materials that modulate and emit
 - III-V and III-N for on-chip lasers and resonant-cavity LEDs, integrated as coupons at high density
 - Heterogeneous integration onto CMOS, photonic ICs, and other platforms through 2D-material-assisted epitaxy and transfer
 
-The ultra-thin-film lithium niobate work is joint with the [Englund group](https://qp.mit.edu/) at MIT RLE.
+I am co-advised by [Jeehwan Kim](https://jeehwanlab.mit.edu/) and [Dirk R. Englund](https://qp.mit.edu/), and the membrane-based active photonics work runs jointly across the two groups. [Current projects and funding](/research/).
 
 #### From target to measured device, one loop
 
