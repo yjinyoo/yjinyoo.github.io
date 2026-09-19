@@ -114,7 +114,7 @@ max_width: 930px
 # see https://schema.org/docs/faq.html for more information
 serve_og_meta: true # link previews on Slack / X / LinkedIn
 serve_schema_org: true # structured data for Google Scholar
-og_image: # The site-wide (default for all links) Open Graph preview image
+og_image: /assets/img/og-card.png # built by scripts/build_og_image.py
 
 # -----------------------------------------------------------------------------
 # Analytics and search engine verification
