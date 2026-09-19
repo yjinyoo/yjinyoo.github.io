@@ -1,0 +1,11 @@
+# Social links shown under the profile photo, in this order.
+# Rendered by jekyll-socials: https://github.com/george-gca/jekyll-socials
+
+email: yjyoo@mit.edu
+orcid_id: 0000-0002-6490-2324
+scholar_userid: GbHBB0UAAAAJ
+github_username: yjinyoo
+linkedin_username: young-jin-yoo-026a4812a
+
+# cv_pdf: cv.pdf # drop a PDF at assets/pdf/cv.pdf and uncomment to show a CV icon
+rss_icon: false

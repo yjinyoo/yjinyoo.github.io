@@ -1,0 +1,56 @@
+# Badge colors for the venue abbreviations used in _bibliography/papers.bib.
+# The key must match the `abbr` field of the entry exactly.
+
+"Nat. Electron.":
+  color: "#0b3d2c"
+
+"Nat. Nanotech.":
+  color: "#0b3d2c"
+
+"Nat. Commun.":
+  color: "#0b3d2c"
+
+"Light Sci. Appl.":
+  color: "#0b3d2c"
+
+"Adv. Mater.":
+  color: "#1f4e79"
+
+"Adv. Opt. Mater.":
+  color: "#1f4e79"
+
+"Adv. Funct. Mater.":
+  color: "#1f4e79"
+
+"Adv. Sci.":
+  color: "#1f4e79"
+
+"Adv. Healthc. Mater.":
+  color: "#1f4e79"
+
+"ACS Nano":
+  color: "#7a2048"
+
+"ACS AMI":
+  color: "#7a2048"
+
+"ACS ANM":
+  color: "#7a2048"
+
+"ACS Energy Lett.":
+  color: "#7a2048"
+
+"Opt. Express":
+  color: "#35618f"
+
+"Opt. Mater. Express":
+  color: "#35618f"
+
+"Opt. Quantum Electron.":
+  color: "#35618f"
+
+"Nanophotonics":
+  color: "#35618f"
+
+"preprint":
+  color: "#6b6b6b"

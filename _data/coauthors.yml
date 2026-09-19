@@ -1,0 +1,10 @@
+# Co-authors linked from the publications list. Keyed by lowercase surname.
+# Only people with a stable public page are listed; add more as needed.
+
+"song":
+  - firstname: ["Young Min", "Y. M.", "Young M."]
+    url: https://www.gist-foel.net/
+
+"kim":
+  - firstname: ["Jeehwan", "J."]
+    url: https://jeehwanlab.mit.edu/
