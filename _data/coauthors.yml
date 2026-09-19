@@ -1,10 +1,3 @@
-# Co-authors linked from the publications list. Keyed by lowercase surname.
-# Only people with a stable public page are listed; add more as needed.
-
-"song":
-  - firstname: ["Young Min", "Y. M.", "Young M."]
-    url: https://www.gist-foel.net/
-
-"kim":
-  - firstname: ["Jeehwan", "J."]
-    url: https://jeehwanlab.mit.edu/
+# Intentionally empty. Linking co-authors renders their names in the theme
+# accent colour, which made the corresponding authors the most prominent
+# names in the list on my own publications page.
