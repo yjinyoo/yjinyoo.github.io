@@ -11,7 +11,7 @@ profile:
   more_info: >
     <p>Room 38-160</p>
     <p>Massachusetts Institute of Technology</p>
-    <p>77 Massachusetts Avenue</p>
+    <p>50 Vassar Street</p>
     <p>Cambridge, MA 02139</p>
 
 selected_papers: false
@@ -45,5 +45,14 @@ Across the design stage: TCAD for devices, DFT for materials, FEM for electrosta
 #### Before MIT
 
 I did my Ph.D. in Electrical Engineering and Computer Science at GIST with [Young Min Song](https://www.gist-foel.net/), in the Flexible OptoElectronics Laboratory, on ultra-thin film resonators. A few tens of nanometers of absorbing dielectric on a mirror forms a Gires-Tournois cavity, sharp enough to read single bioparticles out of an ordinary bright-field micrograph, and the same structure retuned gives structural color displays, colorimetric sensors, and daytime radiative coolers.
+
+#### Activity
+
+<a href="https://github.com/yjinyoo" target="_blank" rel="noopener">
+  <img src="https://ghchart.rshah.org/2f6f4e/yjinyoo" alt="Commit activity over the past year" style="width:100%; max-width:720px;">
+</a>
+
+Commits across my repositories over the past year. Most of the work behind these
+is in private repositories, so the counts appear without naming the projects.
 
 Reach me at <a href="mailto:yjyoo@mit.edu">yjyoo@mit.edu</a>.
