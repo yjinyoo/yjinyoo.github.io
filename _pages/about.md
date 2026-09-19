@@ -26,7 +26,8 @@ latest_posts:
 
 {% include site_styles.liquid %}
 
-**Membrane-based integrated photonics. <span style="white-space:nowrap">Multi-physics</span> <span style="white-space:nowrap">simulation-driven</span> <span style="white-space:nowrap">design-to-fab</span>.**
+**<span style="white-space:nowrap">Membrane-based</span> integrated photonics.**<br>
+**<span style="white-space:nowrap">Multi-physics</span> <span style="white-space:nowrap">simulation-driven</span> <span style="white-space:nowrap">design-to-fab</span>.**
 
 I build active photonic devices on silicon. Silicon does not host the materials that modulate, emit, or store light, so I release those materials as single-crystalline freestanding membranes, transfer them onto CMOS-compatible platforms, and design and fabricate the resulting devices in house or by CMOS foundry tape-out. The most immediate applications are optical interconnects and co-packaged optics for computing, but the same approach reaches resonant-cavity LED microdisplays and quantum photonic integrated circuits.
 
