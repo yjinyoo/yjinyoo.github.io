@@ -44,11 +44,20 @@ Across the design stage: TCAD for devices, DFT for materials, FEM for electrosta
 
 #### Activity
 
-<a href="https://github.com/yjinyoo" target="_blank" rel="noopener">
-  <img src="https://ghchart.rshah.org/2f6f4e/yjinyoo" alt="Commit activity over the past year" style="width:100%; max-width:720px;">
-</a>
-
-Commits across my repositories over the past year. Most of the work behind these
-is in private repositories, so the counts appear without naming the projects.
+<div style="border:1px solid rgba(128,128,128,.35); border-radius:10px; padding:1.1rem 1.25rem; margin:1.2rem 0 1.6rem;">
+  <div style="display:flex; align-items:baseline; justify-content:space-between; flex-wrap:wrap; gap:.5rem; margin-bottom:.9rem;">
+    <strong style="font-size:1.02rem;">Commits over the past year</strong>
+    <a href="https://github.com/yjinyoo" target="_blank" rel="noopener" style="font-size:.85rem;">github.com/yjinyoo</a>
+  </div>
+  <a href="https://github.com/yjinyoo" target="_blank" rel="noopener" aria-label="GitHub profile">
+    <img src="https://ghchart.rshah.org/2f6f4e/yjinyoo"
+         alt="Commit activity over the past year"
+         style="width:100%; display:block;">
+  </a>
+  <p style="font-size:.85rem; line-height:1.5; margin:.9rem 0 0; opacity:.75;">
+    Design, simulation and fabrication scripting across every project. Most of the
+    repositories are private, so the days fill in without naming what is in them.
+  </p>
+</div>
 
 Reach me at <a href="mailto:yjyoo@mit.edu">yjyoo@mit.edu</a>.

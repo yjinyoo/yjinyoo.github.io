@@ -2,7 +2,7 @@
 layout: page
 permalink: /research/
 title: research
-description: Ongoing projects at MIT, and what the work involves.
+description: What I build at MIT, and the funded projects it runs under.
 nav: true
 nav_order: 2
 ---
@@ -12,7 +12,58 @@ materials are released as single-crystalline freestanding membranes, transferred
 onto CMOS-compatible platforms, and the resulting devices are designed and
 fabricated in house or by CMOS foundry tape-out.
 
-## Ongoing projects
+## Research projects
+
+What is actually being built.
+
+#### Electro-optic modulators on complex-oxide membranes
+
+Lithium niobate and barium titanate have the Pockels coefficients a modulator
+needs, and neither grows on silicon. Grown on a lattice-matched substrate and
+released as a membrane, the film can be placed on a silicon photonic platform,
+including the back end of a finished CMOS wafer where nothing can be grown at
+temperature. Built into photonic-crystal cavities, nanobeams and microrings, the
+same phase shift is reached over a far shorter interaction length, which is what
+brings the drive voltage toward the logic supply. The work covers PLD growth,
+crystallographic orientation and interface engineering, and DFT-guided defect
+and oxygen-vacancy control.
+
+#### On-chip light sources from III-V and III-N membranes
+
+Silicon does not emit. Compound semiconductor membranes integrated as coupons,
+many small pieces at high density rather than whole bonded wafers, give lasers
+and resonant-cavity LEDs on a silicon platform without spending III-V area where
+it is not needed. A low-order cavity around a thin emitter narrows the spectrum
+and steers the pattern, which decides how much of the light survives coupling
+into a waveguide or a fiber.
+
+#### Heterogeneous integration onto CMOS and photonic ICs
+
+The transfer step decides whether any of the above survives a process flow.
+Remote and 2D-material-assisted epitaxy grows the film through an intervening
+layer so it registers to the substrate lattice yet releases cleanly, and the
+substrate can be reused. Whether release is clean is an interface problem, which
+is where first-principles calculation earns its cost. Our work on improving
+remote epitaxy of perovskite complex oxides is in
+[ACS Nano](https://doi.org/10.1021/acsnano.4c09445) (2024).
+
+#### The design-to-fab loop
+
+Scope the target and the benchmark to beat. Design the device and its
+fabrication window by coupled, cross-validated multi-physics simulation inside
+the CMOS design rules, with inverse design and machine-learning surrogates.
+Build it with DFT-guided interface engineering and membrane transfer. Prove it
+by device and optical measurement read out with coupled-mode theory. Each pass
+calibrates the model and de-risks the next fabrication run. Across the design
+stage: TCAD for devices, DFT for materials, FEM for electrostatics and
+mechanics, and FDTD, RCWA, mode solving and ray optics for photonics.
+
+These feed optical interconnects and co-packaged optics for computing,
+resonant-cavity LED microdisplays, and quantum photonic integrated circuits.
+
+## Funded projects
+
+The grants the work runs under.
 
 #### TOPCHIP: photonic integrated circuit testing and heterogeneous device integration for quantum information science
 
@@ -40,28 +91,3 @@ the Ministry of Science and ICT. Principal investigator: Prof. Jeehwan Kim.*
 
 Proposal preparation and day-to-day charge of the project, developing a
 neuronal-resolution micro-LED array.
-
-## What the work involves
-
-- **Complex-oxide membranes**, lithium niobate and barium titanate: PLD growth,
-  crystallographic orientation and interface engineering, DFT-guided defect and
-  oxygen-vacancy control
-- **Electro-optic modulators** built on photonic-crystal cavities, nanobeams and
-  microrings
-- **III-V and III-N** on-chip lasers and resonant-cavity LEDs, integrated as
-  coupons at high density
-- **Heterogeneous integration** onto CMOS and photonic ICs by remote and
-  2D-material-assisted epitaxy and membrane transfer
-
-The applications this feeds are optical interconnects and co-packaged optics for
-computing, resonant-cavity LED microdisplays, and quantum photonic integrated
-circuits.
-
-#### The design-to-fab loop
-
-Scope the target and the benchmark to beat. Design the device and its
-fabrication window by coupled, cross-validated multi-physics simulation inside
-the CMOS design rules, with inverse design and machine-learning surrogates.
-Build it with DFT-guided interface engineering and membrane transfer. Prove it by
-device and optical measurement read out with coupled-mode theory. Each pass
-calibrates the model and de-risks the next fabrication run.
