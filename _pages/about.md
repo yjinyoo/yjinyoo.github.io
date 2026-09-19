@@ -61,10 +61,10 @@ Across the design stage: TCAD for devices, DFT for materials, FEM for electrosta
     </a>
     <p style="flex:1 1 240px; font-size:.95rem; line-height:1.6; margin:0; opacity:.8;">
       Design, simulation and fabrication scripting across every project:
-      electromagnetic and drift-diffusion simulation, photomask layouts, process
-      flows, and the analysis that turns a measured spectrum back into model
-      parameters. Almost every repository is private, so the days fill in without
-      naming what is in them.
+      electromagnetic and drift-diffusion simulation, first-principles models of the
+      interfaces, photomask layouts, process flows, and the analysis that closes the
+      loop against measurement. Almost every repository is private, so the days fill
+      in without naming what is in them.
     </p>
   </div>
 </div>
