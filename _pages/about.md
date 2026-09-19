@@ -34,7 +34,7 @@ I build active photonic devices on silicon. Silicon does not host the materials 
 - III-V and III-N for on-chip lasers and resonant-cavity LEDs, integrated as coupons at high density
 - Heterogeneous integration onto CMOS, photonic ICs, and other platforms through 2D-material-assisted epitaxy and transfer
 
-I work in the [Jeehwan Kim group](https://jeehwanlab.mit.edu/) at MIT. Some of the projects, on the quantum photonic integrated circuit side, are co-advised by [Dirk R. Englund](https://qp.mit.edu/) and run jointly across the two groups. [Current projects and funding](/research/).
+I work in the [Jeehwan Kim group](https://jeehwanlab.mit.edu/) at MIT, and am co-advised by [Dirk R. Englund](https://qp.mit.edu/) on the CMOS integrated photonics work. [Current projects and funding](/research/).
 
 #### From target to measured device, one loop
 
