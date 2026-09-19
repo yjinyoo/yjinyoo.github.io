@@ -20,7 +20,12 @@ import sys
 import urllib.request
 
 USER = "yjinyoo"
-YEAR = int(sys.argv[1]) if len(sys.argv) > 1 else dt.date.today().year
+ARGS = [a for a in sys.argv[1:] if not a.startswith("-")]
+YEAR = int(ARGS[0]) if ARGS else dt.date.today().year
+# By default the empty run before the first active day is cut, so the chart opens
+# on the month the work actually started rather than on a bank of blank weeks.
+# The figure printed under the chart still counts the whole year.
+FULL_YEAR = "--full" in sys.argv[1:]
 SITE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # Stable filename: the year is inside the image, so the page never has to be
 # edited when the year rolls over.
@@ -66,6 +71,12 @@ def build(year):
     today = dt.date.today()
     start = dt.date(year, 1, 1)
     end = min(dt.date(year, 12, 31), today) if today.year == year else dt.date(year, 12, 31)
+
+    year_total = sum(c for d, c in counts.items() if d[:4] == str(year))
+    active = sorted(d for d, l in levels.items() if l > 0 and d[:4] == str(year))
+    if active and not FULL_YEAR:
+        # Open on the first of the month holding the first active day.
+        start = dt.date(year, dt.date.fromisoformat(active[0]).month, 1)
 
     # Columns are weeks beginning on Sunday, as GitHub lays them out.
     first_col = start - dt.timedelta(days=(start.weekday() + 1) % 7)
@@ -117,7 +128,7 @@ def build(year):
 
     base = TOP + 7 * PITCH + 15
     out.append(f'<text x="0" y="{base}" font-size="10" fill="{LABEL}">'
-               f'{total:,} contributions in {year}</text>')
+               f'{year_total:,} contributions in {year}</text>')
 
     lx = width - (5 * PITCH + 62)
     out.append(f'<text x="{lx}" y="{base}" font-size="10" fill="{LABEL}">Less</text>')
@@ -132,10 +143,11 @@ def build(year):
     os.makedirs(os.path.dirname(OUT), exist_ok=True)
     with open(OUT, "w", encoding="utf-8") as f:
         f.write("\n".join(out))
-    filled = sum(1 for d, l in levels.items() if l > 0 and start.isoformat() <= d <= end.isoformat())
-    print(f"{OUT}\n  {year}: {total:,} contributions, {filled} active days, "
-          f"through {end.isoformat()}")
-    if total == 0:
+    print(f"{OUT}\n  {year}: {year_total:,} contributions, {len(active)} active days, "
+          f"chart spans {start.isoformat()} to {end.isoformat()}")
+    if total != year_total:
+        print(f"  NOTE: {year_total - total:,} contributions fall outside the drawn range")
+    if year_total == 0:
         print("  WARNING: zero contributions. Check that 'Private contributions' is "
               "enabled in the GitHub profile contribution settings.")
 
