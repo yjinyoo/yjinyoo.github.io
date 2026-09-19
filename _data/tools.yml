@@ -1,0 +1,118 @@
+# Open-source tools listed on /tools/.
+#
+# Hand-written fields: title, summary, body. Those say what GitHub cannot know, which is
+# why the tool exists and what failure it catches.
+#
+# Generated fields: description, language, pushed. Do not edit them by hand; they are
+# overwritten by `python scripts/update_tools.py`, which reads them from the GitHub API.
+#
+# To add a tool: append a block with repo/title/summary/body, then run the script.
+
+- repo: beol-eo-prescreen
+  pushed: "2026-09-19"
+  language: "Python"
+  description: "Closed-form screens for membrane electro-optic modulators: does the drive voltage reach the film, and does the field survive at the mode center?"
+  title: Electro-optic prescreen
+  summary: does the drive voltage reach the film, and does the field survive at the mode center
+  body: >-
+    Three closed-form checks to run before the electrostatic sweep and before any full-wave
+    simulation of a membrane electro-optic modulator. What fraction of the drive voltage lands
+    on the active film, what field survives at the mode center for a slanted electrode pair, and
+    what confinement factor and index shift follow from a mode solve. Nothing here needs a mesh,
+    and each returns in well under a second.
+
+
+    A back-end-of-line stack puts a thick low-permittivity cladding in series with a thin
+    high-permittivity film, and capacitors in series divide the voltage by thickness over
+    permittivity: 800 nm of oxide above a 100 nm film leaves 57 mV of a 3.3 V drive on the film,
+    1.7 percent, while every plot downstream still looks reasonable. Slanted electrodes fail less
+    visibly than that. A mirror-symmetric pair driven push-pull holds the potential identically
+    zero along the mode axis, so the field there is exactly zero by symmetry rather than by
+    geometry, which no mesh refinement will reveal: the sweep completes, every point returns a
+    valid field, and the modulation is zero.
+
+- repo: fab-check
+  pushed: "2026-09-19"
+  language: "Python"
+  description: "Advisory lookup of design values against a cached fab grain. Separates a value that passed a rule from a value no rule was ever cached for."
+  title: Fab-grain check
+  summary: four verdicts, because a value nobody cached a rule for is not a value that passed
+  body: >-
+    Looks a design value up against what the process can actually give, before the value is
+    locked, and reads a cached file of process constraints to do it. It is advisory rather than
+    blocking, because a constraint file is always incomplete and a screen that refuses to run is
+    a screen that gets switched off.
+
+
+    The verdict that matters is not the one that fails. A material has an entry, so the lookup
+    succeeds; that entry happens to carry an orientation policy and no thickness rule, so nothing
+    numeric is evaluated; and a naive tool prints a pass. The caller reads "within cached
+    constraints" and locks the number. So there are four verdicts here, and NO CONSTRAINT, meaning
+    the entry exists but this property was never cached, is reported as distinct from OK. One more
+    case is worth its own rule: a process offers a few sidewall angles rather than a continuum, so
+    a sweep that optimizes to 22 degrees has optimized to an angle nobody can etch. A range cannot
+    catch that. A set can.
+
+- repo: device-assert
+  pushed: "2026-09-19"
+  language: "Python"
+  description: "Check that a built EM simulation is the device you declared. Measures the geometry back out of the simulation object, never against the previous run."
+  title: Device assertion
+  summary: measures the device back out of a built simulation, never against the previous run
+  body: >-
+    Checks that a built electromagnetic simulation is the device you declared, by point sampling
+    its structure list in the solver's own overwrite order and reconstructing two things: the
+    layer stack on a probe line, and the in-plane profile across the propagation axis. Both are
+    compared to a written spec. Reading the builder's variables instead would only re-read the
+    mistake.
+
+
+    The failure it exists for is not a typo. It is a geometry error that enters as a convenience
+    for one run and is then inherited by every run after it, because each new run is checked
+    against the previous one. A chain of relative checks does not catch an error, it propagates
+    one: every run matches its predecessor, the spectra move smoothly, and nothing looks wrong
+    for weeks. The in-plane profile is the check that catches the specific case, because a
+    patterned film modelled as an unpatterned slab has an identical vertical stack. The trenches
+    are gone, the mode is not confined, and every layer check still passes.
+
+- repo: refcheck
+  pushed: "2026-09-19"
+  language: "Python"
+  description: "Audit a numbered reference list against CrossRef, OpenAlex and Semantic Scholar. Separates wrong numbers from absent references from checks that did not run."
+  title: Reference audit
+  summary: separates a wrong reference from an absent one from a check that never ran
+  body: >-
+    Checks a numbered reference list against CrossRef, OpenAlex and Semantic Scholar, and
+    separates three outcomes that a single index cannot tell apart: an entry found but printed
+    with the wrong volume, page or year; an entry held by no index at all; and an entry that
+    could not be scored, which is not a pass. Input is a proof PDF, in which the reference list
+    is located automatically, or a plain text list.
+
+
+    One index is not enough because a real paper missing from CrossRef, which happens for
+    preprints, conference papers and older society journals, looks exactly like a reference nobody
+    ever wrote. Both land in the same bucket, and at proof stage the reference numbers are often
+    the last thing still correctable. Entries printed without titles, as in the Science style, are
+    matched on journal, volume and first page instead, which is an exact key even with the title
+    missing.
+
+- repo: harness-budget
+  pushed: "2026-09-19"
+  language: "Python"
+  description: "Measure what a coding-agent harness costs: context budgets, memory-store integrity, dead paths, recall@K, and where the wall clock goes when an agent drives a tool."
+  title: Harness budget
+  summary: what a coding agent loads into context, and what it costs in wall clock
+  body: >-
+    Five checks for a coding-agent harness: which auto-loaded files are over their size budget,
+    whether a file-based memory store is internally consistent, whether every path the documents
+    name still exists, recall@K for retrieving the right memory from a question, and where the
+    wall clock actually goes when an agent drives a tool.
+
+
+    A harness accumulates, and nothing in the loop reports what it costs. These numbers used to be
+    typed into the rules file by hand, and they were wrong for weeks: a byte count read as a
+    character count put one file at 86 percent over budget when it was 12 percent over. Counting
+    is in characters, never bytes, because one Korean character is three bytes in UTF-8. The
+    latency check answers the other half. Splitting elapsed time into tool time and model
+    round-trip time gave 11 percent against 89 percent for one server, which pointed at the number
+    of calls rather than at the server, and nobody would have guessed that ratio.
