@@ -3,8 +3,8 @@
 # -----------------------------------------------------------------------------
 
 title: blank # blank -> the full name below is used
-first_name: Young
-middle_name: Jin
+first_name: Young Jin
+middle_name: # given name lives in first_name; the theme bolds that field
 last_name: Yoo
 contact_note: >
   Email is the reliable one.
