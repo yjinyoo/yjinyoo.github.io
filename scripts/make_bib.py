@@ -138,7 +138,9 @@ for i, f in enumerate(flat):
         ("abstract", tex_escape(f["abstract"])),
     ]
     if f["doi"] in CO_FIRST:
-        rows.append(("additional_info", "Equal first-author contribution."))
+        # `note` gets its own line in the theme's entry layout; `additional_info`
+        # is appended to the journal name and reads as part of the venue.
+        rows.append(("note", "Equal first-author contribution"))
     if f["pdf"]:
         rows.append(("pdf", f["pdf"]))          # a free copy, never the publisher PDF
     rows.append(("bibtex_show", "true"))
