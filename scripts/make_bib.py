@@ -36,6 +36,14 @@ CO_FIRST = {
     "10.1364/oe.24.0a1033",         # Opt. Express 2016, nanophotonic surfaces
 }
 
+# Year as the author lists it, where it differs from the publisher record.
+# Crossref gives this paper 2026-02-28 in every date field (created, issued,
+# published, published-online) and the CV says 2026, but it is listed as 2025
+# elsewhere, so the author's year is used here.
+YEAR_OVERRIDE = {
+    "10.1038/s41377-026-02228-2": 2025,
+}
+
 # On the CV but absent from OpenAlex, which does not index either venue.
 ADDITIONS = [
     {
@@ -100,6 +108,8 @@ def fields_for(w):
         "cites": w.get("cited_by_count") or 0,
     }
     f.update(OVERRIDES.get(doi, {}))
+    if f["doi"] in YEAR_OVERRIDE:
+        f["year"] = YEAR_OVERRIDE[f["doi"]]
     return f
 
 
