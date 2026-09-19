@@ -34,7 +34,7 @@ I build active photonic devices on silicon. The materials that modulate and emit
 - III-V and III-N for on-chip lasers and resonant-cavity LEDs, integrated as coupons at high density
 - Heterogeneous integration onto CMOS, photonic ICs, and other platforms through 2D-material-assisted epitaxy and transfer
 
-The ultra-thin-film lithium niobate work is joint with the [Englund group](https://www.rle.mit.edu/qp/) at MIT RLE.
+The ultra-thin-film lithium niobate work is joint with the [Englund group](https://qp.mit.edu/) at MIT RLE.
 
 #### From target to measured device, one loop
 
