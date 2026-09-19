@@ -230,6 +230,9 @@ exclude:
   - al-folio-upgrade-report.md
   - bin/
   - CLAUDE.md
+  - NEXT_SESSION_PROMPT.md # internal handoff, must not be served
+  - log/ # session logs, internal
+  - scripts/ # generators; nothing here is served
   - Dockerfile
   - docker-compose.yml
   - docker-compose-slim.yml
