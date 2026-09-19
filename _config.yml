@@ -175,17 +175,9 @@ disqus_shortname: al-folio # put your disqus shortname
 # If you have blog posts published on medium.com or other external sources,
 # you can display them in your blog by adding a link to the RSS feed.
 # Optional: Set default categories and tags for posts from each source.
+# Left empty on purpose. The template ships al-folio's own Medium feed and a
+# Google Blog post here, and the plugin was publishing both under this domain.
 external_sources:
-  - name: medium.com
-    rss_url: https://medium.com/@al-folio/feed
-    categories: [external-posts]
-    tags: [medium]
-  - name: Google Blog
-    posts:
-      - url: https://blog.google/technology/ai/google-gemini-update-flash-ai-assistant-io-2024/
-        published_date: 2024-05-14
-    categories: [external-posts]
-    tags: [google]
 
 # -----------------------------------------------------------------------------
 # Newsletter
@@ -337,13 +329,10 @@ terser:
 # Jekyll Archives
 # -----------------------------------------------------------------------------
 
+# No blog, so nothing to archive; leaving it on generated /blog/ index pages.
 jekyll-archives:
   posts:
-    enabled: [year, tags, categories] # enables year, tag and category archives (remove if you need to disable one of them).
-    permalinks:
-      year: "/blog/:year/"
-      tags: "/blog/:type/:name/"
-      categories: "/blog/:type/:name/"
+    enabled: []
 display_tags: ["formatting", "images", "links", "math", "code", "blockquotes"] # these tags will be displayed on the front page of your blog
 display_categories: ["external-services"] # these categories will be displayed on the front page of your blog
 
