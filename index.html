@@ -77,9 +77,12 @@
     line-height: 1.55;
   }
 
-  /* Publication numbers. The theme renders `abbr` as a filled pill, which was
-     right for a venue label and wrong for a running number. Plain digits. */
-  .publications .abbr .badge {
+  /* Publication numbers. The theme renders `abbr` as a filled pill whose text
+     colour is the card background, set with !important, so the digits were
+     white on white once the pill was removed. Its selector also outranks a
+     plain `.publications .abbr .badge`, so this one matches it and adds a
+     class to win on specificity. */
+  .publications ol.bibliography li .abbr abbr.badge {
     background: none !important;
     background-color: transparent !important;
     color: #6b7280 !important;
