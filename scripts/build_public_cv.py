@@ -19,7 +19,7 @@ import fitz  # PyMuPDF
 
 SITE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 OUT = os.path.join(SITE, "assets", "pdf", "cv.pdf")
-DEFAULT_SRC = r"C:\Users\YJ\OneDrive\Career\CV\Curriculum Vitae_YJYOO_Aug_2026.pdf"
+DEFAULT_SRC = r"C:\Users\YJ\OneDrive\Career\CV\Curriculum Vitae_YJYOO_Sep_2026.pdf"
 
 # Lines to remove entirely, matched case-insensitively against the page text.
 DROP_PREFIXES = ("phone:",)
@@ -27,11 +27,14 @@ DROP_PREFIXES = ("phone:",)
 # Corrections applied to the source PDF. These exist because the source CV
 # itself is wrong; fix the .docx as well, or every rebuild re-applies them.
 #   (page index, text to find, replacement, y-range that isolates the right line)
-CORRECTIONS = [
-    # GIST postdoc ran to Feb 2023, not Feb 2022. The y-range keeps this off the
-    # Georgia Tech line above it, which legitimately ends Oct. 2022.
-    (0, "Feb. 2022", "Feb. 2023", (655, 680)),
-]
+# Text to patch in the exported PDF, as (page, find, replace, y-range). Empty is the
+# goal state: a correction here means the source document is still wrong, and the fix
+# belongs in the source, not in every export of it.
+#
+# 2026-09-20: the GIST postdoc end date (Feb 2022 -> Feb 2023) lived here from
+# 2026-09-19 until the .docx itself was corrected. Do not re-add it. If a correction
+# is ever needed again, check first that the source has not simply been re-exported.
+CORRECTIONS = []
 # Anything matching these must not survive into the output.
 FORBIDDEN = [
     re.compile(r"\+82[\s-]?10[\s-]?\d{3,4}[\s-]?\d{4}"),
