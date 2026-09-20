@@ -112,7 +112,7 @@
     A harness accumulates, and nothing in the loop reports what it costs. These numbers used to be
     typed into the rules file by hand, and they were wrong for weeks: a byte count read as a
     character count put one file at 86 percent over budget when it was 12 percent over. Counting
-    is in characters, never bytes, because one Korean character is three bytes in UTF-8. The
+    is in characters, never bytes: outside ASCII a character is two to four bytes in UTF-8. The
     latency check answers the other half. Splitting elapsed time into tool time and model
     round-trip time gave 11 percent against 89 percent for one server, which pointed at the number
-    of calls rather than at the server, and nobody would have guessed that ratio.
+    of calls rather than at the server.

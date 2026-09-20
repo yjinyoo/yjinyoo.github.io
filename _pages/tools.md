@@ -9,10 +9,9 @@ nav_order: 4
 
 {% include site_styles.liquid %}
 
-Most of what runs the loop is project code and stays private. These survive without the
-project: three screens a design has to pass before it costs anything to simulate, a check
-a manuscript has to pass before it is submitted, and the instrumentation for the agent
-harness that runs all of them.
+Three screens a design has to pass before it costs anything to simulate, a check a
+manuscript has to pass before it is submitted, and the instrumentation for the agent
+harness that runs them.
 
 <ul style="margin:1.2rem 0 1.8rem; padding-left:1.1rem;">
 {%- for tool in site.data.tools %}
