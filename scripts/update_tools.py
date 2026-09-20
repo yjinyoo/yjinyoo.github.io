@@ -12,18 +12,23 @@ quietly wrong.
 """
 
 import argparse
+import os
 import json
 import re
 import sys
 import urllib.error
 import urllib.request
-from datetime import datetime, timezone
 from pathlib import Path
 
 DATA = Path(__file__).resolve().parent.parent / "_data" / "tools.yml"
 OWNER = "yjinyoo"
 API = "https://api.github.com/repos/{owner}/{repo}"
 UA = {"User-Agent": "tools-page-update", "Accept": "application/vnd.github+json"}
+# Unauthenticated GitHub allows 60 requests an hour per IP. That is plenty for one
+# person on one machine and not plenty on a shared CI runner, so use a token when the
+# environment offers one.
+if os.environ.get("GITHUB_TOKEN"):
+    UA["Authorization"] = "Bearer " + os.environ["GITHUB_TOKEN"]
 
 # Each generated field: the yaml key, and how to read it out of the API payload.
 GENERATED = {

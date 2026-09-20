@@ -32,7 +32,7 @@
     valid field, and the modulation is zero.
 
 - repo: fab-check
-  pushed: "2026-09-19"
+  pushed: "2026-09-20"
   language: "Python"
   description: "Advisory lookup of design values against a cached fab grain. Separates a value that passed a rule from a value no rule was ever cached for."
   title: Fab-grain check
@@ -54,7 +54,7 @@
     catch that. A set can.
 
 - repo: device-assert
-  pushed: "2026-09-19"
+  pushed: "2026-09-20"
   language: "Python"
   description: "Check that a built EM simulation is the device you declared. Measures the geometry back out of the simulation object, never against the previous run."
   title: Device assertion
@@ -97,7 +97,7 @@
     missing.
 
 - repo: harness-budget
-  pushed: "2026-09-19"
+  pushed: "2026-09-20"
   language: "Python"
   description: "Measure what a coding-agent harness costs: context budgets, memory-store integrity, dead paths, recall@K, and where the wall clock goes when an agent drives a tool."
   title: Harness budget
