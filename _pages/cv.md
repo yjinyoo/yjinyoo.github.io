@@ -51,14 +51,12 @@ Advisor: Prof. Young Min Song.
 
 ## Fellowships
 
-Competitively awarded to the individual researcher by the National Research
-Foundation of Korea.
-
 - **Sejong Science Fellowship**, National Research Foundation of Korea. Mar 2021 to Feb 2024.
   An individual research grant, not a stipend: the early-career scheme under the
   foundation's basic research program.
 - **Global Ph.D. Fellowship**, National Research Foundation of Korea. Mar 2018 to Feb 2021.
   National fellowship for doctoral students.
+- **Scholarship supported by the Korean government**. Sep 2016 to Feb 2021.
 
 ## Awards
 
