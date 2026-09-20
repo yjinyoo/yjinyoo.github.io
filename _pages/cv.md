@@ -59,7 +59,6 @@ Foundation of Korea.
   foundation's basic research program.
 - **Global Ph.D. Fellowship**, National Research Foundation of Korea. Mar 2018 to Feb 2021.
   National fellowship for doctoral students.
-- **Scholarship supported by the Korean government**. Sep 2016 to Feb 2021.
 
 ## Awards
 
