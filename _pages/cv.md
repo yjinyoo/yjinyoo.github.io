@@ -49,16 +49,25 @@ Advisor: Prof. Young Min Song.
 Thesis: Study on Ultra-Thin Film Coloration with Highly Absorbing Media.
 Advisor: Prof. Young Min Song.
 
-## Awards and fellowships
+## Fellowships
+
+Competitively awarded to the individual researcher by the National Research
+Foundation of Korea.
 
 - **Sejong Science Fellowship**, National Research Foundation of Korea. Mar 2021 to Feb 2024.
+  An individual research grant, not a stipend: the early-career scheme under the
+  foundation's basic research program.
+- **Global Ph.D. Fellowship**, National Research Foundation of Korea. Mar 2018 to Feb 2021.
+  National fellowship for doctoral students.
+- **Scholarship supported by the Korean government**. Sep 2016 to Feb 2021.
+
+## Awards
+
 - **Encouragement prize, 26th Humantech Paper Award**, Samsung Electronics, Korea. Feb 2020.
   *Ultra-thin porous films with highly absorbent media for colorimetric detection.*
-- **Global Ph.D. Fellowship**, National Research Foundation of Korea. Mar 2018 to Feb 2021.
 - **Excellent Paper Award**, Photonics Conference, Korea. Nov 2017.
   *Optimal design of anti-reflective nanostructures with enhanced hardness by using atomic layer deposition.*
 - **Best Poster Award**, International Symposium on Green Manufacturing and Applications, Korea. Jun 2017.
   *Ultra-thin film optical coatings for reflective color filters.*
-- **Scholarship supported by the Korean government**. Sep 2016 to Feb 2021.
 - **Excellent Paper Award**, Photonics Conference, Korea. Nov 2014.
   *Design of ZnS antireflective microstructures for mid- and far-infrared applications.*
