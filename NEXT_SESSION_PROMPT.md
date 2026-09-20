@@ -7,85 +7,90 @@
 
 | 페이지 | 상태 |
 |---|---|
-| about | 소개, 하는 일 3줄, 설계 루프, 활동 그래프, 연락처 |
-| research | 소자 프로젝트 3건, 과제 4건(AFRL/NSF/MISTI/NRF) |
+| about | 소개, 하는 일 3줄, 설계 루프, 활동 그래프, 연락처. 루프 문단 끝에서 tools 로 링크 |
+| research | 소자 프로젝트 3건, 과제 4건 |
 | publications | 45편, 번호·권·페이지, 공동 1저자 14편 |
-| cv | 재직 3건, 학위 2건(석사부터), 수상 7건, PDF |
+| tools | 공개 저장소 5건. `_data/tools.yml` 에서 렌더 |
+| cv | 재직 3건, 학위 2건, 수상 7건, PDF |
 
-내부 링크 깨진 것 없음. DOI 45개 확인됨. 매일 활동 그래프 자동 갱신.
+내부 링크 깨진 것 없음. DOI 45개 확인됨.
 
-## 바로 다음 두 가지
+## 스스로 도는 것 (건드릴 필요 없음)
 
-1. **tools 페이지를 만든다.** nav 순서는 about → research → publications → **tools** → cv
-   (user 가 `software` 대신 `tools` 로 확정). 각 항목은 무엇을 하는가 / 왜 만들었는가(숫자가
-   있으면 그 숫자) / 저장소 링크 세 줄. 지금 올라간 셋:
-   - <https://github.com/yjinyoo/beol-eo-prescreen> 전압 분배·경사 전극 쐐기장·1차 섭동
-   - <https://github.com/yjinyoo/refcheck> 참고문헌 3색인 대조
-   - <https://github.com/yjinyoo/harness-budget> 컨텍스트 예산·메모리 무결성·죽은 경로·recall@K
-2. **about 설계 루프 문단 끝에 한 절만 붙인다.** user 확정 문구:
-   `The loop is scripted end to end and run by coding agents.`
-   **주장은 쓰지 않는다.** AI 역량은 tools 페이지가 증거로 보여주는 구성이고,
-   about 에서 대놓고 말하지 않기로 했다. `AI-driven` 류 수식어 금지.
+| 언제 | 무엇 | 파일 |
+|---|---|---|
+| 매일 | 활동 그래프 갱신, 바뀌면 재배포 | `.github/workflows/refresh-activity.yml` |
+| 매주 월 | tools 데이터를 깃헙에서 갱신, 바뀌면 커밋 + 재배포 | `.github/workflows/site-maintenance.yml` |
+| 매주 월 | 내부 링크 + DOI 45개. **고칠 사람이 필요하므로 실패로 알린다** | 같은 파일 |
 
-## CV 원본 수정 (user 가 새 세션에서 하라고 지시, 2026-09-19)
+주간 점검이 빨간색이면 그게 이 프로젝트의 다음 할 일이다. 먼저 어느 잡이 떨어졌는지 본다:
+`tools` 잡은 스스로 낫게 돼 있어서 거기서 떨어졌다면 깃헙 API 나 권한 문제고, `checks` 잡이
+떨어졌으면 링크나 DOI 가 실제로 깨진 것이다.
 
-`OneDrive/Career/CV/Curriculum Vitae_YJYOO_081926.docx` 의 Work Experience 절,
-`School of Electrical Engineering and Computer Science, Mar. 2021 ~ Feb. 2022` 줄.
-GIST 포닥 종료일이 `Feb. 2022` 로 적혀 있는데 실제는 **`Feb. 2023`** 이다 (user 진술).
+## 새 도구를 공개했을 때
 
-지금은 `scripts/build_public_cv.py` 의 `CORRECTIONS` 가 매 빌드마다 PDF 에서 그 날짜를
-고쳐 내보낸다. 사이트와 공개 PDF 는 맞지만 **원본을 지원서나 협업자에게 보내면 틀린 채로
-나간다.**
+1. `_data/tools.yml` 에 블록 하나 추가 (`repo` / `title` / `summary` / `body`)
+2. `python scripts/update_tools.py` — 깃헙이 아는 필드는 스크립트가 채운다. **손으로 적지 말 것**
+3. 푸시하고 배포 확인
 
-순서:
+`summary` 는 목록에 한 줄로 뜨는 절. `body` 는 두 문단: 무엇을 하는가, 그리고 **어떤 실패를
+잡는가.** 두 번째가 이 페이지의 값이다.
 
-1. docx 를 고친다. **Word COM 은 이 문서에서 두 번 다 무응답이었다** (`Documents.Open`
-   에서 멈춤, 2026-09-19). python-docx 로 해당 런의 텍스트만 바꾸는 쪽이 빠를 수 있다.
-2. 고친 docx 에서 PDF 를 새로 뽑아 같은 폴더에 둔다.
-3. `scripts/build_public_cv.py` 의 `DEFAULT_SRC` 를 새 PDF 로 바꾸고, `CORRECTIONS` 에서
-   그 항목을 **지운다.** 원본이 맞아진 뒤에도 남겨 두면 이중 수정이 된다.
-4. `python scripts/build_public_cv.py` 를 돌리고 1쪽을 눈으로 확인한 뒤 배포한다.
-
-## 열린 것
-
-1. **Search Console 은 2026-09-19 에 소유권 인증까지 끝났다** (HTML 파일 방식).
-   남은 것: sitemap 제출과 홈 주소 색인 요청을 user 가 눌렀는지 미확인.
-   `site:yjinyoo.github.io` 로 색인 여부부터 보고 판단할 것.
-2. **아직 user 손으로만 되는 것:** GitHub 프로필 Website 칸, Google Scholar Homepage 칸,
-   LinkedIn Contact info Website 칸. 랩 멤버 페이지(`jeehwanlab.mit.edu`) 링크가 MIT 도메인이라
-   효과가 가장 크지만 관리자에게 요청해야 한다.
-3. **CV 원본이 아직 틀렸다.** `Curriculum Vitae_YJYOO_081926.docx` 의 GIST 포닥 종료일이
-   Feb. 2022 인데 실제는 Feb. 2023. `scripts/build_public_cv.py` 의 `CORRECTIONS` 가 매 빌드마다
-   고쳐서 내보내는 중. 원본을 고치면 그 항목을 지울 것.
-4. **검색 노출 확인.** 새 주소라 색인에 며칠~몇 주 걸린다. 다음 세션에서
-   `site:yjinyoo.github.io` 로 색인 여부를 먼저 보고, 안 잡혔으면 1번이 됐는지 묻는다.
-5. **특허 10건·국제학회 15건.** CV 에 있고 사이트에는 없다. 특허만 넣는 쪽을 권했고 답 미정.
-6. **cv 페이지 MIT 항목이 research 와 중복.** user 가 알고 그대로 두기로 했다. 먼저 꺼내지 말 것.
-
-## 하지 말 것
-
-- `_bibliography/papers.bib` 손으로 고치기 (생성 파일)
-- CV PDF 를 원본 그대로 올리기 (전화번호)
-- 공개 페이지에 `co-advised by Kim and Englund` 쓰기
-- about 을 줄여서 research 로 내용 옮기기 (user 가 명시적으로 반대)
-- 미공개 프로젝트의 구조·수치·파트너 적기
-
-## 다음에 논문이 나오면
+## 새 논문이 나오면
 
 ```bash
 python scripts/update_publications.py     # 재수집 → 동명이인 분리 → bib → DOI 검증
 ```
 
-공동 1저자면 `scripts/make_bib.py` 의 `CO_FIRST` 에 DOI 를 추가한다. 서지 DB 에는 그 정보가
-없어서 자동으로는 절대 안 들어온다. CV 가 정본이다.
+공동 1저자면 `scripts/make_bib.py` 의 `CO_FIRST` 에 DOI 를 추가한다. 서지 DB 에 그 정보가 없어서
+자동으로는 절대 안 들어온다. CV 가 정본이다.
 
-## 공개 저장소 후속
+## 글을 쓸 때 (2026-09-19 user 교정 셋)
 
-- **내부본에 이관할 버그 3건** (공개본에서 고쳤고 내부본은 아직 옛 상태):
-  `tools/refcheck_crossref.py` 의 저널명 정규식과 `guess_title`, `tools/link_lint.py` 의
-  하드코딩된 폴더명. **실제 교정지로 공개본을 한 번 돌려 본 뒤** 이관할 것. 내부본은
-  Science 양식에서 검증된 상태라 무턱대고 덮으면 그 경로가 깨질 수 있다.
-- **다음 공개 후보:** `device_assert.py`(661줄, 프로젝트 기대값 제거 필요),
-  `fab_check.py`(308줄, 엔진만 내고 `fab_constraints.md` 29항목은 예시로 대체).
-- **올리지 않기로 한 것:** `leak_check.py`(패턴이 곧 협업자·프로젝트 목록),
-  카이랄 두 건(원고 미발표).
+1. **공개물에 특정 언어를 박지 말 것.** 문구만이 아니라 코드도. 토크나이저에 한글 음절 범위가
+   박혀 있었는데, **빠진 문자는 토큰이 아예 안 만들어져서 결과에 "없음"으로도 안 나타난다.**
+   구조만 남기고 언어는 쓰는 사람이 얹게 한다.
+2. **읽는 사람을 안내하는 문장을 쓰지 말 것.** "이 줄은 두 번 읽을 만하다", "이건 따로 한 줄
+   받을 만하다" 류. 다음 문장이 스스로 할 일을 가로챈다. 비공개 코드가 있다는 사실도 말하지 않는다.
+3. **설명 없는 전문 용어 금지.** `recall@K` 를 그대로 썼다가 user 가 무슨 뜻이냐고 물었다.
+   물어봤다는 게 답이다.
+
+## 열린 것
+
+1. **CV 원본이 아직 틀렸다.** `OneDrive/Career/CV/Curriculum Vitae_YJYOO_081926.docx` 의 GIST
+   포닥 종료일이 `Feb. 2022` 인데 실제는 **`Feb. 2023`**. `scripts/build_public_cv.py` 의
+   `CORRECTIONS` 가 매 빌드마다 고쳐서 내보내므로 사이트와 공개 PDF 는 맞지만, **원본을 지원서나
+   협업자에게 보내면 틀린 채로 나간다.** 고치는 순서: docx 수정 (Word COM 은 이 문서에서 두 번 다
+   무응답, python-docx 가 빠를 수 있다) → PDF 재생성 → `DEFAULT_SRC` 교체 → `CORRECTIONS` 에서
+   그 항목 **삭제**(안 지우면 이중 수정) → 1쪽 눈으로 확인.
+2. **아직 user 손으로만 되는 것:** GitHub 프로필 Website 칸, Google Scholar Homepage 칸,
+   LinkedIn Contact info. 랩 멤버 페이지(`jeehwanlab.mit.edu`) 링크가 MIT 도메인이라 효과가
+   가장 크지만 관리자에게 요청해야 한다.
+3. **검색 노출.** 소유권 인증과 사이트맵 제출은 끝났다. `site:yjinyoo.github.io` 로 색인 여부부터
+   보고 판단할 것.
+4. **특허 10건·국제학회 15건.** CV 에 있고 사이트에는 없다. 특허만 넣는 쪽을 권했고 답 미정.
+5. **cv 페이지 MIT 항목이 research 와 중복.** user 가 알고 그대로 두기로 했다. 먼저 꺼내지 말 것.
+
+## 공개 저장소
+
+지금 다섯: `beol-eo-prescreen`, `refcheck`, `harness-budget`, `fab-check`, `device-assert`.
+
+**다음 후보는 없다.** 그림 도구 일곱 개는 user 가 올리지 않기로 했고(`house_check` 계열 포함),
+본딩 사진 → GDS 건은 **코드에서 치수를 다 빼도 작업 방식 자체가 남고 그게 미발표 프로젝트의
+방법이라** 보류했다. 일반화한 판본이 `~/bondmap/bondmap.py` 에 로컬로만 있다.
+
+**Origin MCP 는 우리 것이 아니다.** `youngminsw/Origin-Pro-MCP` (MIT, 별 39개, PyPI 등재)의
+클론이고 141 커밋 중 124개가 원작자 것이다. **우리 17 커밋이 upstream 에 안 올라가 있다**
+(batch 도구, 하우스 스타일, 전수 리뷰에서 나온 수정 13건). 새 저장소가 아니라 **upstream PR**
+이 답이고, 한 덩어리로 낼지 쪼갤지는 따로 앉아서 볼 일이다. 홈페이지에 적기에도 그쪽이 세다.
+
+## 내부본 이관 5건 (Simulations 세션에서)
+
+정본 = `Simulations/harness/known_issues.md` 의 2026-09-19 절 + 그 이전 기록.
+
+- **조건 없이 바로:** 층 두께가 샘플 간격만큼 짧게 나오는 버그(`tools/device_assert.py`),
+  누출 검사기 오탐 둘(`tools/leak_check.py`)
+- **조건 있음:** 참고문헌 도구 셋. 인계에 "실제 교정지로 공개본을 먼저 돌려 볼 것"이라고 돼
+  있는데, 그 조건의 **의도**는 "Science 양식에서 검증된 경로를 깨지 말 것"이다. 교정지 한 건은
+  어차피 한 양식이라 의도를 반만 만족시킨다. **제목을 인쇄하는 양식과 안 하는 양식으로 참고문헌을
+  열 개쯤 만들어 양쪽 버전에 돌리는 쪽**이 싸고 덮는 범위가 넓다.
