@@ -50,13 +50,20 @@ gh run list --workflow='Deploy site' --limit 8 --json headSha,conclusion \
 curl -s https://yjinyoo.github.io/assets/css/main.css | grep -oE "<선택자 조각>[^{]*\{[^}]*\}"
 ```
 
-## 생성물 세 가지
+## 생성물 네 가지
 
 | 무엇 | 스크립트 | 언제 |
 |---|---|---|
 | 논문 목록 | `scripts/update_publications.py` | 새 논문이 나오면 |
 | 활동 그래프 | `scripts/build_activity_svg.py` | 매일 자동(`refresh-activity.yml`), 수동 실행도 가능 |
+| tools 페이지 데이터 | `scripts/update_tools.py` | 매주 자동(`site-maintenance.yml`), 새 도구를 올리면 수동 |
 | CV PDF · 링크 카드 | `scripts/build_public_cv.py`, `scripts/build_og_image.py` | CV 나 소개 문구가 바뀌면 |
+
+`_data/tools.yml` 에서 **깃헙이 아는 필드(`description`/`language`/`pushed`)는 손으로 고치지
+않는다.** 스크립트가 덮어쓴다. 손으로 쓰는 것은 `title`/`summary`/`body` 뿐이다.
+
+주간 점검(`site-maintenance.yml`)은 두 잡이고 성격이 다르다. `tools` 는 스스로 낫고(갱신 →
+커밋 → 재배포), `checks`(내부 링크 + DOI)는 사람이 고쳐야 하므로 **실패로 알린다.**
 
 활동 그래프는 GitHub 프로필의 **공개** 기여만 읽는다. 프로필 설정의 `Private contributions` 가 꺼지면
 거의 빈 그래프가 나오는데, 그건 버그가 아니라 공개 프로필의 사실이다.
