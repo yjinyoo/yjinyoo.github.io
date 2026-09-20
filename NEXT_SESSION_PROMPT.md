@@ -9,9 +9,9 @@
 |---|---|
 | about | 소개, 하는 일 3줄, 설계 루프, 활동 그래프, 연락처. 루프 문단 끝에서 tools 로 링크 |
 | research | 소자 프로젝트 3건, 과제 4건 |
-| publications | 45편, 번호·권·페이지, 공동 1저자 14편 |
-| tools | 공개 저장소 5건. `_data/tools.yml` 에서 렌더 |
-| cv | 재직 3건, 학위 2건, 수상 7건, PDF |
+| publications | 45편, 번호·권·페이지, 공동 1저자 14편. 설명 문구 없음(목록이 스스로 말한다) |
+| tools | 공개 저장소 7건. `_data/tools.yml` 에서 렌더 |
+| cv | 재직 3건, 학위 2건, **Fellowships 3 / Awards 4 로 분리**, PDF |
 
 내부 링크 깨진 것 없음. DOI 45개 확인됨.
 
@@ -57,12 +57,12 @@ python scripts/update_publications.py     # 재수집 → 동명이인 분리 �
 
 ## 열린 것
 
-1. **CV 원본이 아직 틀렸다.** `OneDrive/Career/CV/Curriculum Vitae_YJYOO_081926.docx` 의 GIST
-   포닥 종료일이 `Feb. 2022` 인데 실제는 **`Feb. 2023`**. `scripts/build_public_cv.py` 의
-   `CORRECTIONS` 가 매 빌드마다 고쳐서 내보내므로 사이트와 공개 PDF 는 맞지만, **원본을 지원서나
-   협업자에게 보내면 틀린 채로 나간다.** 고치는 순서: docx 수정 (Word COM 은 이 문서에서 두 번 다
-   무응답, python-docx 가 빠를 수 있다) → PDF 재생성 → `DEFAULT_SRC` 교체 → `CORRECTIONS` 에서
-   그 항목 **삭제**(안 지우면 이중 수정) → 1쪽 눈으로 확인.
+1. **CV 원본과 공개본이 이제 같다 (09-20 해결).** docx 의 GIST 포닥 종료일을 고쳤고,
+   Word COM 이 이번에는 변환에 성공해 `Curriculum Vitae_YJYOO_Sep_2026.pdf` 를 새로 뽑았다.
+   `build_public_cv.py` 의 `DEFAULT_SRC` 가 그 파일을 가리키고 `CORRECTIONS` 는 **비었다.**
+   다시 채우지 말 것: 보정이 필요하면 원본이 틀린 것이고 고칠 곳은 원본이다.
+   ⚠ 사이트 cv 페이지에서 뺀 항목이 원본에 남아 있으면 또 갈라진다. 대외 문구를 고치면
+   원본도 같이 본다.
 2. **아직 user 손으로만 되는 것:** GitHub 프로필 Website 칸, Google Scholar Homepage 칸,
    LinkedIn Contact info. 랩 멤버 페이지(`jeehwanlab.mit.edu`) 링크가 MIT 도메인이라 효과가
    가장 크지만 관리자에게 요청해야 한다.
@@ -73,9 +73,14 @@ python scripts/update_publications.py     # 재수집 → 동명이인 분리 �
 
 ## 공개 저장소
 
-지금 다섯: `beol-eo-prescreen`, `refcheck`, `harness-budget`, `fab-check`, `device-assert`.
+지금 일곱: `beol-eo-prescreen`, `refcheck`, `harness-budget`, `fab-check`, `device-assert`,
+`resonance-extract`, `mpi-env-check`.
 
-**다음 후보는 없다.** 그림 도구 일곱 개는 user 가 올리지 않기로 했고(`house_check` 계열 포함),
+**후보를 목록에서 고르지 말고 폴더를 훑을 것.** 09-20 에 `resonance-extract` 가 빠져 있었는데,
+인계의 후보 목록 두 개만 보고 그게 전부라고 여긴 탓이었다. `tools/` 를 직접 훑으니 둘이 더 나왔다.
+남은 후보는 `gds_lint`(BLOCK 3건이 얕다: 파운드리 NDA 언급 한 줄, 내부 경로 한 줄).
+
+**올리지 않기로 한 것.** 그림 도구 일곱 개(user 지시, `house_check` 계열 포함),
 본딩 사진 → GDS 건은 **코드에서 치수를 다 빼도 작업 방식 자체가 남고 그게 미발표 프로젝트의
 방법이라** 보류했다. 일반화한 판본이 `~/bondmap/bondmap.py` 에 로컬로만 있다.
 
