@@ -75,6 +75,50 @@
     patterned film modelled as an unpatterned slab has an identical vertical stack. The trenches
     are gone, the mode is not confined, and every layer check still passes.
 
+- repo: resonance-extract
+  pushed: "2026-09-20"
+  language: "Python"
+  description: "Resonance frequency and Q from a time-domain record by fitting complex poles: subspace and linear-prediction estimators, plus complex-frequency re-weighting of a record you already have."
+  title: Resonance extraction
+  summary: fit the poles instead of running until the field has decayed
+  body: >-
+    Pulls resonance frequencies and Q factors out of a time-domain record by fitting complex
+    poles, rather than transforming the record and measuring a linewidth. A subspace estimator
+    and a linear-prediction one, the transform baseline to measure what they buy, and a way to
+    re-weight a record you already have so it reports the response at a complex frequency,
+    with no new run.
+
+
+    A transform's resolution is set by how long the record is, so resolving a linewidth means
+    running until the field has decayed, which for a high-Q resonator is most of the cost of
+    the simulation. The answer wanted was never a spectrum: it was a few complex poles, and
+    fitting a handful of those needs far less data than separating them in a transform. The
+    cases this is for are the ones harmonic inversion does not cover, which is two poles too
+    close to separate, a record cut short, or a resonance buried under a loss-broadened
+    background.
+
+- repo: mpi-env-check
+  pushed: "2026-09-20"
+  language: "Python"
+  description: "Assert at the top of a parallel job that the MPI world, rank count and thread settings are what the script assumes. Four silent failures, each of which reported success."
+  title: Parallel environment gate
+  summary: four parallel jobs reported success and produced worthless work
+  body: >-
+    Asserts at the top of a parallel job that the MPI world size, the rank count and the
+    thread settings are the ones the script assumes, and exits if they are not. Also wraps
+    the write side, so a rank-0 write that throws raises everywhere instead of leaving the
+    other ranks at a barrier that never comes.
+
+
+    Four failures, each a different mechanism and each invisible at the time. Thirty-two ranks
+    that each became rank 0 of a world of size 1, so every rank-0 guard passed and one
+    calculation ran thirty-two times serially. A collective write that produced the file on
+    only one rank, while the rest pointed at a path that did not exist. Nine runs that exited
+    0 with five unreadable archives, because every rank wrote the same path. Threads left
+    unset, so 264 of them fought over 16 cores while the process monitor showed every rank
+    busy. Every post-mortem ended with the same instruction, and nobody put it into code,
+    which is why there were four.
+
 - repo: refcheck
   pushed: "2026-09-19"
   language: "Python"
