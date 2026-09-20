@@ -1,0 +1,66 @@
+name: Site maintenance
+
+# Two jobs with different jobs to do.
+#
+# `tools` self-heals: the tools page carries fields GitHub owns (description,
+# language, last push), so it refreshes them and commits if anything moved. A
+# check that only complains would leave the page wrong until someone read the log.
+#
+# `checks` cannot self-heal: a broken internal link or a reference whose DOI no
+# longer resolves needs a person. So it just fails, loudly, on a schedule, because
+# both rot without anyone touching the repository.
+
+on:
+  schedule:
+    - cron: "41 7 * * 1" # Mondays, after the daily activity refresh
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  actions: write # to dispatch Deploy site; a GITHUB_TOKEN push does not trigger it
+
+jobs:
+  tools:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+      - name: Refresh the generated fields in _data/tools.yml
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: python scripts/update_tools.py
+      - name: Commit if it changed
+        id: commit
+        run: |
+          if git diff --quiet -- _data/tools.yml; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+            echo "No change."
+          else
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add _data/tools.yml
+            git commit -m "Refresh the tools page from GitHub"
+            git push
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          fi
+      - name: Redeploy
+        if: steps.commit.outputs.changed == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run "Deploy site" --ref main
+
+  checks:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+      # Runs against the live site, not a local build, so it also catches a page
+      # that failed to deploy.
+      - name: Internal links resolve
+        run: python scripts/check_links.py
+      - name: Every DOI still resolves
+        run: python scripts/check_dois.py
