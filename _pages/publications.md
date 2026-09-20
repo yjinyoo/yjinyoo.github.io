@@ -2,7 +2,6 @@
 layout: page
 permalink: /publications/
 title: publications
-description: Peer-reviewed papers on membrane-based integrated photonics, complex-oxide electro-optics, and heterogeneous integration onto silicon.
 nav: true
 nav_order: 3
 ---
