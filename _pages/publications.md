@@ -2,7 +2,7 @@
 layout: page
 permalink: /publications/
 title: publications
-description: Reverse chronological and numbered from the first paper. Every entry links to its DOI; where a free version exists, a PDF link sits next to it. Equal first authorship is noted on the entry.
+description: Peer-reviewed papers on membrane-based integrated photonics, complex-oxide electro-optics, and heterogeneous integration onto silicon.
 nav: true
 nav_order: 3
 ---

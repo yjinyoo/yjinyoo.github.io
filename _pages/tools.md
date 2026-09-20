@@ -9,9 +9,9 @@ nav_order: 4
 
 {% include site_styles.liquid %}
 
-Three screens a design has to pass before it costs anything to simulate, a check a
-manuscript has to pass before it is submitted, and the instrumentation for the agent
-harness that runs them.
+Screens a design has to pass before it costs anything to simulate, checks a result and a
+manuscript have to pass before they go out, and the instrumentation for the agent harness
+and the cluster that run them.
 
 <ul style="margin:1.2rem 0 1.8rem; padding-left:1.1rem;">
 {%- for tool in site.data.tools %}
