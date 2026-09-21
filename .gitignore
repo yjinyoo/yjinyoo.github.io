@@ -24,4 +24,5 @@ __pycache__/
 scripts/works_raw.json
 scripts/works_mine.json
 scripts/summary.tsv
+scripts/papers.bib
 scripts/__pycache__/

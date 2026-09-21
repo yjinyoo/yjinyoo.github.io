@@ -9,11 +9,11 @@
 |---|---|
 | about | 소개, 하는 일 3줄, 설계 루프, 활동 그래프, 연락처. 루프 문단 끝에서 tools 로 링크 |
 | research | 소자 프로젝트 3건, 과제 4건 |
-| publications | 45편, 번호·권·페이지, 공동 1저자 14편. 설명 문구 없음(목록이 스스로 말한다) |
+| publications | 저널 논문 + 책 챕터 절. **번호·연도·권·페이지·공동 1저자를 CV 에서 읽는다** (09-21 부터). 설명 문구 없음 |
 | tools | 공개 저장소 7건. `_data/tools.yml` 에서 렌더 |
 | cv | 재직 3건, 학위 2건, **Fellowships 3 / Awards 4 로 분리**, PDF |
 
-내부 링크 깨진 것 없음. DOI 45개 확인됨.
+내부 링크 깨진 것 없음. 편수와 DOI 수는 여기 적지 않는다: `check_cv_match.py` 와 `check_dois.py` 가 잰다.
 
 ## 스스로 도는 것 (건드릴 필요 없음)
 
@@ -21,12 +21,12 @@
 |---|---|---|
 | 매일 | 활동 그래프 갱신, 바뀌면 재배포 | `.github/workflows/refresh-activity.yml` |
 | 매주 월 | tools 데이터를 깃헙에서 갱신, 바뀌면 커밋 + 재배포 | `.github/workflows/site-maintenance.yml` |
-| 매주 월 | 내부 링크 + DOI 45개. **고칠 사람이 필요하므로 실패로 알린다** | 같은 파일 |
+| 매주 월 | 내부 링크 + DOI + 논문 목록 대 CV. **고칠 사람이 필요하므로 실패로 알린다** | 같은 파일 |
 | 상시 | 방문 집계 (국가·페이지·유입 경로) | Cloudflare Web Analytics, 09-20 켬 |
 
 주간 점검이 빨간색이면 그게 이 프로젝트의 다음 할 일이다. 먼저 어느 잡이 떨어졌는지 본다:
 `tools` 잡은 스스로 낫게 돼 있어서 거기서 떨어졌다면 깃헙 API 나 권한 문제고, `checks` 잡이
-떨어졌으면 링크나 DOI 가 실제로 깨진 것이다.
+떨어졌으면 링크나 DOI 가 실제로 깨졌거나, CV 와 논문 목록 중 한쪽만 다시 만든 것이다.
 
 ## 새 도구를 공개했을 때
 
@@ -39,12 +39,14 @@
 
 ## 새 논문이 나오면
 
-```bash
-python scripts/update_publications.py     # 재수집 → 동명이인 분리 → bib → DOI 검증
-```
+**CV 가 먼저다.** 사이트의 번호·연도·권·페이지·공동 1저자는 CV 에서 읽으므로 CV 에 없는 논문은
+사이트에 못 올라간다(생성 스크립트가 멈추고 무엇이 짝이 없는지 적는다).
 
-공동 1저자면 `scripts/make_bib.py` 의 `CO_FIRST` 에 DOI 를 추가한다. 서지 DB 에 그 정보가 없어서
-자동으로는 절대 안 들어온다. CV 가 정본이다.
+1. CV 원본(OneDrive `Career/CV/` docx)에 추가, `Co-first author` 표시 포함. PDF 로 내보낸다
+2. `python scripts/build_public_cv.py` — 공개 CV 를 만들고 "목록이 CV 와 안 맞는다"고 알린다
+3. `python scripts/update_publications.py` — 재수집 → 동명이인 분리 → CV 와 짝짓기 → bib → DOI → CV 대조
+
+온라인 선공개라 권·페이지가 없으면 CV 에 `(2026)` 만 적어도 된다. 권·페이지가 나오면 CV 만 고치고 2·3 을 다시.
 
 ## 글을 쓸 때 (2026-09-19 user 교정 셋)
 

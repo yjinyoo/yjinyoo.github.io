@@ -21,14 +21,21 @@ is no local build step; nothing needs Ruby on your machine.
 
 ## Publication list
 
-`_bibliography/papers.bib` is generated, not hand-written. To refresh it after a
-new paper appears:
+`_bibliography/papers.bib` is generated, not hand-written, and the CV is its
+source. What counts as a paper, its number, year, volume and pages, and equal
+first authorship are read from `assets/pdf/cv.pdf` by `scripts/cv_record.py`.
+OpenAlex only fills in what the CV does not carry (full author names, DOI,
+abstract, open-access link). The one deliberate departure from the CV is declared
+in `cv_record.SITE_YEAR`.
 
-```
-python scripts/update_publications.py
-```
+When a new paper appears:
 
-That does five things:
+1. Add it to the CV (the Word original), export the PDF.
+2. `python scripts/build_public_cv.py` writes `assets/pdf/cv.pdf` without the
+   phone number, then reports that the publication list no longer matches.
+3. `python scripts/update_publications.py` regenerates the list.
+
+`update_publications.py` does five things:
 
 1. `fetch_pubs.py` pulls every work OpenAlex attributes to ORCID
    0000-0002-6490-2324.
@@ -38,23 +45,29 @@ That does five things:
    affiliation is on the authorship. **Check its printed drop list** whenever a
    new co-author group appears, because a genuinely new collaboration has no
    shared co-author yet and will be dropped until the affiliation catches it.
-3. `make_bib.py` writes the BibTeX. `selected={true}` controls which papers show
-   on the front page. The rule is first-author with 20+ citations, or a leading
-   slot (top six) at a Nature-family venue, or 200+ citations. Citation count on
-   its own is deliberately not enough: it would promote large group papers where
-   the contribution was one author slot out of twenty.
-4. `fix_stale.py` applies manual corrections where OpenAlex is behind the
-   publisher. There is one right now: the Gires-Tournois monopixel paper, which
-   OpenAlex still lists only as a Research Square preprint with the author order
-   scrambled.
-5. `check_dois.py` resolves every DOI against Crossref. `NOT FOUND` means the
+   It also merges journal cover and frontispiece records into the paper they
+   illustrate.
+3. `make_bib.py` matches every record to exactly one CV entry and writes the
+   BibTeX; if any record or CV entry is left unmatched, it writes nothing and
+   lists them. Records OpenAlex lacks go in `ADDITIONS`, records where it is
+   behind the publisher in `OVERRIDES`. `selected={true}` controls which papers
+   show on the front page. The rule is first-author with 20+ citations, or a
+   leading slot (top six) at a Nature-family venue, or 200+ citations. Citation
+   count on its own is deliberately not enough: it would promote large group
+   papers where the contribution was one author slot out of twenty. Book chapters
+   are written as `@incollection` and listed after the papers, unnumbered.
+4. `check_dois.py` resolves every DOI against Crossref. `NOT FOUND` means the
    link is dead. `UNRESOLVED` means the check itself failed and the DOI is
    simply unchecked, which is not the same as passing.
+5. `check_cv_match.py` compares the written list with the CV once more: count,
+   and each number's title, year, volume, pages and equal first authorship. The
+   weekly `Site maintenance` run repeats it, since the two files can drift when
+   only one of them is rebuilt.
 
 ## Hosting a PDF of a paper
 
 The `pdf` field on an entry points at a free copy where one exists, which is why
-21 of the 43 entries have one. Do not add a publisher PDF for a paywalled paper:
+only some entries have one. Do not add a publisher PDF for a paywalled paper:
 Wiley, Elsevier, ACS and Springer Nature all forbid redistributing the typeset
 version. The accepted manuscript is usually allowed after an embargo. Check the
 journal at <https://openpolicyfinder.jisc.ac.uk/> before adding a file to

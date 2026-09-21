@@ -113,6 +113,14 @@ def main():
         raise SystemExit(f"FAILED: phone numbers survived redaction {leaks}; output deleted")
     print("verified: no phone number remains in the extracted text")
 
+    # A new CV usually means a new paper. The PDF above is fine either way; what
+    # can go stale is the publication list generated from it.
+    sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+    import check_cv_match
+    if check_cv_match.main() != 0:
+        raise SystemExit("the CV is written, but the publication list no longer matches it: "
+                         "run scripts/update_publications.py")
+
 
 if __name__ == "__main__":
     main()
