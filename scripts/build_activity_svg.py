@@ -1,46 +1,49 @@
-"""Render a contribution calendar for one calendar year as a self-contained SVG.
+"""Render the activity calendar: code (GitHub contributions) and simulation runs.
 
     python scripts/build_activity_svg.py [year]
 
-The third-party chart services only render a rolling twelve months and cannot be
-asked for a calendar year, so the data is read straight from the profile and
-drawn here. Output: assets/img/activity.svg
+Output: assets/img/activity.svg (GitHub) and assets/img/simulations.svg, two panels
+drawn over the same weeks so they sit side by side (see calendar_svg.py).
 
-Only what the profile shows anonymously is used, which is what a visitor to the
-site would see. Private contributions appear only while "Private contributions"
-is enabled in the GitHub profile's contribution settings; with it off the year
-renders almost empty, and that is a true picture of the public profile, not a
-bug in this script.
+CODE ROW. The third-party chart services only render a rolling twelve months and
+cannot be asked for a calendar year, so the data is read straight from the
+profile. Only what the profile shows anonymously is used, which is what a visitor
+to the site would see. Private contributions appear only while "Private
+contributions" is enabled in the GitHub profile's contribution settings; with it
+off the year renders almost empty, and that is a true picture of the public
+profile, not a bug in this script.
+
+SIMULATION ROW. Read from _data/simulation_runs.json, which is NOT made here and
+cannot be made on GitHub Actions: `Simulations/tools/simulation_run_counter.py`
+counts it on the workstation (it needs the cloud solver account, the local
+archive of runs deleted from the cloud, and the cluster login) and
+`publish_simulation_runs.py` pushes it at every session wrap-up. The daily
+refresh here redraws that row from the committed file, ending it on the day the
+counts were collected. With no data file the chart is the code row alone.
 """
 
 import datetime as dt
+import json
 import os
 import re
 import sys
 import urllib.request
+
+from calendar_svg import BLUE, GREEN, quartile_levels, render_panel, shared_span
 
 USER = "yjinyoo"
 ARGS = [a for a in sys.argv[1:] if not a.startswith("-")]
 YEAR = int(ARGS[0]) if ARGS else dt.date.today().year
 # By default the empty run before the first active day is cut, so the chart opens
 # on the month the work actually started rather than on a bank of blank weeks.
-# The figure printed under the chart still counts the whole year.
+# The totals beside each row still count the whole year.
 FULL_YEAR = "--full" in sys.argv[1:]
 SITE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # Stable filename: the year is inside the image, so the page never has to be
 # edited when the year rolls over.
 OUT = os.path.join(SITE, "assets", "img", "activity.svg")
-
-CELL, GAP = 13, 3
-PITCH = CELL + GAP
-LEFT, TOP = 36, 40          # room for weekday labels and the month row
-# Empty days are drawn semi-transparent so the chart reads on a light or a dark
-# page without needing to know which one it is sitting on.
-EMPTY = ("#8b929c", 0.20)
-SCALE = ["#cdead9", "#8fd0ae", "#55a87e", "#2f6f4e"]
-LABEL = "#8b929c"
-MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun",
-          "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
+OUT_SIMS = os.path.join(SITE, "assets", "img", "simulations.svg")
+SIMS = os.path.join(SITE, "_data", "simulation_runs.json")
 
 
 def fetch(year):
@@ -66,88 +69,40 @@ def fetch(year):
     return {d: int(l) for d, l in days.items()}, counts
 
 
+def simulation_panel(year):
+    if not os.path.exists(SIMS):
+        return None
+    with open(SIMS, encoding="utf-8") as f:
+        doc = json.load(f)
+    collected = dt.date.fromisoformat(doc["collected_on"])
+    counts = {d: sum(v) for d, v in doc["by_day"].items()}
+    in_year = {d: c for d, c in counts.items() if d[:4] == str(year)}
+    return dict(label="Simulation runs", unit="runs", counts=counts,
+                levels=quartile_levels(in_year), scale=BLUE,
+                last=collected if collected.year == year else None)
+
+
 def build(year):
     levels, counts = fetch(year)
-    today = dt.date.today()
-    start = dt.date(year, 1, 1)
-    end = min(dt.date(year, 12, 31), today) if today.year == year else dt.date(year, 12, 31)
+    gh = dict(label="Project activity", unit="GitHub contributions", counts=counts,
+              levels=levels, scale=GREEN)
+    sims = simulation_panel(year)
+    panels = [gh] + ([sims] if sims else [])
+    start, end = shared_span(year, panels, FULL_YEAR)
+    print(f"chart spans {start.isoformat()} to {end.isoformat()}")
 
-    year_total = sum(c for d, c in counts.items() if d[:4] == str(year))
-    active = sorted(d for d, l in levels.items() if l > 0 and d[:4] == str(year))
-    if active and not FULL_YEAR:
-        # Open on the first of the month holding the first active day.
-        start = dt.date(year, dt.date.fromisoformat(active[0]).month, 1)
-
-    # Columns are weeks beginning on Sunday, as GitHub lays them out.
-    first_col = start - dt.timedelta(days=(start.weekday() + 1) % 7)
-    n_cols = ((end - first_col).days // 7) + 1
-    width = LEFT + n_cols * PITCH + 8
-    height = TOP + 7 * PITCH + 30
-
-    out = [f'<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}" '
-           f'viewBox="0 0 {width} {height}" role="img" '
-           f'aria-label="{USER} contribution activity for {year}">',
-           f'<title>Contribution activity, {year}</title>',
-           f'<style>text{{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif}}</style>']
-
-    # Year, set large enough to be the first thing read.
-    out.append(f'<text x="0" y="19" font-size="18" font-weight="700" fill="{LABEL}">{year}</text>')
-
-    # Month labels, placed at the first column whose week contains the 1st.
-    seen = set()
-    for col in range(n_cols):
-        week = first_col + dt.timedelta(days=7 * col)
-        for k in range(7):
-            d = week + dt.timedelta(days=k)
-            if d.year == year and d.day <= 7 and d.month not in seen and start <= d <= end:
-                seen.add(d.month)
-                out.append(f'<text x="{LEFT + col * PITCH}" y="{TOP - 8}" '
-                           f'font-size="12" fill="{LABEL}">{MONTHS[d.month - 1]}</text>')
-                break
-
-    for row, name in ((1, "Mon"), (3, "Wed"), (5, "Fri")):
-        out.append(f'<text x="0" y="{TOP + row * PITCH + CELL - 2}" '
-                   f'font-size="11" fill="{LABEL}">{name}</text>')
-
-    total = 0
-    for col in range(n_cols):
-        for row in range(7):
-            d = first_col + dt.timedelta(days=7 * col + row)
-            if d < start or d > end:
-                continue
-            key = d.isoformat()
-            lvl = levels.get(key, 0)
-            total += counts.get(key, 0)
-            x, y = LEFT + col * PITCH, TOP + row * PITCH
-            if lvl == 0:
-                fill, extra = EMPTY[0], f' opacity="{EMPTY[1]}"'
-            else:
-                fill, extra = SCALE[min(lvl, 4) - 1], ""
-            out.append(f'<rect x="{x}" y="{y}" width="{CELL}" height="{CELL}" rx="2" '
-                       f'fill="{fill}"{extra}><title>{key}: {counts.get(key, 0)}</title></rect>')
-
-    base = TOP + 7 * PITCH + 18
-    out.append(f'<text x="0" y="{base}" font-size="12" fill="{LABEL}">'
-               f'{year_total:,} contributions in {year}</text>')
-
-    lx = width - (5 * PITCH + 76)
-    out.append(f'<text x="{lx}" y="{base}" font-size="12" fill="{LABEL}">Less</text>')
-    out.append(f'<rect x="{lx + 28}" y="{base - 9}" width="{CELL}" height="{CELL}" rx="2" '
-               f'fill="{EMPTY[0]}" opacity="{EMPTY[1]}"/>')
-    for i, c in enumerate(SCALE):
-        out.append(f'<rect x="{lx + 28 + (i + 1) * PITCH}" y="{base - 9}" '
-                   f'width="{CELL}" height="{CELL}" rx="2" fill="{c}"/>')
-    out.append(f'<text x="{lx + 28 + 5 * PITCH + 4}" y="{base}" font-size="12" fill="{LABEL}">More</text>')
-    out.append("</svg>")
-
-    os.makedirs(os.path.dirname(OUT), exist_ok=True)
-    with open(OUT, "w", encoding="utf-8") as f:
-        f.write("\n".join(out))
-    print(f"{OUT}\n  {year}: {year_total:,} contributions, {len(active)} active days, "
-          f"chart spans {start.isoformat()} to {end.isoformat()}")
-    if total != year_total:
-        print(f"  NOTE: {year_total - total:,} contributions fall outside the drawn range")
-    if year_total == 0:
+    jobs = [(gh, OUT, f"Project activity, {year}",
+             f"{USER} GitHub contributions per day in {year}")]
+    if sims:
+        jobs.append((sims, OUT_SIMS, f"Simulation runs, {year}",
+                     f"Finished simulation runs per day in {year}"))
+    for p, path, title, aria in jobs:
+        year_total, active, drawn = render_panel(year, p, path, start, end, title=title, aria=aria)
+        print(f"{path}\n  {year_total:,} {p['unit']} on {len(active)} days in {year}"
+              + (f", drawn through {p['last']}" if p.get("last") and p["last"] < end else ""))
+        if drawn != year_total:
+            print(f"  NOTE: {year_total - drawn:,} fall outside the drawn range")
+    if not sum(counts.values()):
         print("  WARNING: zero contributions. Check that 'Private contributions' is "
               "enabled in the GitHub profile contribution settings.")
 

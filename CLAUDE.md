@@ -73,9 +73,20 @@ curl -s https://yjinyoo.github.io/assets/css/main.css | grep -oE "<선택자 조
 | 무엇 | 스크립트 | 언제 |
 |---|---|---|
 | 논문 목록 + 공개 CV | `scripts/sync_cv.py` (안에서 `build_public_cv.py` → `update_publications.py`) | CV 를 고쳤으면 언제나 |
-| 활동 그래프 | `scripts/build_activity_svg.py` | 매일 자동(`refresh-activity.yml`), 수동 실행도 가능 |
+| 활동 그래프 (좌: Project activity, 우: Simulation runs) | `scripts/build_activity_svg.py` → `assets/img/activity.svg` + `simulations.svg` (그리기는 `scripts/calendar_svg.py`) | 매일 자동(`refresh-activity.yml`) + **세션 정리 9단계** |
 | tools 페이지 데이터 | `scripts/update_tools.py` | 매주 자동(`site-maintenance.yml`), 새 도구를 올리면 수동 |
 | 링크 카드 | `scripts/build_og_image.py` | 소개 문구가 바뀌면 |
+
+**활동 그래프는 두 장이고 출처와 갱신 경로가 다르다.** 왼쪽(초록)은 공개 GitHub 프로필의 기여 수를 매일 Actions 가 읽는다.
+오른쪽(파랑)은 `_data/simulation_runs.json` 에서 그리는데, 이 파일은 워크스테이션에서만 만들어진다
+(`Simulations/tools/simulation_run_counter.py`; 클라우드 솔버 계정·로컬 아카이브 드라이브·클러스터 접속이 필요).
+세션 정리 때 `Simulations/tools/publish_simulation_runs.py` 가 다시 세서 **데이터 파일과 SVG 두 장만** push 한다.
+- 두 장은 **같은 주 범위**를 쓰고, 폭은 카드 절반(416 px)으로 고정, 칸 크기가 주 수를 따라 줄어든다(9 월 ≈ 11 px, 12 월 ≈ 7.5 px). 그래서 한쪽만 다시 그리면 좌우가 어긋난다. 둘 다 같이 커밋할 것.
+- 범위는 **GitHub 기록이 시작된 달부터** (2026 은 3 월). 시뮬레이션이 더 일찍 시작해도 그쪽에 맞추지 않는다 (user 09-21). 각 장의 숫자는 한 해 전체라 1~2 월 실행 2,216 건은 숫자에만 있고 그림에는 없다. 원래 GitHub 달력도 "그림은 첫 활동 달부터, 숫자는 한 해 전체" 였다.
+- 시뮬레이션 쪽은 센 날까지만 그린다. 그 뒤를 빈칸으로 그리면 "안 돌렸다"는 주장이 된다.
+- 시뮬레이션 수는 **끝난 실행만** 센다 (클라우드 `success`, 클러스터 COMPLETED 중 60 초 이상·`_` 이름 제외).
+- 솔버 대시보드 숫자(09-21 에 13,733)를 쓰지 말 것: 견적만 내고 안 돌린 초안이 들어 있다. 서버 용량 때문에 지운 실행의 기록이 어디 남는지는 카운터 머리 주석.
+- **이름·문구 (user 09-21 확정):** 왼쪽 이름은 `Project activity`, 숫자 옆에 `GitHub contributions` 로 출처를 밝힌다. 올해 커밋의 약 45 % 가 하네스 저장소라 문단에 `the shared tooling behind it` 를 넣어 둔 것이다. 빼면 "Project" 가 부풀린 말이 된다. `Code`(측정·성장 기록까지 들어 있어 좁다)·`Commits`(user 가 뜻을 물었다)는 기각. 공개 페이지에 솔버 제품명·클러스터 이름·"cloud FDTD" 같은 직접 표현 금지. 종류는 **예시로("including ...") 쓰고 몇 개로 단정하지 않는다** (user 09-21: 셋으로 못 박으면 다양성이 없어 보인다). 단 예시에는 실제로 센 것만: FDTD, mode analysis, inverse design(adjoint FDTD 실행), DFT. 로컬 실행 제외는 밝힌다. 시뮬레이션 숫자의 출처를 "GitHub 기록" 이라고 쓰지 않는다: 출처는 작업 기록이고 GitHub 에는 날짜별 개수 파일이 올라갈 뿐이다.
 
 `_data/tools.yml` 에서 **깃헙이 아는 필드(`description`/`language`/`pushed`)는 손으로 고치지
 않는다.** 스크립트가 덮어쓴다. 손으로 쓰는 것은 `title`/`summary`/`body` 뿐이다.
@@ -83,7 +94,7 @@ curl -s https://yjinyoo.github.io/assets/css/main.css | grep -oE "<선택자 조
 주간 점검(`site-maintenance.yml`)은 두 잡이고 성격이 다르다. `tools` 는 스스로 낫고(갱신 →
 커밋 → 재배포), `checks`(내부 링크 + DOI + 사이트 대 CV)는 사람이 고쳐야 하므로 **실패로 알린다.**
 
-활동 그래프는 GitHub 프로필의 **공개** 기여만 읽는다. 프로필 설정의 `Private contributions` 가 꺼지면
+활동 그래프 왼쪽은 GitHub 프로필의 **공개** 기여만 읽는다. 프로필 설정의 `Private contributions` 가 꺼지면
 거의 빈 그래프가 나오는데, 그건 버그가 아니라 공개 프로필의 사실이다.
 
 ## 페이지 역할 (2026-09-19 user 확정)

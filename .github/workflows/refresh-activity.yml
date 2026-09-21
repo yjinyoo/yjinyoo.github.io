@@ -22,13 +22,13 @@ jobs:
       - name: Commit if it changed
         id: commit
         run: |
-          if git diff --quiet -- assets/img/activity.svg; then
+          if git diff --quiet -- assets/img/activity.svg assets/img/simulations.svg; then
             echo "changed=false" >> "$GITHUB_OUTPUT"
             echo "No change."
           else
             git config user.name "github-actions[bot]"
             git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-            git add assets/img/activity.svg
+            git add assets/img/activity.svg assets/img/simulations.svg
             git commit -m "Refresh activity graph"
             git push
             echo "changed=true" >> "$GITHUB_OUTPUT"
