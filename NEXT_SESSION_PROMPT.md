@@ -22,6 +22,7 @@
 | 매일 | 활동 그래프 갱신, 바뀌면 재배포 | `.github/workflows/refresh-activity.yml` |
 | 매주 월 | tools 데이터를 깃헙에서 갱신, 바뀌면 커밋 + 재배포 | `.github/workflows/site-maintenance.yml` |
 | 매주 월 | 내부 링크 + DOI 45개. **고칠 사람이 필요하므로 실패로 알린다** | 같은 파일 |
+| 상시 | 방문 집계 (국가·페이지·유입 경로) | Cloudflare Web Analytics, 09-20 켬 |
 
 주간 점검이 빨간색이면 그게 이 프로젝트의 다음 할 일이다. 먼저 어느 잡이 떨어졌는지 본다:
 `tools` 잡은 스스로 낫게 돼 있어서 거기서 떨어졌다면 깃헙 API 나 권한 문제고, `checks` 잡이
@@ -66,6 +67,8 @@ python scripts/update_publications.py     # 재수집 → 동명이인 분리 �
 2. **아직 user 손으로만 되는 것:** GitHub 프로필 Website 칸, Google Scholar Homepage 칸,
    LinkedIn Contact info. 랩 멤버 페이지(`jeehwanlab.mit.edu`) 링크가 MIT 도메인이라 효과가
    가장 크지만 관리자에게 요청해야 한다.
+   **이 셋이 방문 집계보다 먼저다.** 분석을 켜 뒀어도 유입이 없으면 볼 것이 없고,
+   셋을 걸어야 Cloudflare 에서 유입 경로가 갈려 나온다.
 3. **검색 노출.** 소유권 인증과 사이트맵 제출은 끝났다. `site:yjinyoo.github.io` 로 색인 여부부터
    보고 판단할 것.
 4. **특허 10건·국제학회 15건.** CV 에 있고 사이트에는 없다. 특허만 넣는 쪽을 권했고 답 미정.
