@@ -29,6 +29,10 @@ SITE_YEAR = {
 # The research page lists the funded projects of the MIT appointment, not the
 # GIST-era ones, which stay on the CV only. (year, month) of the first included start.
 SITE_PROJECTS_FROM = (2023, 3)
+# The cv page lists graduate degrees only; the B.S. stays on the CV. Author's
+# instruction 2026-09-21, after an agent added the B.S. to the site unasked to
+# make this check pass. (year, month) of the first included start: the M.S.
+SITE_EDUCATION_FROM = (2016, 9)
 
 # "43. B. Kim, ... (2026). Co-first author" -> volume, pages, year at the end
 LOCATOR = re.compile(r"(\d+),\s*([A-Za-z]?\d+(?:[–—−-]\d+)?)\s*\((\d{4})\)")

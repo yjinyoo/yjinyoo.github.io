@@ -24,7 +24,8 @@
 | research 페이지 Funded projects | 손으로 쓴 문구. MIT 이후(`SITE_PROJECTS_FROM`) 과제 전부, 날짜 일치 | `check_cv_match.py` |
 
 - 사이트에 항목을 **먼저** 넣지 말 것. CV 에 없으면 대조가 실패한다 (09-21: MISTI 과제가 사이트에만 있었다).
-- CV 와 일부러 다르게 둔 것은 `cv_record.py` 머리의 `SITE_YEAR` / `SITE_PROJECTS_FROM` 두 곳뿐. 늘리려면 거기에 이유와 함께.
+- CV 와 일부러 다르게 둔 것은 `cv_record.py` 머리의 `SITE_YEAR` / `SITE_PROJECTS_FROM` / `SITE_EDUCATION_FROM` 세 곳뿐. 늘리려면 거기에 이유와 함께.
+- **대조가 "CV 에 있는데 사이트에 없다" 고 하면 사이트에 넣기 전에 user 에게 묻는다.** 빠진 것이 의도일 수 있다. 09-21 오전 세션이 검사를 통과시키려고 B.S. 를 묻지 않고 cv 페이지에 넣었고 user 가 "누가 넣으라고 했어" 로 되돌렸다. 공개 페이지는 대학원 학위만 (`SITE_EDUCATION_FROM`).
 - 대조가 도는 곳: sync 끝, `update_publications.py` 끝, `build_public_cv.py` 끝, 주간 `Site maintenance`.
   **CV 를 고치고 sync 를 안 하면** Simulations 세션 시작 훅이 "CV changed after the homepage was synced" 를 띄운다.
 - Word 가 멈추면 sync 가 150 초에 끊고 수동 절차(Word 에서 PDF 저장 → 두 스크립트)를 출력한다.

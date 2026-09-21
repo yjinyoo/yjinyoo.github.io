@@ -49,10 +49,6 @@ Advisor: Prof. Young Min Song.
 Thesis: Study on Ultra-Thin Film Coloration with Highly Absorbing Media.
 Advisor: Prof. Young Min Song.
 
-#### B.S., Electronics Engineering
-
-*Pusan National University. Mar 2010 to Feb 2016.*
-
 ## Fellowships
 
 - **Sejong Science Fellowship**, National Research Foundation of Korea. Mar 2021 to Feb 2024.
