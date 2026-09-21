@@ -64,3 +64,9 @@ jobs:
         run: python scripts/check_links.py
       - name: Every DOI still resolves
         run: python scripts/check_dois.py
+      # Compares two files in the repository, not the live site: the public CV
+      # PDF and the generated publication list. They drifted to 42 against 45 once.
+      - name: Publication list matches the CV
+        run: |
+          pip install --quiet pymupdf
+          python scripts/check_cv_match.py

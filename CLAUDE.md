@@ -13,7 +13,7 @@
 
 ## 절대 하지 말 것
 
-- **`_bibliography/papers.bib` 손으로 고치지 않기.** 생성 파일이다. `scripts/update_publications.py` 로 다시 만들고, 예외는 스크립트 안의 `CO_FIRST` / `ADDITIONS` / `OVERRIDES` / `YEAR_OVERRIDE` 에 넣는다. 손으로 고치면 다음 갱신에 사라진다.
+- **`_bibliography/papers.bib` 손으로 고치지 않기.** 생성 파일이다. **정본은 CV 다**: 번호·연도·권·페이지·공동 1저자는 `assets/pdf/cv.pdf` 에서 `scripts/cv_record.py` 가 읽는다. 논문을 고치려면 CV 를 고치고 `build_public_cv.py` → `update_publications.py`. 예외는 `make_bib.py` 의 `ADDITIONS`(OpenAlex 에 없음) / `OVERRIDES`(OpenAlex 가 낡음), CV 와 일부러 다르게 둔 것은 `cv_record.SITE_YEAR` 한 곳. 2026-09-21 까지는 번호·연도를 OpenAlex 에서 가져와 사이트 45 대 CV 42 로 어긋나 있었다.
 - **CV PDF 를 원본 그대로 올리지 않기.** 전화번호가 들어 있다. `scripts/build_public_cv.py` 가 지우고, 저장한 파일을 다시 읽어 남아 있으면 출력을 삭제하고 실패한다.
 - **`co-advised by Kim and Englund` 를 공개 페이지에 쓰지 않기.** CV 에는 그렇게 적혀 있으나 공개물에서는 Kim 이 먼저·단독, Englund 는 범위를 한정해서 (`on the CMOS integrated photonics work`). 근거 = memory `user_joint_kim_englund_appointment`.
 - **미공개 프로젝트의 소자 구조·수치·파트너를 적지 않기.** NDA 건, 투고 중 원고, 프로그램 상세가 섞여 있다. 안전선은 이미 공개된 GitHub 프로필 수준.
@@ -54,7 +54,7 @@ curl -s https://yjinyoo.github.io/assets/css/main.css | grep -oE "<선택자 조
 
 | 무엇 | 스크립트 | 언제 |
 |---|---|---|
-| 논문 목록 | `scripts/update_publications.py` | 새 논문이 나오면 |
+| 논문 목록 | `scripts/update_publications.py` | 새 논문이 나오면. **CV 에 먼저 넣고** 공개 CV 를 다시 만든 뒤 |
 | 활동 그래프 | `scripts/build_activity_svg.py` | 매일 자동(`refresh-activity.yml`), 수동 실행도 가능 |
 | tools 페이지 데이터 | `scripts/update_tools.py` | 매주 자동(`site-maintenance.yml`), 새 도구를 올리면 수동 |
 | CV PDF · 링크 카드 | `scripts/build_public_cv.py`, `scripts/build_og_image.py` | CV 나 소개 문구가 바뀌면 |
@@ -63,7 +63,7 @@ curl -s https://yjinyoo.github.io/assets/css/main.css | grep -oE "<선택자 조
 않는다.** 스크립트가 덮어쓴다. 손으로 쓰는 것은 `title`/`summary`/`body` 뿐이다.
 
 주간 점검(`site-maintenance.yml`)은 두 잡이고 성격이 다르다. `tools` 는 스스로 낫고(갱신 →
-커밋 → 재배포), `checks`(내부 링크 + DOI)는 사람이 고쳐야 하므로 **실패로 알린다.**
+커밋 → 재배포), `checks`(내부 링크 + DOI + 논문 목록 대 CV)는 사람이 고쳐야 하므로 **실패로 알린다.**
 
 활동 그래프는 GitHub 프로필의 **공개** 기여만 읽는다. 프로필 설정의 `Private contributions` 가 꺼지면
 거의 빈 그래프가 나오는데, 그건 버그가 아니라 공개 프로필의 사실이다.
@@ -72,12 +72,12 @@ curl -s https://yjinyoo.github.io/assets/css/main.css | grep -oE "<선택자 조
 
 - **about** = 첫 화면에서 임팩트. 내용을 research 로 미루지 않는다. 대부분 여기까지만 읽는다.
 - **research** = 같은 주제를 더 깊게. about 과 **길이가 아니라 깊이로** 갈린다 (예: Landau-Devonshire 는 research 에만).
-- **publications** = 45편, 번호는 오래된 것이 1번.
+- **publications** = 저널 논문 + 그 아래 책 챕터 절. 번호는 **CV 번호 그대로**(오래된 것이 1번). 편수는 여기 적지 않는다(`check_cv_match.py` 가 잰다).
 - **cv** = 기록 + PDF. MIT 항목이 research 와 겹치는 상태를 user 가 알고 그대로 두기로 했다.
 
 ## 알려진 함정
 
-- **Word COM 이 멈춘다.** docx→PDF 를 두 번 시도해 둘 다 문서 여는 데서 무응답. PyMuPDF 로 기존 PDF 를 직접 다룬다.
+- **Word COM 이 멈출 때가 있다.** 09-19 에 두 번 무응답, 09-20·09-21 은 성공. 09-21 에 된 방식: OneDrive 밖(스크래치)으로 docx 를 복사해서 `Documents.Open(src, False, True, False)` 읽기 전용으로 열고 `ExportAsFixedFormat(out, 17)`, 전체를 `Start-Job` + `Wait-Job -Timeout 150` 으로 감싸 멈추면 끊는다. 사용자가 Word 로 다른 문서를 열어 둔 상태에서도 됐다.
 - **저널 권·페이지는 `journal` 문자열에 싣는다.** 레이아웃이 volume/pages 필드를 렌더하지 않고, 그 사이의 `additional_info` 는 markdownify 를 거쳐 앞 공백이 사라지고 뒤에 줄바꿈이 붙는다.
 - **공저자에 링크를 걸지 않는다.** 테마가 강조색으로 칠해서 내 논문 목록에서 교신저자가 제일 눈에 띄게 된다.
 - **OpenAlex 는 동명이인 7명을 한 저자 레코드에 합쳐 놨다.** 공저자망 + MIT 소속으로 가른다. 새 협업이 생기면 공저자가 안 겹쳐서 떨어질 수 있으니 `curate.py` 의 탈락 목록을 확인한다.

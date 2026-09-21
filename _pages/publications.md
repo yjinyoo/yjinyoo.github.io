@@ -12,6 +12,10 @@ nav_order: 3
 
 <div class="publications">
 
-{% bibliography %}
+{% bibliography --query @article %}
+
+<h2 class="bibliography">book chapter</h2>
+
+{% bibliography --query @incollection --group_by none %}
 
 </div>

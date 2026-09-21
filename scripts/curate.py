@@ -73,7 +73,11 @@ for w in sorted(theirs, key=lambda x: -(x.get("publication_year") or 0)):
 def norm(t):
     t = (t or "").lower()
     t = re.sub(r"\(.*?\)", " ", t)          # drop "(Adv. Sci. 10/2023)" cover suffixes
-    t = re.sub(r"^[a-z ]{0,30}:\s*", "", t)  # drop "Colorimetric Sensors: ..." cover prefixes
+    # drop "Colorimetric Sensors: ..." cover prefixes. The limit was 30 characters
+    # until "Colored Passive Radiative Cooler: " (32) slipped through and the 2018
+    # Adv. Opt. Mater. paper was listed twice. make_bib now also refuses two works
+    # that match the same CV entry, so a miss here fails loudly instead.
+    t = re.sub(r"^[a-z ]{0,60}:\s*", "", t)
     return re.sub(r"[^a-z0-9]", "", t)
 
 
