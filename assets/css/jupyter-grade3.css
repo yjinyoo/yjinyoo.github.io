@@ -495,6 +495,18 @@ pre {
   z-index: 10;
 }
 
+#clusters > a {
+  color: #ef5c00;
+  text-decoration: underline;
+  cursor: auto;
+}
+
+#clusters > a:hover {
+  color: #126dce;
+  text-decoration: underline;
+  cursor: auto;
+}
+
 
 .well {
   background-color: #e4e4e4;
