@@ -47,25 +47,39 @@ Across the design stage: TCAD for devices, DFT for materials, FEM for electrosta
 
 #### Activity
 
+{% assign sims = site.data.simulation_runs %}
 <div style="border:1px solid rgba(128,128,128,.35); border-radius:10px; padding:1.1rem 1.25rem; margin:1.2rem 0 1.6rem;">
-  <div style="display:flex; align-items:baseline; justify-content:space-between; flex-wrap:wrap; gap:.5rem; margin-bottom:.9rem;">
-    <strong style="font-size:1.02rem;">Contribution activity</strong>
-    <a href="https://github.com/yjinyoo" target="_blank" rel="noopener" style="font-size:.85rem;">github.com/yjinyoo</a>
-  </div>
-  <div style="display:flex; gap:1.5rem; align-items:flex-start; flex-wrap:wrap;">
-    <a href="https://github.com/yjinyoo" target="_blank" rel="noopener" aria-label="GitHub profile"
-       style="flex:0 0 auto; max-width:100%;">
-      <img src="{{ '/assets/img/activity.svg' | relative_url }}"
-           alt="Contribution activity for the current year"
-           style="width:508px; max-width:100%; display:block;">
-    </a>
-    <p style="flex:1 1 240px; font-size:.95rem; line-height:1.6; margin:0; opacity:.8;">
-      Design, simulation and fabrication scripting across every project:
-      electromagnetic and drift-diffusion simulation, first-principles models of the
-      interfaces, photomask layouts, process flows, and the analysis that closes the
-      loop against measurement. Almost every repository is private, so the days fill
-      in without naming what is in them.
-    </p>
+  <div style="display:flex; gap:1.5rem; flex-wrap:wrap; font-size:.9rem; line-height:1.55;">
+    <div style="flex:1 1 360px; min-width:0;">
+      <a href="https://github.com/yjinyoo" target="_blank" rel="noopener" aria-label="GitHub profile">
+        <img src="{{ '/assets/img/activity.svg' | relative_url }}"
+             alt="GitHub activity per day for the current year"
+             style="width:100%; height:auto; display:block; margin-bottom:.8rem;">
+      </a>
+      <p style="margin:0; opacity:.8;">
+        <span aria-hidden="true" style="display:inline-block; width:.7em; height:.7em; border-radius:2px; background:#55a87e; margin-right:.35em;"></span><strong>Project activity.</strong>
+        Design, simulation and fabrication scripting across every project:
+        electromagnetic and drift-diffusion simulation, first-principles models of the
+        interfaces, photomask layouts, process flows, the analysis that closes the loop
+        against measurement, and the shared tooling behind it. Counted from GitHub
+        contributions, mostly in private repositories.
+      </p>
+    </div>
+    <div style="flex:1 1 360px; min-width:0;">
+      <img src="{{ '/assets/img/simulations.svg' | relative_url }}"
+           alt="Finished simulation runs per day for the current year"
+           style="width:100%; height:auto; display:block; margin-bottom:.8rem;">
+      <p style="margin:0; opacity:.8;">
+        <span aria-hidden="true" style="display:inline-block; width:.7em; height:.7em; border-radius:2px; background:#256abf; margin-right:.35em;"></span><strong>Simulation runs.</strong>
+        {{ sims.total_display }} finished jobs on cloud and HPC cluster resources since
+        {{ sims.first_month | append: "-01" | date: "%B %Y" }}, including electromagnetic
+        (FDTD) simulation, mode analysis, inverse design and first-principles (DFT)
+        calculations. Counted from the job records; runs on local machines, failed jobs,
+        and cost estimates that never ran are not counted. The
+        <a href="https://github.com/yjinyoo/yjinyoo.github.io/blob/main/_data/simulation_runs.json" target="_blank" rel="noopener">daily counts</a>
+        are published with this site.
+      </p>
+    </div>
   </div>
 </div>
 
