@@ -71,6 +71,8 @@ def check_dated(bad):
         cv_items = cv_record.section_items(section)
         if section == "projects":
             cv_items = [c for c in cv_items if c["start"] >= cv_record.SITE_PROJECTS_FROM]
+        if section == "education":
+            cv_items = [c for c in cv_items if c["start"] >= cv_record.SITE_EDUCATION_FROM]
         site = page_items(page, headings)
         used = set()
         for s in site:
@@ -168,7 +170,8 @@ def main():
     counts = ", ".join(f"{len(page_items(p, h))} {s}" for s, p, h in DATED_PAGES)
     print(f"OK: {len(papers)} papers, {len(chapters)} chapter(s), {counts} match the CV "
           f"(declared departures: {len(cv_record.SITE_YEAR)} year, "
-          f"projects from {cv_record.SITE_PROJECTS_FROM[0]}-{cv_record.SITE_PROJECTS_FROM[1]:02d})")
+          f"projects from {cv_record.SITE_PROJECTS_FROM[0]}-{cv_record.SITE_PROJECTS_FROM[1]:02d}, "
+          f"degrees from {cv_record.SITE_EDUCATION_FROM[0]}-{cv_record.SITE_EDUCATION_FROM[1]:02d})")
     return 0
 
 
