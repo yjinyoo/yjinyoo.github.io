@@ -19,7 +19,17 @@ import fitz  # PyMuPDF
 
 SITE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 OUT = os.path.join(SITE, "assets", "pdf", "cv.pdf")
-DEFAULT_SRC = r"C:\Users\YJ\OneDrive\Career\CV\Curriculum Vitae_YJYOO_Sep_2026.pdf"
+CV_DIR = r"C:\Users\YJ\OneDrive\Career\CV"
+
+
+def newest_cv_pdf():
+    """The most recently written CV PDF. A fixed file name here went stale the
+    month after it was typed, so the default is looked up, not remembered."""
+    pdfs = [os.path.join(CV_DIR, n) for n in os.listdir(CV_DIR)
+            if n.startswith("Curriculum Vitae_YJYOO_") and n.lower().endswith(".pdf")]
+    if not pdfs:
+        raise SystemExit(f"no CV PDF in {CV_DIR}")
+    return max(pdfs, key=os.path.getmtime)
 
 # Lines to remove entirely, matched case-insensitively against the page text.
 DROP_PREFIXES = ("phone:",)
@@ -43,7 +53,8 @@ FORBIDDEN = [
 
 
 def main():
-    src = sys.argv[1] if len(sys.argv) > 1 else DEFAULT_SRC
+    positional = [a for a in sys.argv[1:] if not a.startswith("--")]
+    src = positional[0] if positional else newest_cv_pdf()
     if not os.path.exists(src):
         raise SystemExit(f"source not found: {src}")
 
@@ -114,7 +125,10 @@ def main():
     print("verified: no phone number remains in the extracted text")
 
     # A new CV usually means a new paper. The PDF above is fine either way; what
-    # can go stale is the publication list generated from it.
+    # can go stale is the publication list generated from it. sync_cv.py passes
+    # --no-check because it regenerates the list next and checks after that.
+    if "--no-check" in sys.argv:
+        return
     sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
     import check_cv_match
     if check_cv_match.main() != 0:

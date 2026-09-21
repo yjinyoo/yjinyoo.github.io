@@ -11,9 +11,27 @@
 1. 이 파일 2) `NEXT_SESSION_PROMPT.md` 3) `log/` 최근 1개 4) `git log --oneline -5`
 5. 대외 문구를 건드리면 **CV 를 먼저 연다** (`~/.claude/projects/.../memory/reference_cv_location_and_ownership.md`)
 
+## CV 와 사이트 연동 (2026-09-21)
+
+**CV 가 정본, 사이트는 따라간다.** 흐름은 한 방향: CV(OneDrive `Career/CV/` docx) 수정 → `python scripts/sync_cv.py`
+→ `git diff` 확인 → 커밋·푸시. sync 는 docx→PDF(Word) → 공개 CV → 논문 목록 재생성 → 전체 대조까지 하고,
+어느 docx 를 반영했는지 `scripts/cv_source.json` 에 남긴다. 커밋은 안 한다.
+
+| 사이트 | CV 에서 오는 방식 | 대조 |
+|---|---|---|
+| publications | **생성**: 번호·연도·권·페이지·공동 1저자를 `cv_record.py` 가 공개 CV PDF 에서 읽음 | `make_bib.py` 가 1:1 아니면 안 씀 |
+| cv 페이지 (재직·학위·펠로십·수상) | 손으로 쓴 문구. **날짜·이름·항목 수는 CV 와 같아야** | `check_cv_match.py` |
+| research 페이지 Funded projects | 손으로 쓴 문구. MIT 이후(`SITE_PROJECTS_FROM`) 과제 전부, 날짜 일치 | `check_cv_match.py` |
+
+- 사이트에 항목을 **먼저** 넣지 말 것. CV 에 없으면 대조가 실패한다 (09-21: MISTI 과제가 사이트에만 있었다).
+- CV 와 일부러 다르게 둔 것은 `cv_record.py` 머리의 `SITE_YEAR` / `SITE_PROJECTS_FROM` 두 곳뿐. 늘리려면 거기에 이유와 함께.
+- 대조가 도는 곳: sync 끝, `update_publications.py` 끝, `build_public_cv.py` 끝, 주간 `Site maintenance`.
+  **CV 를 고치고 sync 를 안 하면** Simulations 세션 시작 훅이 "CV changed after the homepage was synced" 를 띄운다.
+- Word 가 멈추면 sync 가 150 초에 끊고 수동 절차(Word 에서 PDF 저장 → 두 스크립트)를 출력한다.
+
 ## 절대 하지 말 것
 
-- **`_bibliography/papers.bib` 손으로 고치지 않기.** 생성 파일이다. **정본은 CV 다**: 번호·연도·권·페이지·공동 1저자는 `assets/pdf/cv.pdf` 에서 `scripts/cv_record.py` 가 읽는다. 논문을 고치려면 CV 를 고치고 `build_public_cv.py` → `update_publications.py`. 예외는 `make_bib.py` 의 `ADDITIONS`(OpenAlex 에 없음) / `OVERRIDES`(OpenAlex 가 낡음), CV 와 일부러 다르게 둔 것은 `cv_record.SITE_YEAR` 한 곳. 2026-09-21 까지는 번호·연도를 OpenAlex 에서 가져와 사이트 45 대 CV 42 로 어긋나 있었다.
+- **`_bibliography/papers.bib` 손으로 고치지 않기.** 생성 파일이다(위 표). 예외는 `make_bib.py` 의 `ADDITIONS`(OpenAlex 에 없음) / `OVERRIDES`(OpenAlex 가 낡음). 2026-09-21 까지는 번호·연도를 OpenAlex 에서 가져와 사이트 45 대 CV 42 로 어긋나 있었다.
 - **CV PDF 를 원본 그대로 올리지 않기.** 전화번호가 들어 있다. `scripts/build_public_cv.py` 가 지우고, 저장한 파일을 다시 읽어 남아 있으면 출력을 삭제하고 실패한다.
 - **`co-advised by Kim and Englund` 를 공개 페이지에 쓰지 않기.** CV 에는 그렇게 적혀 있으나 공개물에서는 Kim 이 먼저·단독, Englund 는 범위를 한정해서 (`on the CMOS integrated photonics work`). 근거 = memory `user_joint_kim_englund_appointment`.
 - **미공개 프로젝트의 소자 구조·수치·파트너를 적지 않기.** NDA 건, 투고 중 원고, 프로그램 상세가 섞여 있다. 안전선은 이미 공개된 GitHub 프로필 수준.
@@ -54,16 +72,16 @@ curl -s https://yjinyoo.github.io/assets/css/main.css | grep -oE "<선택자 조
 
 | 무엇 | 스크립트 | 언제 |
 |---|---|---|
-| 논문 목록 | `scripts/update_publications.py` | 새 논문이 나오면. **CV 에 먼저 넣고** 공개 CV 를 다시 만든 뒤 |
+| 논문 목록 + 공개 CV | `scripts/sync_cv.py` (안에서 `build_public_cv.py` → `update_publications.py`) | CV 를 고쳤으면 언제나 |
 | 활동 그래프 | `scripts/build_activity_svg.py` | 매일 자동(`refresh-activity.yml`), 수동 실행도 가능 |
 | tools 페이지 데이터 | `scripts/update_tools.py` | 매주 자동(`site-maintenance.yml`), 새 도구를 올리면 수동 |
-| CV PDF · 링크 카드 | `scripts/build_public_cv.py`, `scripts/build_og_image.py` | CV 나 소개 문구가 바뀌면 |
+| 링크 카드 | `scripts/build_og_image.py` | 소개 문구가 바뀌면 |
 
 `_data/tools.yml` 에서 **깃헙이 아는 필드(`description`/`language`/`pushed`)는 손으로 고치지
 않는다.** 스크립트가 덮어쓴다. 손으로 쓰는 것은 `title`/`summary`/`body` 뿐이다.
 
 주간 점검(`site-maintenance.yml`)은 두 잡이고 성격이 다르다. `tools` 는 스스로 낫고(갱신 →
-커밋 → 재배포), `checks`(내부 링크 + DOI + 논문 목록 대 CV)는 사람이 고쳐야 하므로 **실패로 알린다.**
+커밋 → 재배포), `checks`(내부 링크 + DOI + 사이트 대 CV)는 사람이 고쳐야 하므로 **실패로 알린다.**
 
 활동 그래프는 GitHub 프로필의 **공개** 기여만 읽는다. 프로필 설정의 `Private contributions` 가 꺼지면
 거의 빈 그래프가 나오는데, 그건 버그가 아니라 공개 프로필의 사실이다.

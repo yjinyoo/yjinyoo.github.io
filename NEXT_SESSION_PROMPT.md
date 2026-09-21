@@ -8,10 +8,10 @@
 | 페이지 | 상태 |
 |---|---|
 | about | 소개, 하는 일 3줄, 설계 루프, 활동 그래프, 연락처. 루프 문단 끝에서 tools 로 링크 |
-| research | 소자 프로젝트 3건, 과제 4건 |
+| research | 소자 프로젝트 3건, 과제(MIT 이후, CV 와 대조됨) |
 | publications | 저널 논문 + 책 챕터 절. **번호·연도·권·페이지·공동 1저자를 CV 에서 읽는다** (09-21 부터). 설명 문구 없음 |
 | tools | 공개 저장소 7건. `_data/tools.yml` 에서 렌더 |
-| cv | 재직 3건, 학위 2건, **Fellowships 3 / Awards 4 로 분리**, PDF |
+| cv | 재직·학위(09-21 B.S. 추가)·**Fellowships / Awards 분리**, PDF. 날짜·항목은 CV 와 대조됨 |
 
 내부 링크 깨진 것 없음. 편수와 DOI 수는 여기 적지 않는다: `check_cv_match.py` 와 `check_dois.py` 가 잰다.
 
@@ -37,16 +37,18 @@
 `summary` 는 목록에 한 줄로 뜨는 절. `body` 는 두 문단: 무엇을 하는가, 그리고 **어떤 실패를
 잡는가.** 두 번째가 이 페이지의 값이다.
 
-## 새 논문이 나오면
+## CV 를 고쳤으면 (새 논문·과제·수상·직위, 오타 하나라도)
 
-**CV 가 먼저다.** 사이트의 번호·연도·권·페이지·공동 1저자는 CV 에서 읽으므로 CV 에 없는 논문은
-사이트에 못 올라간다(생성 스크립트가 멈추고 무엇이 짝이 없는지 적는다).
+**CV 가 먼저, 사이트는 따라간다.** 규칙 전체는 `CLAUDE.md` "CV 와 사이트 연동".
 
-1. CV 원본(OneDrive `Career/CV/` docx)에 추가, `Co-first author` 표시 포함. PDF 로 내보낸다
-2. `python scripts/build_public_cv.py` — 공개 CV 를 만들고 "목록이 CV 와 안 맞는다"고 알린다
-3. `python scripts/update_publications.py` — 재수집 → 동명이인 분리 → CV 와 짝짓기 → bib → DOI → CV 대조
+1. CV 원본(OneDrive `Career/CV/` docx)을 고친다. 논문이면 `Co-first author` 표시까지
+2. `python scripts/sync_cv.py` — PDF 내보내기 → 공개 CV → 논문 목록 재생성 → 사이트 전체 대조
+3. 대조가 실패하면 그 줄이 할 일이다. 과제·수상·직위가 새로 생겼으면 cv/research 페이지에 문구를 쓴다
+   (날짜·이름은 CV 그대로). 다시 `python scripts/check_cv_match.py`
+4. `git diff` 보고 커밋·푸시, 배포 확인
 
-온라인 선공개라 권·페이지가 없으면 CV 에 `(2026)` 만 적어도 된다. 권·페이지가 나오면 CV 만 고치고 2·3 을 다시.
+온라인 선공개라 권·페이지가 없으면 CV 에 `(2026)` 만 적어도 된다. 권·페이지가 나오면 CV 만 고치고 sync.
+CV 를 고치고 sync 를 잊으면 Simulations 세션 시작 훅이 알린다.
 
 ## 글을 쓸 때 (2026-09-19 user 교정 셋)
 

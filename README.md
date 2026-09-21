@@ -19,21 +19,39 @@ GitHub Pages at <https://yjinyoo.github.io>.
 Push to `main` and the `Deploy site` GitHub Action rebuilds and publishes. There
 is no local build step; nothing needs Ruby on your machine.
 
+## The CV drives the site
+
+The CV (a Word document kept outside this repository) is the source; the site
+follows it. After any change to the CV:
+
+```
+python scripts/sync_cv.py
+```
+
+It exports the CV to PDF with Word, writes the public copy without the phone
+number (`build_public_cv.py` → `assets/pdf/cv.pdf`), regenerates the publication
+list (`update_publications.py`), checks the whole site against the CV
+(`check_cv_match.py`), and records which CV it used in `scripts/cv_source.json`.
+It does not commit. `python scripts/sync_cv.py --check` only reports whether the
+site is behind the CV.
+
+What the check covers:
+
+| Site | How it follows the CV |
+| --- | --- |
+| publications | generated: number, year, volume, pages, equal first authorship |
+| cv page | hand-written; dates, names and the set of items must match |
+| research page, funded projects | hand-written; every project since `SITE_PROJECTS_FROM`, dates must match |
+
+The deliberate departures from the CV are declared at the top of
+`scripts/cv_record.py` (`SITE_YEAR`, `SITE_PROJECTS_FROM`) and nowhere else.
+
 ## Publication list
 
-`_bibliography/papers.bib` is generated, not hand-written, and the CV is its
-source. What counts as a paper, its number, year, volume and pages, and equal
-first authorship are read from `assets/pdf/cv.pdf` by `scripts/cv_record.py`.
-OpenAlex only fills in what the CV does not carry (full author names, DOI,
-abstract, open-access link). The one deliberate departure from the CV is declared
-in `cv_record.SITE_YEAR`.
-
-When a new paper appears:
-
-1. Add it to the CV (the Word original), export the PDF.
-2. `python scripts/build_public_cv.py` writes `assets/pdf/cv.pdf` without the
-   phone number, then reports that the publication list no longer matches.
-3. `python scripts/update_publications.py` regenerates the list.
+`_bibliography/papers.bib` is generated, not hand-written. What counts as a
+paper, its number, year, volume and pages, and equal first authorship are read
+from `assets/pdf/cv.pdf` by `scripts/cv_record.py`. OpenAlex only fills in what
+the CV does not carry (full author names, DOI, abstract, open-access link).
 
 `update_publications.py` does five things:
 
@@ -59,10 +77,10 @@ When a new paper appears:
 4. `check_dois.py` resolves every DOI against Crossref. `NOT FOUND` means the
    link is dead. `UNRESOLVED` means the check itself failed and the DOI is
    simply unchecked, which is not the same as passing.
-5. `check_cv_match.py` compares the written list with the CV once more: count,
-   and each number's title, year, volume, pages and equal first authorship. The
-   weekly `Site maintenance` run repeats it, since the two files can drift when
-   only one of them is rebuilt.
+5. `check_cv_match.py` compares the site with the CV: the list (count, and each
+   number's title, year, volume, pages and equal first authorship) and the dated
+   items on the cv and research pages. The weekly `Site maintenance` run repeats
+   it, since the pages are written by hand and either side can be edited alone.
 
 ## Hosting a PDF of a paper
 
