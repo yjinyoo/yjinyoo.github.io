@@ -86,7 +86,7 @@ curl -s https://yjinyoo.github.io/assets/css/main.css | grep -oE "<선택자 조
 - 시뮬레이션 쪽은 센 날까지만 그린다. 그 뒤를 빈칸으로 그리면 "안 돌렸다"는 주장이 된다.
 - 시뮬레이션 수는 **끝난 실행만** 센다 (클라우드 `success`, 클러스터 COMPLETED 중 60 초 이상·`_` 이름 제외).
 - 솔버 대시보드 숫자(09-21 에 13,733)를 쓰지 말 것: 견적만 내고 안 돌린 초안이 들어 있다. 서버 용량 때문에 지운 실행의 기록이 어디 남는지는 카운터 머리 주석.
-- **이름·문구 (user 09-21 확정):** 왼쪽 이름은 `Project activity`, 숫자 옆에 `GitHub contributions` 로 출처를 밝힌다. 올해 커밋의 약 45 % 가 하네스 저장소라 문단에 `the shared tooling behind it` 를 넣어 둔 것이다. 빼면 "Project" 가 부풀린 말이 된다. `Code`(측정·성장 기록까지 들어 있어 좁다)·`Commits`(user 가 뜻을 물었다)는 기각. 공개 페이지에 솔버 제품명·클러스터 이름·"cloud FDTD" 같은 직접 표현 금지. 종류는 **예시로("including ...") 쓰고 몇 개로 단정하지 않는다** (user 09-21: 셋으로 못 박으면 다양성이 없어 보인다). 단 예시에는 실제로 센 것만: FDTD, mode analysis, inverse design(adjoint FDTD 실행), DFT. 로컬 실행 제외는 밝힌다. 시뮬레이션 숫자의 출처를 "GitHub 기록" 이라고 쓰지 않는다: 출처는 작업 기록이고 GitHub 에는 날짜별 개수 파일이 올라갈 뿐이다.
+- **이름·문구 (user 09-21 확정):** 왼쪽 이름은 `Project activity`, 숫자 옆에 `GitHub contributions` 로 출처를 밝힌다. 올해 커밋의 약 45 % 가 하네스 저장소라 캡션에 `the shared tooling behind them` 을 넣어 둔 것이다. 빼면 "Project" 가 부풀린 말이 된다. `Code`(측정·성장 기록까지 들어 있어 좁다)·`Commits`(user 가 뜻을 물었다)는 기각. 공개 페이지에 솔버 제품명·클러스터 이름·"cloud FDTD" 같은 직접 표현 금지. 종류는 **예시로("including ...") 쓰고 몇 개로 단정하지 않는다** (user 09-21: 셋으로 못 박으면 다양성이 없어 보인다). 단 예시에는 실제로 센 것만: FDTD, mode analysis, inverse design(adjoint FDTD 실행), DFT. 로컬 실행 제외는 밝힌다. 캡션은 **2~3 문장, 좌우 줄 수를 실제 사이트 CSS 로 렌더해서 맞춘다** (user 09-21. 자체 목업은 글꼴이 달라 한 줄씩 어긋났다). 날짜별 개수 파일로 가는 링크는 뺐다: 방문자에게 새 정보가 없고 공개 저장소의 내부 문서로 데려간다. 시뮬레이션 숫자의 출처를 "GitHub 기록" 이라고 쓰지 않는다: 출처는 작업 기록이고 GitHub 에는 날짜별 개수 파일이 올라갈 뿐이다.
 
 `_data/tools.yml` 에서 **깃헙이 아는 필드(`description`/`language`/`pushed`)는 손으로 고치지
 않는다.** 스크립트가 덮어쓴다. 손으로 쓰는 것은 `title`/`summary`/`body` 뿐이다.

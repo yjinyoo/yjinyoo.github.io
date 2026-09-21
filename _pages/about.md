@@ -49,7 +49,7 @@ Across the design stage: TCAD for devices, DFT for materials, FEM for electrosta
 
 {% assign sims = site.data.simulation_runs %}
 <div style="border:1px solid rgba(128,128,128,.35); border-radius:10px; padding:1.1rem 1.25rem; margin:1.2rem 0 1.6rem;">
-  <div style="display:flex; gap:1.5rem; flex-wrap:wrap; font-size:.9rem; line-height:1.55;">
+  <div style="display:flex; gap:1.5rem; flex-wrap:wrap; font-size:.85rem; line-height:1.55;">
     <div style="flex:1 1 360px; min-width:0;">
       <a href="https://github.com/yjinyoo" target="_blank" rel="noopener" aria-label="GitHub profile">
         <img src="{{ '/assets/img/activity.svg' | relative_url }}"
@@ -58,11 +58,9 @@ Across the design stage: TCAD for devices, DFT for materials, FEM for electrosta
       </a>
       <p style="margin:0; opacity:.8;">
         <span aria-hidden="true" style="display:inline-block; width:.7em; height:.7em; border-radius:2px; background:#55a87e; margin-right:.35em;"></span><strong>Project activity.</strong>
-        Design, simulation and fabrication scripting across every project:
-        electromagnetic and drift-diffusion simulation, first-principles models of the
-        interfaces, photomask layouts, process flows, the analysis that closes the loop
-        against measurement, and the shared tooling behind it. Counted from GitHub
-        contributions, mostly in private repositories.
+        Design, simulation and fabrication scripting, measurement analysis, and the
+        shared tooling behind them, across every project. Counted from GitHub
+        contributions, mostly to private repositories.
       </p>
     </div>
     <div style="flex:1 1 360px; min-width:0;">
@@ -71,13 +69,9 @@ Across the design stage: TCAD for devices, DFT for materials, FEM for electrosta
            style="width:100%; height:auto; display:block; margin-bottom:.8rem;">
       <p style="margin:0; opacity:.8;">
         <span aria-hidden="true" style="display:inline-block; width:.7em; height:.7em; border-radius:2px; background:#256abf; margin-right:.35em;"></span><strong>Simulation runs.</strong>
-        {{ sims.total_display }} finished jobs on cloud and HPC cluster resources since
-        {{ sims.first_month | append: "-01" | date: "%B %Y" }}, including electromagnetic
-        (FDTD) simulation, mode analysis, inverse design and first-principles (DFT)
-        calculations. Counted from the job records; runs on local machines, failed jobs,
-        and cost estimates that never ran are not counted. The
-        <a href="https://github.com/yjinyoo/yjinyoo.github.io/blob/main/_data/simulation_runs.json" target="_blank" rel="noopener">daily counts</a>
-        are published with this site.
+        {{ sims.total_display }} finished jobs on cloud and HPC clusters since
+        {{ sims.first_month | append: "-01" | date: "%B %Y" }}, including FDTD, mode
+        solving, inverse design and DFT. Runs on local machines and failed jobs are not counted.
       </p>
     </div>
   </div>
