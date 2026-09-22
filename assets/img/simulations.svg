@@ -2,7 +2,7 @@
 <title>Simulation runs, 2026</title>
 <style>text{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif}</style>
 <text x="0" y="13" font-size="13" font-weight="600" fill="#8b929c">Simulation runs</text>
-<text x="416" y="13" font-size="11" fill="#8b929c" text-anchor="end">10,574 runs in 2026</text>
+<text x="416" y="13" font-size="11" fill="#8b929c" text-anchor="end">10,594 runs in 2026</text>
 <text x="0.0" y="30" font-size="10" fill="#8b929c">Mar</text>
 <text x="55.3" y="30" font-size="10" fill="#8b929c">Apr</text>
 <text x="110.7" y="30" font-size="10" fill="#8b929c">May</text>
@@ -215,7 +215,7 @@
 <rect x="387.33" y="119.00" width="11.34" height="11.34" rx="2.0" fill="#5598e7"><title>2026-09-19: 9 runs</title></rect>
 <rect x="401.17" y="36.00" width="11.34" height="11.34" rx="2.0" fill="#5598e7"><title>2026-09-20: 7 runs</title></rect>
 <rect x="401.17" y="49.83" width="11.34" height="11.34" rx="2.0" fill="#256abf"><title>2026-09-21: 50 runs</title></rect>
-<rect x="401.17" y="63.67" width="11.34" height="11.34" rx="2.0" fill="#5598e7"><title>2026-09-22: 8 runs</title></rect>
+<rect x="401.17" y="63.67" width="11.34" height="11.34" rx="2.0" fill="#256abf"><title>2026-09-22: 28 runs</title></rect>
 <text x="299" y="148.8" font-size="10" fill="#8b929c">Less</text>
 <rect x="325" y="140.8" width="9" height="9" rx="2.0" fill="#8b929c" opacity="0.2"/>
 <rect x="336.0" y="140.8" width="9" height="9" rx="2.0" fill="#9ec5f4"/>
