@@ -81,13 +81,14 @@ curl -s https://yjinyoo.github.io/assets/css/main.css | grep -oE "<선택자 조
 **활동 그래프는 두 장이고 출처와 갱신 경로가 다르다.** 왼쪽(초록)은 공개 GitHub 프로필의 기여 수를 매일 Actions 가 읽는다.
 오른쪽(파랑)은 `_data/simulation_runs.json` 에서 그리는데, 이 파일은 워크스테이션에서만 만들어진다
 (`Simulations/tools/simulation_run_counter.py`; 클라우드 솔버 계정·로컬 아카이브 드라이브·클러스터 접속이 필요).
-세션 정리 때 `Simulations/tools/publish_simulation_runs.py` 가 다시 세서 **데이터 파일과 SVG 두 장만** push 한다.
+세션 정리 때 `Simulations/tools/publish_simulation_runs.py` 가 다시 세서 **데이터 파일 두 개(JSON·실행 목록 CSV)와 SVG 두 장만** push 한다.
 - 두 장은 **같은 주 범위**를 쓰고, 폭은 카드 절반(416 px)으로 고정, 칸 크기가 주 수를 따라 줄어든다(9 월 ≈ 11 px, 12 월 ≈ 7.5 px). 그래서 한쪽만 다시 그리면 좌우가 어긋난다. 둘 다 같이 커밋할 것.
 - 범위는 **GitHub 기록이 시작된 달부터** (2026 은 3 월). 시뮬레이션이 더 일찍 시작해도 그쪽에 맞추지 않는다 (user 09-21). 각 장의 숫자는 한 해 전체라 1~2 월 실행 2,216 건은 숫자에만 있고 그림에는 없다. 원래 GitHub 달력도 "그림은 첫 활동 달부터, 숫자는 한 해 전체" 였다.
 - 시뮬레이션 쪽은 센 날까지만 그린다. 그 뒤를 빈칸으로 그리면 "안 돌렸다"는 주장이 된다.
 - 시뮬레이션 수는 **끝난 실행만** 센다 (클라우드 `success`, 클러스터 COMPLETED 중 60 초 이상·`_` 이름 제외).
 - 솔버 대시보드 숫자(09-21 에 13,733)를 쓰지 말 것: 견적만 내고 안 돌린 초안이 들어 있다. 서버 용량 때문에 지운 실행의 기록이 어디 남는지는 카운터 머리 주석.
-- **이름·문구 (user 09-21 확정):** 왼쪽 이름은 `Project activity`, 숫자 옆에 `GitHub contributions` 로 출처를 밝힌다. 올해 커밋의 약 45 % 가 하네스 저장소라 캡션에 `the shared tooling behind them` 을 넣어 둔 것이다. 빼면 "Project" 가 부풀린 말이 된다. `Code`(측정·성장 기록까지 들어 있어 좁다)·`Commits`(user 가 뜻을 물었다)는 기각. 공개 페이지에 솔버 제품명·클러스터 이름·"cloud FDTD" 같은 직접 표현 금지. 종류는 **예시로("including ...") 쓰고 몇 개로 단정하지 않는다** (user 09-21: 셋으로 못 박으면 다양성이 없어 보인다). 단 예시에는 실제로 센 것만: FDTD, mode analysis, inverse design(adjoint FDTD 실행), DFT. 로컬 실행 제외는 밝힌다. 캡션은 **2~3 문장, 좌우 줄 수를 실제 사이트 CSS 로 렌더해서 맞춘다** (user 09-21. 자체 목업은 글꼴이 달라 한 줄씩 어긋났다). 날짜별 개수 파일로 가는 링크는 뺐다: 방문자에게 새 정보가 없고 공개 저장소의 내부 문서로 데려간다. 시뮬레이션 숫자의 출처를 "GitHub 기록" 이라고 쓰지 않는다: 출처는 작업 기록이고 GitHub 에는 날짜별 개수 파일이 올라갈 뿐이다.
+- **이름·문구 (user 09-21 확정):** 왼쪽 이름은 `Project activity`, 숫자 옆에 `GitHub contributions` 로 출처를 밝힌다. 올해 커밋의 약 45 % 가 하네스 저장소라 캡션에 `the shared tooling behind them` 을 넣어 둔 것이다. 빼면 "Project" 가 부풀린 말이 된다. `Code`(측정·성장 기록까지 들어 있어 좁다)·`Commits`(user 가 뜻을 물었다)는 기각. 공개 페이지에 솔버 제품명·클러스터 이름·"cloud FDTD" 같은 직접 표현 금지. 종류는 **예시로("including ...") 쓰고 몇 개로 단정하지 않는다** (user 09-21: 셋으로 못 박으면 다양성이 없어 보인다). 단 예시에는 실제로 센 것만: FDTD, mode analysis, inverse design(adjoint FDTD 실행), DFT. 로컬 실행 제외는 밝힌다. 캡션은 **2~3 문장, 좌우 줄 수를 실제 사이트 CSS 로 렌더해서 맞춘다** (user 09-21. 자체 목업은 글꼴이 달라 한 줄씩 어긋났다). 날짜별 개수 파일로 가는 링크는 뺐다: 방문자에게 새 정보가 없고 공개 저장소의 내부 문서로 데려간다.
+**대신 실행 목록 페이지 `/simulation-runs/` (user 09-21 저녁):** 오른쪽 달력과 캡션 숫자가 여기로 간다. 한 줄에 날짜·종류·짧은 ID(클라우드 task ID 앞 8자리, 클러스터 job ID)라 숫자를 표본 대조할 수 있다. 작업 이름은 비공개(`D:/Tidy3D_archive/finished_runs.csv`), NDA·미공개 설계값이 들어 있다. 데이터는 `assets/data/simulation_runs.csv`, 카운터가 쓰고 줄 수가 총계와 다르면 안 쓴다. 페이지에 종류별 합계를 띄우지 않는다(위 "셋으로 못 박지 않는다"). 시뮬레이션 숫자의 출처를 "GitHub 기록" 이라고 쓰지 않는다: 출처는 작업 기록이고 GitHub 에는 날짜별 개수 파일이 올라갈 뿐이다.
 
 `_data/tools.yml` 에서 **깃헙이 아는 필드(`description`/`language`/`pushed`)는 손으로 고치지
 않는다.** 스크립트가 덮어쓴다. 손으로 쓰는 것은 `title`/`summary`/`body` 뿐이다.
