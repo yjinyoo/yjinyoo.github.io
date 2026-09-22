@@ -20,7 +20,7 @@
 | 언제 | 무엇 | 파일 |
 |---|---|---|
 | 매일 | 활동 그래프 갱신, 바뀌면 재배포 | `.github/workflows/refresh-activity.yml` |
-| 세션 정리마다 | 활동 그래프의 시뮬레이션 쪽 재집계 + push (워크스테이션에서, Actions 아님) | `Simulations/tools/publish_simulation_runs.py` |
+| 세션 정리마다 | 활동 그래프의 시뮬레이션 쪽 재집계 + **실행 목록 CSV** + push (워크스테이션에서, Actions 아님) | `Simulations/tools/publish_simulation_runs.py` |
 | 매주 월 | tools 데이터를 깃헙에서 갱신, 바뀌면 커밋 + 재배포 | `.github/workflows/site-maintenance.yml` |
 | 매주 월 | 내부 링크 + DOI + 논문 목록 대 CV. **고칠 사람이 필요하므로 실패로 알린다** | 같은 파일 |
 | 상시 | 방문 집계 (국가·페이지·유입 경로) | Cloudflare Web Analytics, 09-20 켬 |
