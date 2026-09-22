@@ -43,7 +43,7 @@
 - **`google2cef4b219e13a627.html` 를 지우지 않기.** 쓰레기 파일처럼 보이지만 Google Search Console
   소유권 인증 파일이다. 지우면 인증이 풀리고 색인 상태 보고가 끊긴다. 테마가 `google_site_verification`
   설정 키를 렌더하지 않아서 메타 태그 방식이 안 되고, 이 파일 방식으로 인증돼 있다 (2026-09-19).
-- **공식 과제 제목을 줄이지 않기.** 2026-09-19 에 MISTI 제목을 줄였다가 하필 `advanced quantum photonic integrated circuits` 를 잘랐다. 정본은 최종 보고서.
+- **공식 과제 제목을 줄이지 않기.** 2026-09-19 에 MISTI 제목을 줄였다가 하필 `advanced quantum photonic integrated circuits` 를 잘랐다. **정본은 선정 통지** (`OneDrive/MIT/Proposal/MIT-Imperial seed fund/Accepted/MIT_Global_Seed_Fund_Notification.pdf`), 우리가 쓴 최종 보고서가 아니다. 보고서는 꼬리 `for etch-free integration process` 를 빠뜨렸고, 그걸 따른 CV·사이트가 MISTI 제목을 NSF 과제 제목과 똑같이 적고 있었다 (user 09-22).
 
 ## 배포와 확인
 
