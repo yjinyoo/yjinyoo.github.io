@@ -30,6 +30,10 @@
   **CV 를 고치고 sync 를 안 하면** Simulations 세션 시작 훅이 "CV changed after the homepage was synced" 를 띄운다.
 - Word 가 멈추면 sync 가 150 초에 끊고 수동 절차(Word 에서 PDF 저장 → 두 스크립트)를 출력한다.
 
+## 고장 난 기능
+
+- **고치기 전에 빼는 안부터 낸다.** 이 사이트는 최소형이다: 09-21 논문 목록의 Abs/Bib/PDF 가 틀려 있어 넷 다 고치자고 했더니 user 가 "DOI 만" → "제목 링크만" 으로 두 번 줄였다. 테마가 기본으로 켜 둔 기능은 필요해서 있는 게 아니다.
+
 ## 절대 하지 말 것
 
 - **`_bibliography/papers.bib` 손으로 고치지 않기.** 생성 파일이다(위 표). 예외는 `make_bib.py` 의 `ADDITIONS`(OpenAlex 에 없음) / `OVERRIDES`(OpenAlex 가 낡음). 2026-09-21 까지는 번호·연도를 OpenAlex 에서 가져와 사이트 45 대 CV 42 로 어긋나 있었다.
@@ -61,6 +65,7 @@ gh run list --workflow='Deploy site' --limit 8 --json headSha,conclusion \
 ## 테마 CSS 를 이길 때
 
 테마는 gem 안에 있어 고칠 수 없다. `_includes/site_styles.liquid` 가 각 페이지에서 덧씌운다.
+템플릿은 같은 경로의 로컬 사본이 이긴다: `_layouts/bib.liquid` (논문 한 편, 09-21 제목 링크·버튼 제거). 테마 gem 을 올리면 새 upstream 과 diff 할 것.
 **`!important` 만으로는 못 이긴다.** 테마도 `!important` 를 쓰는 자리가 있고, 그러면 명시도로 결판난다.
 번호 뱃지가 두 번이나 흰색으로 남은 원인이 이것이다(테마 `.publications ol.bibliography li .abbr abbr` 가
 글자색을 카드 배경색으로 박아 둔다). 실제 규칙을 먼저 읽고 선택자를 맞춘다:
