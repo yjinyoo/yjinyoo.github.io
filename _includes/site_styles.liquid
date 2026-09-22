@@ -83,4 +83,15 @@ no explicit size, so h2 and h4 sat too close to body text to separate sections.
     color: #8b929c;
     margin-top: 0.15rem;
   }
+
+  /* Paper titles link to the paper (_layouts/bib.liquid). At rest they keep the
+     text colour so the list does not turn into a column of green; on hover they
+     take the accent and an underline, which is how the reader finds the link. */
+  .publications ol.bibliography li .title a {
+    color: inherit;
+  }
+  .publications ol.bibliography li .title a:hover {
+    color: var(--global-theme-color);
+    text-decoration: underline;
+  }
 </style>
