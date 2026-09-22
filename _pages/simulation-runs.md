@@ -29,6 +29,7 @@ kept the month and not the day.
     <thead><tr><th>date</th><th>kind</th><th>id</th></tr></thead>
     <tbody id="runs-body"></tbody>
   </table>
+  <button id="runs-more" type="button" hidden></button>
 </div>
 
 <style>
@@ -60,24 +61,42 @@ kept the month and not the day.
   .runs-list td:last-child {
     font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
   }
+  .runs-list #runs-more {
+    margin: 1rem 0;
+    padding: .4rem 1rem;
+    border: 1px solid rgba(128, 128, 128, .5);
+    border-radius: 6px;
+    background: transparent;
+    color: inherit;
+    font-size: .88rem;
+    cursor: pointer;
+  }
+  .runs-list #runs-more:hover {
+    border-color: var(--global-theme-color);
+    color: var(--global-theme-color);
+  }
 </style>
 
 <script>
   (() => {
     // Rows come straight from the CSV a visitor can download, so the page and the file cannot differ.
     const LABEL = { fdtd: "FDTD", mode_solver: "mode solving", dft: "DFT" };
-    const SHOWN = 1000; // enough to browse; the CSV has every row
+    const PAGE = 1000; // rows per "show more"; the first screen stays light
     const body = document.getElementById("runs-body");
     const status = document.getElementById("runs-status");
     const filter = document.getElementById("runs-filter");
+    const moreButton = document.getElementById("runs-more");
+    const fmt = (n) => n.toLocaleString("en-US");
     let rows = [];
     let summary = "";
+    let limit = PAGE;
 
     const render = () => {
       const q = filter.value.trim().toLowerCase();
       const hits = q ? rows.filter((r) => r.text.includes(q)) : rows;
+      const shown = Math.min(limit, hits.length);
       const frag = document.createDocumentFragment();
-      hits.slice(0, SHOWN).forEach((r) => {
+      hits.slice(0, shown).forEach((r) => {
         const tr = document.createElement("tr");
         [r.date, LABEL[r.kind] || r.kind, r.id].forEach((v) => {
           const td = document.createElement("td");
@@ -87,9 +106,11 @@ kept the month and not the day.
         frag.appendChild(tr);
       });
       body.replaceChildren(frag);
-      const n = hits.length.toLocaleString("en-US");
-      const more = hits.length > SHOWN ? `, newest ${SHOWN.toLocaleString("en-US")} shown` : "";
-      status.textContent = q ? `${n} matching rows${more}.` : `${summary}${more}.`;
+      const left = hits.length - shown;
+      const part = left > 0 ? `, newest ${fmt(shown)} shown` : "";
+      status.textContent = q ? `${fmt(hits.length)} matching rows${part}.` : `${summary}${part}.`;
+      moreButton.hidden = left <= 0;
+      moreButton.textContent = `Show ${fmt(Math.min(PAGE, left))} more (${fmt(left)} not shown)`;
     };
 
     fetch("{{ '/assets/data/simulation_runs.csv' | relative_url }}")
@@ -100,7 +121,7 @@ kept the month and not the day.
       .then((text) => {
         rows = text
           .trim()
-          .split("\n")
+          .split(/\r?\n/)
           .slice(1)
           .map((line) => {
             const [date, kind, id] = line.split(",");
@@ -110,7 +131,14 @@ kept the month and not the day.
         // Total only: a per-kind breakdown would read as "three kinds of simulation" (CLAUDE.md).
         summary = `${rows.length.toLocaleString("en-US")} rows`;
         render();
-        filter.addEventListener("input", render);
+        filter.addEventListener("input", () => {
+          limit = PAGE; // a new filter starts from the newest rows again
+          render();
+        });
+        moreButton.addEventListener("click", () => {
+          limit += PAGE;
+          render();
+        });
       })
       .catch(() => {
         status.textContent = "The list could not be loaded; the CSV link above has it.";
