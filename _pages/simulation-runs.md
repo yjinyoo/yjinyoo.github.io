@@ -53,6 +53,8 @@ kept the month and not the day.
   }
   .runs-list th,
   .runs-list td {
+    /* The theme drew the kind column in the accent colour, which reads as a link. */
+    color: var(--global-text-color) !important;
     text-align: left;
     padding: .18rem 1.6rem .18rem 0;
     border-bottom: 1px solid rgba(128, 128, 128, .18);
