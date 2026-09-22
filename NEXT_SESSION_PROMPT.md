@@ -7,7 +7,7 @@
 
 | 페이지 | 상태 |
 |---|---|
-| about | 소개, 하는 일 3줄, 설계 루프, 활동(좌 Project activity · 우 Simulation runs, 캡션 각 4줄), 연락처. 루프 문단 끝에서 tools 로 링크 |
+| about | 소개, 하는 일 3줄, 설계 루프, 활동(좌 Project activity · 우 Simulation runs, 캡션 각 4줄), 연락처. 루프 문단 끝에서 tools 로 링크. 우 달력·숫자 → `/simulation-runs/` 실행 목록 (09-21) |
 | research | 소자 프로젝트 3건, 과제(MIT 이후, CV 와 대조됨) |
 | publications | 저널 논문 + 책 챕터 절. **번호·연도·권·페이지·공동 1저자를 CV 에서 읽는다** (09-21 부터). 설명 문구 없음. **제목이 DOI 링크, 버튼 없음** (user 09-21, `_layouts/bib.liquid` 로컬 사본) |
 | tools | 공개 저장소 7건. `_data/tools.yml` 에서 렌더 |

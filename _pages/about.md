@@ -64,12 +64,14 @@ Across the design stage: TCAD for devices, DFT for materials, FEM for electrosta
       </p>
     </div>
     <div style="flex:1 1 360px; min-width:0;">
-      <img src="{{ '/assets/img/simulations.svg' | relative_url }}"
-           alt="Finished simulation runs per day for the current year"
-           style="width:100%; height:auto; display:block; margin-bottom:.8rem;">
+      <a href="{{ '/simulation-runs/' | relative_url }}" aria-label="List of every counted simulation run">
+        <img src="{{ '/assets/img/simulations.svg' | relative_url }}"
+             alt="Finished simulation runs per day for the current year"
+             style="width:100%; height:auto; display:block; margin-bottom:.8rem;">
+      </a>
       <p style="margin:0; opacity:.8;">
         <span aria-hidden="true" style="display:inline-block; width:.7em; height:.7em; border-radius:2px; background:#256abf; margin-right:.35em;"></span><strong>Simulation runs.</strong>
-        {{ sims.total_display }} finished jobs on cloud and HPC clusters since
+        <a href="{{ '/simulation-runs/' | relative_url }}" title="Every counted run: date, kind and a short job id">{{ sims.total_display }} finished jobs</a> on cloud and HPC clusters since
         {{ sims.first_month | append: "-01" | date: "%B %Y" }}, including FDTD, mode
         solving, inverse design and DFT. Runs on local machines and failed jobs are not counted.
       </p>
