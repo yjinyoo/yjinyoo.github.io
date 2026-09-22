@@ -2,10 +2,17 @@
 
 The CV decides what is listed and how: each paper's number, year, volume and
 pages, and equal first authorship come from the public CV PDF through
-`cv_record.py`. OpenAlex supplies the rest (full author names, DOI, abstract,
-open-access link). Every record must match exactly one CV entry and every CV
-entry exactly one record, or nothing is written: the site and the CV once drifted
-to 45 entries against 42 without anyone noticing.
+`cv_record.py`. OpenAlex supplies the rest (full author names, DOI). Every record
+must match exactly one CV entry and every CV entry exactly one record, or nothing
+is written: the site and the CV once drifted to 45 entries against 42 without
+anyone noticing.
+
+No abstract, pdf or bibtex_show fields are written, so the theme draws no Abs /
+PDF / Bib buttons; the title itself links to the DOI (_layouts/bib.liquid). All
+three were wrong in practice (2026-09-21): OpenAlex's "open-access copy" fell back
+to the landing page, so PDF opened the same page as DOI; the one abstract written
+by hand lost its "~" to the LaTeX filter; and the BibTeX carried the volume inside
+the journal name (see below).
 
 The `abbr` field drives the badge in the left margin. It carries the CV's
 publication number, not a journal abbreviation: the journal name is already
@@ -18,7 +25,7 @@ import json
 import os
 
 import cv_record
-from fetch_pubs import tex_escape, invert_abstract, make_key
+from fetch_pubs import tex_escape, make_key
 
 OUT = os.path.dirname(os.path.abspath(__file__))
 BIB = os.path.join(os.path.dirname(OUT), "_bibliography", "papers.bib")
@@ -31,13 +38,13 @@ ADDITIONS = [
         "authors": ["Joo Ho Yun", "Young Jin Yoo", "Hye Ryun Kim", "Young Min Song"],
         "title": "Recent progress in thermal management for flexible/wearable devices",
         "journal": "Soft Science", "doi": "10.20517/ss.2023.04",
-        "pdf": "", "abstract": "", "type": "article", "cites": 0,
+        "type": "article", "cites": 0,
     },
     {
         "authors": ["Young Jin Yoo", "Young Min Song"],
         "title": "Editorial for the Topic on Micromachining for Advanced Biological Imaging",
         "journal": "Micromachines", "doi": "10.3390/mi13030474",
-        "pdf": "", "abstract": "", "type": "article", "cites": 0,
+        "type": "article", "cites": 0,
     },
 ]
 
@@ -50,11 +57,6 @@ OVERRIDES = {
         "title": "Sub-1-volt, reconfigurable Gires-Tournois resonators for full-coloured monopixel array",
         "journal": "Light: Science \\& Applications",
         "doi": "10.1038/s41377-026-02228-2",
-        "pdf": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12949994/",
-        "abstract": ("An electrically reconfigurable Gires-Tournois resonator integrated with "
-                     "polyaniline produces colour shifts beyond complementary hue ranges at "
-                     "sub-1-volt drive and 90 uW/cm2, scaling from ~16,900 PPI pixel densities "
-                     "to centimetre-scale arrays, with memory-in-pixel operation."),
         "type": "article",
     },
     # OpenAlex has no source for the chapter; the CV lists it under Book Chapters.
@@ -69,7 +71,6 @@ OVERRIDES = {
 def fields_for(w):
     """Flatten one OpenAlex work into the fields we render, overrides applied."""
     src = (w.get("primary_location") or {}).get("source") or {}
-    oa = w.get("best_oa_location") or {}
     doi = (w.get("doi") or "").replace("https://doi.org/", "")
 
     f = {
@@ -79,8 +80,6 @@ def fields_for(w):
         "journal": src.get("display_name") or "",
         "year": w.get("publication_year"),
         "doi": doi,
-        "pdf": oa.get("pdf_url") or oa.get("landing_page_url") or "",
-        "abstract": invert_abstract(w.get("abstract_inverted_index")),
         "type": w.get("type") or "article",
         "cites": w.get("cited_by_count") or 0,
     }
@@ -167,15 +166,11 @@ for f in papers + chapters:
         ("year", str(f["year"] or "")),
         ("doi", f["doi"]),
         ("url", f"https://doi.org/{f['doi']}" if f["doi"] else ""),
-        ("abstract", tex_escape(f["abstract"])),
     ]
     if is_paper and f["co_first"]:
         # `note` gets its own line in the theme's entry layout; `additional_info`
         # is appended to the journal name and reads as part of the venue.
         rows.append(("note", "Equal first-author contribution"))
-    if f["pdf"]:
-        rows.append(("pdf", f["pdf"]))          # a free copy, never the publisher PDF
-    rows.append(("bibtex_show", "true"))
     if selected:
         rows.append(("selected", "true"))
 
@@ -185,12 +180,11 @@ for f in papers + chapters:
 
 header = ("% Publication record for Young Jin Yoo (ORCID 0000-0002-6490-2324).\n"
           "% Numbers, years, volumes and pages from the CV (assets/pdf/cv.pdf);\n"
-          "% authors, DOIs and abstracts from OpenAlex. Regenerate with\n"
+          "% authors and DOIs from OpenAlex. Regenerate with\n"
           "% scripts/update_publications.py, never by hand.\n\n")
 with open(BIB, "w", encoding="utf-8") as fh:
     fh.write(header + "\n\n".join(entries) + "\n")
 
 print(f"wrote {len(papers)} papers numbered {len(papers)} down to 1 as on the CV, "
       f"{len(chapters)} book chapter(s), {n_selected} marked selected")
-print(f"equal first author: {sum(f['co_first'] for f in papers)}   "
-      f"open access copies linked: {sum(1 for f in papers + chapters if f['pdf'])}")
+print(f"equal first author: {sum(f['co_first'] for f in papers)}")

@@ -51,7 +51,12 @@ The deliberate departures from the CV are declared at the top of
 `_bibliography/papers.bib` is generated, not hand-written. What counts as a
 paper, its number, year, volume and pages, and equal first authorship are read
 from `assets/pdf/cv.pdf` by `scripts/cv_record.py`. OpenAlex only fills in what
-the CV does not carry (full author names, DOI, abstract, open-access link).
+the CV does not carry (full author names, DOI).
+
+Each entry is the citation with its title linked to the DOI, and nothing else:
+no Abs / DOI / Bib / PDF buttons. The link lives in `_layouts/bib.liquid`, a
+local copy of the theme's layout; the buttons stay off because `make_bib.py`
+does not write the `abstract`, `pdf` or `bibtex_show` fields.
 
 `update_publications.py` does five things:
 
@@ -84,8 +89,8 @@ the CV does not carry (full author names, DOI, abstract, open-access link).
 
 ## Hosting a PDF of a paper
 
-The `pdf` field on an entry points at a free copy where one exists, which is why
-only some entries have one. Do not add a publisher PDF for a paywalled paper:
+Entries carry no `pdf` field (see above). If a PDF is ever added back, do not
+add a publisher PDF for a paywalled paper:
 Wiley, Elsevier, ACS and Springer Nature all forbid redistributing the typeset
 version. The accepted manuscript is usually allowed after an embargo. Check the
 journal at <https://openpolicyfinder.jisc.ac.uk/> before adding a file to
