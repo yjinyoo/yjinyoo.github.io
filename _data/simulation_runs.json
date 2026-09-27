@@ -1,17 +1,17 @@
 {
- "collected_on": "2026-09-26",
+ "collected_on": "2026-09-27",
  "sources": [
   "fdtd",
   "mode_solver",
   "cluster_dft"
  ],
  "first_month": "2025-07",
- "total": 11789,
- "total_display": "11,789",
+ "total": 11800,
+ "total_display": "11,800",
  "totals": {
   "fdtd": 9529,
   "mode_solver": 1966,
-  "cluster_dft": 249
+  "cluster_dft": 260
  },
  "undated": 45,
  "by_day": {
@@ -733,12 +733,12 @@
   "2026-09-25": [
    0,
    0,
-   40
+   41
   ],
   "2026-09-26": [
    18,
    0,
-   6
+   16
   ]
  },
  "by_month_only": {
