@@ -98,7 +98,7 @@
     background.
 
 - repo: mpi-env-check
-  pushed: "2026-09-20"
+  pushed: "2026-09-22"
   language: "Python"
   description: "Assert at the top of a parallel job that the MPI world, rank count and thread settings are what the script assumes. Four silent failures, each of which reported success."
   title: Parallel environment gate
