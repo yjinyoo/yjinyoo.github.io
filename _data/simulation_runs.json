@@ -6,12 +6,12 @@
   "cluster_dft"
  ],
  "first_month": "2025-07",
- "total": 11939,
- "total_display": "11,939",
+ "total": 11942,
+ "total_display": "11,942",
  "totals": {
   "fdtd": 9594,
   "mode_solver": 1966,
-  "cluster_dft": 379
+  "cluster_dft": 382
  },
  "undated": 0,
  "by_day": {
@@ -743,7 +743,12 @@
   "2026-09-28": [
    20,
    0,
-   119
+   121
+  ],
+  "2026-09-29": [
+   0,
+   0,
+   1
   ]
  },
  "by_month_only": {
