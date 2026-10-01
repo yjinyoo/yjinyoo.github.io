@@ -3,6 +3,8 @@
 The site is public and working: <https://yjinyoo.github.io>
 **Read `CLAUDE.md` first.** What not to do and how to verify a deploy are there.
 
+**Everything in this repo is English, including commit messages** (public repo; hooks refuse Hangul, see `CLAUDE.md`, 10-01).
+
 ## Status (2026-09-21)
 
 | Page | Status |
