@@ -72,7 +72,7 @@ Across the design stage: TCAD for devices, DFT for materials, FEM for electrosta
       <p style="margin:0; opacity:.8;">
         <span aria-hidden="true" style="display:inline-block; width:.7em; height:.7em; border-radius:2px; background:#256abf; margin-right:.35em;"></span><strong>Simulation runs.</strong>
         <a href="{{ '/simulation-runs/' | relative_url }}" title="Every counted run: date, kind and a short job id">{{ sims.total_display }} finished jobs</a> on cloud and HPC clusters since
-        {{ sims.first_month | append: "-01" | date: "%B %Y" }}, including FDTD, mode
+        {{ sims.first_month | append: "-01" | date: "%B %Y" }}, including FDTD, FEM, mode
         solving, inverse design and DFT. Runs on local machines and failed jobs are not counted.
       </p>
     </div>

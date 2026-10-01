@@ -80,7 +80,7 @@ kept the month and not the day.
 <script>
   (() => {
     // Rows come straight from the CSV a visitor can download, so the page and the file cannot differ.
-    const LABEL = { fdtd: "FDTD", mode_solver: "mode solving", dft: "DFT" };
+    const LABEL = { fdtd: "FDTD", mode_solver: "mode solving", dft: "DFT", fem: "FEM" };
     const PAGE = 1000; // rows per "show more"; the first screen stays light
     const body = document.getElementById("runs-body");
     const status = document.getElementById("runs-status");
