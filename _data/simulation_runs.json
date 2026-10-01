@@ -10,12 +10,12 @@
  "total": 11989,
  "total_display": "11,989",
  "totals": {
-  "fdtd": 9594,
+  "fdtd": 9574,
   "mode_solver": 1966,
   "cluster_dft": 372,
   "cluster_fem": 57
  },
- "undated": 0,
+ "undated": 20,
  "by_day": {
   "2026-01-06": [
    8,
@@ -678,7 +678,7 @@
    0
   ],
   "2026-08-11": [
-   139,
+   119,
    0,
    0,
    0
