@@ -1,5 +1,5 @@
 {
- "collected_on": "2026-10-02",
+ "collected_on": "2026-10-03",
  "sources": [
   "fdtd",
   "mode_solver",
@@ -7,13 +7,13 @@
   "cluster_fem"
  ],
  "first_month": "2025-07",
- "total": 12066,
- "total_display": "12,066",
+ "total": 12080,
+ "total_display": "12,080",
  "totals": {
   "fdtd": 9614,
   "mode_solver": 1966,
-  "cluster_dft": 388,
-  "cluster_fem": 98
+  "cluster_dft": 392,
+  "cluster_fem": 108
  },
  "undated": 0,
  "by_day": {
@@ -914,8 +914,14 @@
   "2026-10-02": [
    0,
    0,
-   6,
-   16
+   8,
+   26
+  ],
+  "2026-10-03": [
+   0,
+   0,
+   2,
+   0
   ]
  },
  "by_month_only": {
