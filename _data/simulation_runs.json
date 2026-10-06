@@ -1,5 +1,5 @@
 {
- "collected_on": "2026-10-05",
+ "collected_on": "2026-10-06",
  "sources": [
   "fdtd",
   "mode_solver",
@@ -7,10 +7,10 @@
   "cluster_fem"
  ],
  "first_month": "2025-07",
- "total": 12201,
- "total_display": "12,201",
+ "total": 12202,
+ "total_display": "12,202",
  "totals": {
-  "fdtd": 9720,
+  "fdtd": 9721,
   "mode_solver": 1966,
   "cluster_dft": 407,
   "cluster_fem": 108
@@ -933,6 +933,12 @@
    14,
    0,
    4,
+   0
+  ],
+  "2026-10-06": [
+   1,
+   0,
+   0,
    0
   ]
  },
