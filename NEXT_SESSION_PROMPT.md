@@ -77,8 +77,14 @@ If you edit the CV and forget to sync, the Simulations session-start hook notifi
    largest effect, but it has to be requested from the administrator.
    **These three come before visit analytics.** Even with analytics on, there is nothing to look at without traffic,
    and these three must be linked for referrers to separate out in Cloudflare.
-3. **Search visibility.** Ownership verification and sitemap submission are done. Check indexing with `site:yjinyoo.github.io`
-   first and judge from that.
+3. **Search visibility (10-10, detail in `log/2026-10-10.md`).** Do not judge from `site:yjinyoo.github.io`: on 10-09 it was
+   empty while Search Console showed home indexed every day since 09-20. Judge from Search Console (URL inspection, Pages, Sitemaps).
+   For "young jin yoo mit" Google showed `/research/`, not home (one page per site; home title had no MIT).
+   10-10 fix: home title, og:title and twitter:title = "Young Jin Yoo | MIT"; the user requested indexing the same morning.
+   **Check around 10-17:** (a) the query shows home; (b) URL inspection, Google index tab, last crawl is after 10-10 09:00;
+   (c) Sitemaps shows a read date and "success" (resubmitted 10-10; if dated and still "couldn't fetch", submit `sitemap.xml?v=2`).
+   If home was recrawled and still loses after a week, the next lever is the home body (MIT appears once there vs three times on research);
+   propose wording to the user, it is public text.
 4. **10 patents, 15 international conference talks.** In the CV, not on the site. Recommended adding patents only; no answer yet.
 5. **cv page MIT entries duplicate research.** The user knows and decided to leave it. Do not bring it up first.
 
