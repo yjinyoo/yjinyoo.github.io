@@ -1,6 +1,6 @@
 {% comment %}
   Local copy of al_folio_core 1.0.15 _includes/metadata.liquid (a local file at the same path wins).
-  Only change: a page may set head_title to replace the bare site title in <title>.
+  Only change: a page may set head_title to replace the bare site title in <title>, og:title and twitter:title.
   The home page uses it to put MIT in the title, so a "name + MIT" search ranks home rather than research.
   If you upgrade the theme gem, diff against the new upstream.
 {% endcomment %}
@@ -63,7 +63,7 @@
   <!-- OpenGraph -->
   <meta property="og:site_name" content="{{ title }}">
   <meta property="og:type" content="{% if is_blog_post %}article{% else %}website{% endif %}">
-  <meta property="og:title" content="{% if page.title %}{{ title }} | {{ page.title }}{% else %}{{ title }}{% endif %}">
+  <meta property="og:title" content="{% if page.head_title %}{{ page.head_title }}{% elsif page.title %}{{ title }} | {{ page.title }}{% else %}{{ title }}{% endif %}">
   <meta property="og:url" content="{{ page.url | prepend: site.baseurl | prepend: site.url | remove_first: 'index.html' }}">
   <meta property="og:description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
   {% if page.og_image or site.og_image %}
@@ -79,7 +79,7 @@
 
   <!-- Twitter card -->
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="{% if page.title %}{{ page.title }}{% else %}{{ title }}{% endif %}">
+  <meta name="twitter:title" content="{% if page.head_title %}{{ page.head_title }}{% elsif page.title %}{{ page.title }}{% else %}{{ title }}{% endif %}">
   <meta name="twitter:description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
   {% if page.og_image or site.og_image %}
     <meta name="twitter:image" content="{{ og_image_url }}">
