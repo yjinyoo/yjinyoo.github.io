@@ -1,6 +1,7 @@
 ---
 layout: about
 title: about
+head_title: Young Jin Yoo | MIT
 permalink: /
 subtitle: Postdoctoral researcher, <a href="https://www.rle.mit.edu/">Research Laboratory of Electronics</a>, MIT. <a href="https://jeehwanlab.mit.edu/">Jeehwan Kim Group</a>.
 
