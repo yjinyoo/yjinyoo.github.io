@@ -7,13 +7,13 @@
   "cluster_fem"
  ],
  "first_month": "2025-07",
- "total": 12731,
- "total_display": "12,731",
+ "total": 12732,
+ "total_display": "12,732",
  "totals": {
   "fdtd": 10139,
   "mode_solver": 1966,
   "cluster_dft": 517,
-  "cluster_fem": 109
+  "cluster_fem": 110
  },
  "undated": 0,
  "by_day": {
@@ -981,7 +981,7 @@
    2,
    0,
    11,
-   1
+   2
   ]
  },
  "by_month_only": {
