@@ -87,6 +87,8 @@ If you edit the CV and forget to sync, the Simulations session-start hook notifi
    propose wording to the user, it is public text.
 4. **10 patents, 15 international conference talks.** In the CV, not on the site. Recommended adding patents only; no answer yet.
 5. **cv page MIT entries duplicate research.** The user knows and decided to leave it. Do not bring it up first.
+6. **Google Analytics (11-04).** A GA property exists but the site never had a tag (`_config.yml` `analytics.google` empty), so
+   GA shows "start measuring". Connect only if the user gives the `G-` measurement ID; then verify the tag on the live page.
 
 ## Public repos
 
