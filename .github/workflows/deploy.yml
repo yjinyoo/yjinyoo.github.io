@@ -72,7 +72,7 @@ jobs:
       - name: Setup Ruby 💎
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: "3.3.5"
+          ruby-version: "3.3" # latest 3.3.x; ubuntu-26.04 runners only carry the newest patch (3.3.5 failed 2026-11-04)
           bundler-cache: true
       - name: Setup Python 🐍
         uses: actions/setup-python@v5
