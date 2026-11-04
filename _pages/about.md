@@ -36,7 +36,7 @@ I build active photonic devices on silicon. Silicon does not host the materials 
 
 - Complex oxides, lithium niobate and barium titanate, for low-voltage electro-optic modulators built on photonic-crystal cavities
 - III-V and III-N for on-chip lasers and resonant-cavity LEDs, integrated as coupons at high density
-- Heterogeneous integration onto CMOS, photonic ICs, and other platforms through 2D-material-assisted epitaxy and transfer
+- Heterogeneous integration onto CMOS, photonic ICs, and other platforms through 2D-assisted epitaxy and transfer
 
 I work in the [Jeehwan Kim group](https://jeehwanlab.mit.edu/) at MIT, and am co-advised by [Dirk R. Englund](https://qp.mit.edu/) on the CMOS integrated photonics work. [Current projects and funding](/research/).
 

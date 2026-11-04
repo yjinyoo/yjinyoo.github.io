@@ -42,7 +42,7 @@ into a waveguide or a fiber.
 #### Heterogeneous integration onto CMOS and photonic ICs
 
 The transfer step decides whether any of the above survives a process flow.
-Remote and 2D-material-assisted epitaxy grows the film through an intervening
+Remote and 2D-assisted epitaxy grows the film through an intervening
 layer so it registers to the substrate lattice yet releases cleanly, and the
 substrate can be reused. Whether release is clean is an interface problem, which
 is where first-principles calculation earns its cost.
