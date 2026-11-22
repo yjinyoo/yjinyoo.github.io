@@ -1,288 +1,288 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="416" height="134" viewBox="0 0 416 134" role="img" aria-label="Finished simulation runs per day in 2026">
+<svg xmlns="http://www.w3.org/2000/svg" width="416" height="132" viewBox="0 0 416 132" role="img" aria-label="Finished simulation runs per day in 2026">
 <title>Simulation runs, 2026</title>
 <style>text{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif}</style>
 <text x="0" y="13" font-size="13" font-weight="600" fill="#8b929c">Simulation runs</text>
 <text x="416" y="13" font-size="11" fill="#8b929c" text-anchor="end">12,868 runs in 2026</text>
 <text x="0.0" y="30" font-size="10" fill="#8b929c">Mar</text>
-<text x="43.7" y="30" font-size="10" fill="#8b929c">Apr</text>
-<text x="87.4" y="30" font-size="10" fill="#8b929c">May</text>
-<text x="142.0" y="30" font-size="10" fill="#8b929c">Jun</text>
-<text x="185.7" y="30" font-size="10" fill="#8b929c">Jul</text>
-<text x="229.3" y="30" font-size="10" fill="#8b929c">Aug</text>
-<text x="283.9" y="30" font-size="10" fill="#8b929c">Sep</text>
-<text x="327.6" y="30" font-size="10" fill="#8b929c">Oct</text>
-<text x="382.2" y="30" font-size="10" fill="#8b929c">Nov</text>
-<rect x="0.00" y="36.00" width="8.96" height="8.96" rx="1.79" fill="#8b929c" opacity="0.2"><title>2026-03-01: 0 runs</title></rect>
-<rect x="0.00" y="46.92" width="8.96" height="8.96" rx="1.79" fill="#8b929c" opacity="0.2"><title>2026-03-02: 0 runs</title></rect>
-<rect x="0.00" y="57.84" width="8.96" height="8.96" rx="1.79" fill="#8b929c" opacity="0.2"><title>2026-03-03: 0 runs</title></rect>
-<rect x="0.00" y="68.76" width="8.96" height="8.96" rx="1.79" fill="#8b929c" opacity="0.2"><title>2026-03-04: 0 runs</title></rect>
-<rect x="0.00" y="79.68" width="8.96" height="8.96" rx="1.79" fill="#8b929c" opacity="0.2"><title>2026-03-05: 0 runs</title></rect>
-<rect x="0.00" y="90.61" width="8.96" height="8.96" rx="1.79" fill="#8b929c" opacity="0.2"><title>2026-03-06: 0 runs</title></rect>
-<rect x="0.00" y="101.53" width="8.96" height="8.96" rx="1.79" fill="#8b929c" opacity="0.2"><title>2026-03-07: 0 runs</title></rect>
-<rect x="10.92" y="36.00" width="8.96" height="8.96" rx="1.79" fill="#8b929c" opacity="0.2"><title>2026-03-08: 0 runs</title></rect>
-<rect x="10.92" y="46.92" width="8.96" height="8.96" rx="1.79" fill="#8b929c" opacity="0.2"><title>2026-03-09: 0 runs</title></rect>
-<rect x="10.92" y="57.84" width="8.96" height="8.96" rx="1.79" fill="#8b929c" opacity="0.2"><title>2026-03-10: 0 runs</title></rect>
-<rect x="10.92" y="68.76" width="8.96" height="8.96" rx="1.79" fill="#5598e7"><title>2026-03-11: 19 runs</title></rect>
-<rect x="10.92" y="79.68" width="8.96" height="8.96" rx="1.79" fill="#5598e7"><title>2026-03-12: 19 runs</title></rect>
-<rect x="10.92" y="90.61" width="8.96" height="8.96" rx="1.79" fill="#8b929c" opacity="0.2"><title>2026-03-13: 0 runs</title></rect>
-<rect x="10.92" y="101.53" width="8.96" height="8.96" rx="1.79" fill="#8b929c" opacity="0.2"><title>2026-03-14: 0 runs</title></rect>
-<rect x="21.84" y="36.00" width="8.96" height="8.96" rx="1.79" fill="#8b929c" opacity="0.2"><title>2026-03-15: 0 runs</title></rect>
-<rect x="21.84" y="46.92" width="8.96" height="8.96" rx="1.79" fill="#256abf"><title>2026-03-16: 60 runs</title></rect>
-<rect x="21.84" y="57.84" width="8.96" height="8.96" rx="1.79" fill="#184f95"><title>2026-03-17: 107 runs</title></rect>
-<rect x="21.84" y="68.76" width="8.96" height="8.96" rx="1.79" fill="#184f95"><title>2026-03-18: 140 runs</title></rect>
-<rect x="21.84" y="79.68" width="8.96" height="8.96" rx="1.79" fill="#184f95"><title>2026-03-19: 90 runs</title></rect>
-<rect x="21.84" y="90.61" width="8.96" height="8.96" rx="1.79" fill="#184f95"><title>2026-03-20: 198 runs</title></rect>
-<rect x="21.84" y="101.53" width="8.96" height="8.96" rx="1.79" fill="#184f95"><title>2026-03-21: 176 runs</title></rect>
-<rect x="32.76" y="36.00" width="8.96" height="8.96" rx="1.79" fill="#256abf"><title>2026-03-22: 48 runs</title></rect>
-<rect x="32.76" y="46.92" width="8.96" height="8.96" rx="1.79" fill="#256abf"><title>2026-03-23: 65 runs</title></rect>
-<rect x="32.76" y="57.84" width="8.96" height="8.96" rx="1.79" fill="#184f95"><title>2026-03-24: 168 runs</title></rect>
-<rect x="32.76" y="68.76" width="8.96" height="8.96" rx="1.79" fill="#5598e7"><title>2026-03-25: 18 runs</title></rect>
-<rect x="32.76" y="79.68" width="8.96" height="8.96" rx="1.79" fill="#184f95"><title>2026-03-26: 267 runs</title></rect>
-<rect x="32.76" y="90.61" width="8.96" height="8.96" rx="1.79" fill="#184f95"><title>2026-03-27: 122 runs</title></rect>
-<rect x="32.76" y="101.53" width="8.96" height="8.96" rx="1.79" fill="#8b929c" opacity="0.2"><title>2026-03-28: 0 runs</title></rect>
-<rect x="43.68" y="36.00" width="8.96" height="8.96" rx="1.79" fill="#8b929c" opacity="0.2"><title>2026-03-29: 0 runs</title></rect>
-<rect x="43.68" y="46.92" width="8.96" height="8.96" rx="1.79" fill="#9ec5f4"><title>2026-03-30: 4 runs</title></rect>
-<rect x="43.68" y="57.84" width="8.96" height="8.96" rx="1.79" fill="#184f95"><title>2026-03-31: 92 runs</title></rect>
-<rect x="43.68" y="68.76" width="8.96" height="8.96" rx="1.79" fill="#256abf"><title>2026-04-01: 70 runs</title></rect>
-<rect x="43.68" y="79.68" width="8.96" height="8.96" rx="1.79" fill="#8b929c" opacity="0.2"><title>2026-04-02: 0 runs</title></rect>
-<rect x="43.68" y="90.61" width="8.96" height="8.96" rx="1.79" fill="#184f95"><title>2026-04-03: 96 runs</title></rect>
-<rect x="43.68" y="101.53" width="8.96" height="8.96" rx="1.79" fill="#184f95"><title>2026-04-04: 1,519 runs</title></rect>
-<rect x="54.61" y="36.00" width="8.96" height="8.96" rx="1.79" fill="#8b929c" opacity="0.2"><title>2026-04-05: 0 runs</title></rect>
-<rect x="54.61" y="46.92" width="8.96" height="8.96" rx="1.79" fill="#256abf"><title>2026-04-06: 29 runs</title></rect>
-<rect x="54.61" y="57.84" width="8.96" height="8.96" rx="1.79" fill="#256abf"><title>2026-04-07: 34 runs</title></rect>
-<rect x="54.61" y="68.76" width="8.96" height="8.96" rx="1.79" fill="#5598e7"><title>2026-04-08: 18 runs</title></rect>
-<rect x="54.61" y="79.68" width="8.96" height="8.96" rx="1.79" fill="#256abf"><title>2026-04-09: 43 runs</title></rect>
-<rect x="54.61" y="90.61" width="8.96" height="8.96" rx="1.79" fill="#256abf"><title>2026-04-10: 46 runs</title></rect>
-<rect x="54.61" y="101.53" width="8.96" height="8.96" rx="1.79" fill="#256abf"><title>2026-04-11: 70 runs</title></rect>
-<rect x="65.53" y="36.00" width="8.96" height="8.96" rx="1.79" fill="#5598e7"><title>2026-04-12: 26 runs</title></rect>
-<rect x="65.53" y="46.92" width="8.96" height="8.96" rx="1.79" fill="#5598e7"><title>2026-04-13: 26 runs</title></rect>
-<rect x="65.53" y="57.84" width="8.96" height="8.96" rx="1.79" fill="#256abf"><title>2026-04-14: 52 runs</title></rect>
-<rect x="65.53" y="68.76" width="8.96" height="8.96" rx="1.79" fill="#5598e7"><title>2026-04-15: 7 runs</title></rect>
-<rect x="65.53" y="79.68" width="8.96" height="8.96" rx="1.79" fill="#9ec5f4"><title>2026-04-16: 3 runs</title></rect>
-<rect x="65.53" y="90.61" width="8.96" height="8.96" rx="1.79" fill="#8b929c" opacity="0.2"><title>2026-04-17: 0 runs</title></rect>
-<rect x="65.53" y="101.53" width="8.96" height="8.96" rx="1.79" fill="#8b929c" opacity="0.2"><title>2026-04-18: 0 runs</title></rect>
-<rect x="76.45" y="36.00" width="8.96" height="8.96" rx="1.79" fill="#8b929c" opacity="0.2"><title>2026-04-19: 0 runs</title></rect>
-<rect x="76.45" y="46.92" width="8.96" height="8.96" rx="1.79" fill="#256abf"><title>2026-04-20: 57 runs</title></rect>
-<rect x="76.45" y="57.84" width="8.96" height="8.96" rx="1.79" fill="#184f95"><title>2026-04-21: 77 runs</title></rect>
-<rect x="76.45" y="68.76" width="8.96" height="8.96" rx="1.79" fill="#256abf"><title>2026-04-22: 70 runs</title></rect>
-<rect x="76.45" y="79.68" width="8.96" height="8.96" rx="1.79" fill="#184f95"><title>2026-04-23: 484 runs</title></rect>
-<rect x="76.45" y="90.61" width="8.96" height="8.96" rx="1.79" fill="#184f95"><title>2026-04-24: 488 runs</title></rect>
-<rect x="76.45" y="101.53" width="8.96" height="8.96" rx="1.79" fill="#5598e7"><title>2026-04-25: 8 runs</title></rect>
-<rect x="87.37" y="36.00" width="8.96" height="8.96" rx="1.79" fill="#8b929c" opacity="0.2"><title>2026-04-26: 0 runs</title></rect>
-<rect x="87.37" y="46.92" width="8.96" height="8.96" rx="1.79" fill="#5598e7"><title>2026-04-27: 15 runs</title></rect>
-<rect x="87.37" y="57.84" width="8.96" height="8.96" rx="1.79" fill="#8b929c" opacity="0.2"><title>2026-04-28: 0 runs</title></rect>
-<rect x="87.37" y="68.76" width="8.96" height="8.96" rx="1.79" fill="#8b929c" opacity="0.2"><title>2026-04-29: 0 runs</title></rect>
-<rect x="87.37" y="79.68" width="8.96" height="8.96" rx="1.79" fill="#8b929c" opacity="0.2"><title>2026-04-30: 0 runs</title></rect>
-<rect x="87.37" y="90.61" width="8.96" height="8.96" rx="1.79" fill="#8b929c" opacity="0.2"><title>2026-05-01: 0 runs</title></rect>
-<rect x="87.37" y="101.53" width="8.96" height="8.96" rx="1.79" fill="#8b929c" opacity="0.2"><title>2026-05-02: 0 runs</title></rect>
-<rect x="98.29" y="36.00" width="8.96" height="8.96" rx="1.79" fill="#8b929c" opacity="0.2"><title>2026-05-03: 0 runs</title></rect>
-<rect x="98.29" y="46.92" width="8.96" height="8.96" rx="1.79" fill="#8b929c" opacity="0.2"><title>2026-05-04: 0 runs</title></rect>
-<rect x="98.29" y="57.84" width="8.96" height="8.96" rx="1.79" fill="#8b929c" opacity="0.2"><title>2026-05-05: 0 runs</title></rect>
-<rect x="98.29" y="68.76" width="8.96" height="8.96" rx="1.79" fill="#5598e7"><title>2026-05-06: 11 runs</title></rect>
-<rect x="98.29" y="79.68" width="8.96" height="8.96" rx="1.79" fill="#256abf"><title>2026-05-07: 47 runs</title></rect>
-<rect x="98.29" y="90.61" width="8.96" height="8.96" rx="1.79" fill="#5598e7"><title>2026-05-08: 13 runs</title></rect>
-<rect x="98.29" y="101.53" width="8.96" height="8.96" rx="1.79" fill="#9ec5f4"><title>2026-05-09: 3 runs</title></rect>
-<rect x="109.21" y="36.00" width="8.96" height="8.96" rx="1.79" fill="#5598e7"><title>2026-05-10: 14 runs</title></rect>
-<rect x="109.21" y="46.92" width="8.96" height="8.96" rx="1.79" fill="#9ec5f4"><title>2026-05-11: 1 runs</title></rect>
-<rect x="109.21" y="57.84" width="8.96" height="8.96" rx="1.79" fill="#9ec5f4"><title>2026-05-12: 2 runs</title></rect>
-<rect x="109.21" y="68.76" width="8.96" height="8.96" rx="1.79" fill="#256abf"><title>2026-05-13: 46 runs</title></rect>
-<rect x="109.21" y="79.68" width="8.96" height="8.96" rx="1.79" fill="#9ec5f4"><title>2026-05-14: 2 runs</title></rect>
-<rect x="109.21" y="90.61" width="8.96" height="8.96" rx="1.79" fill="#8b929c" opacity="0.2"><title>2026-05-15: 0 runs</title></rect>
-<rect x="109.21" y="101.53" width="8.96" height="8.96" rx="1.79" fill="#8b929c" opacity="0.2"><title>2026-05-16: 0 runs</title></rect>
-<rect x="120.13" y="36.00" width="8.96" height="8.96" rx="1.79" fill="#9ec5f4"><title>2026-05-17: 1 runs</title></rect>
-<rect x="120.13" y="46.92" width="8.96" height="8.96" rx="1.79" fill="#9ec5f4"><title>2026-05-18: 3 runs</title></rect>
-<rect x="120.13" y="57.84" width="8.96" height="8.96" rx="1.79" fill="#9ec5f4"><title>2026-05-19: 2 runs</title></rect>
-<rect x="120.13" y="68.76" width="8.96" height="8.96" rx="1.79" fill="#9ec5f4"><title>2026-05-20: 2 runs</title></rect>
-<rect x="120.13" y="79.68" width="8.96" height="8.96" rx="1.79" fill="#5598e7"><title>2026-05-21: 9 runs</title></rect>
-<rect x="120.13" y="90.61" width="8.96" height="8.96" rx="1.79" fill="#8b929c" opacity="0.2"><title>2026-05-22: 0 runs</title></rect>
-<rect x="120.13" y="101.53" width="8.96" height="8.96" rx="1.79" fill="#8b929c" opacity="0.2"><title>2026-05-23: 0 runs</title></rect>
-<rect x="131.05" y="36.00" width="8.96" height="8.96" rx="1.79" fill="#8b929c" opacity="0.2"><title>2026-05-24: 0 runs</title></rect>
-<rect x="131.05" y="46.92" width="8.96" height="8.96" rx="1.79" fill="#8b929c" opacity="0.2"><title>2026-05-25: 0 runs</title></rect>
-<rect x="131.05" y="57.84" width="8.96" height="8.96" rx="1.79" fill="#8b929c" opacity="0.2"><title>2026-05-26: 0 runs</title></rect>
-<rect x="131.05" y="68.76" width="8.96" height="8.96" rx="1.79" fill="#8b929c" opacity="0.2"><title>2026-05-27: 0 runs</title></rect>
-<rect x="131.05" y="79.68" width="8.96" height="8.96" rx="1.79" fill="#8b929c" opacity="0.2"><title>2026-05-28: 0 runs</title></rect>
-<rect x="131.05" y="90.61" width="8.96" height="8.96" rx="1.79" fill="#8b929c" opacity="0.2"><title>2026-05-29: 0 runs</title></rect>
-<rect x="131.05" y="101.53" width="8.96" height="8.96" rx="1.79" fill="#8b929c" opacity="0.2"><title>2026-05-30: 0 runs</title></rect>
-<rect x="141.97" y="36.00" width="8.96" height="8.96" rx="1.79" fill="#8b929c" opacity="0.2"><title>2026-05-31: 0 runs</title></rect>
-<rect x="141.97" y="46.92" width="8.96" height="8.96" rx="1.79" fill="#8b929c" opacity="0.2"><title>2026-06-01: 0 runs</title></rect>
-<rect x="141.97" y="57.84" width="8.96" height="8.96" rx="1.79" fill="#9ec5f4"><title>2026-06-02: 1 runs</title></rect>
-<rect x="141.97" y="68.76" width="8.96" height="8.96" rx="1.79" fill="#8b929c" opacity="0.2"><title>2026-06-03: 0 runs</title></rect>
-<rect x="141.97" y="79.68" width="8.96" height="8.96" rx="1.79" fill="#9ec5f4"><title>2026-06-04: 3 runs</title></rect>
-<rect x="141.97" y="90.61" width="8.96" height="8.96" rx="1.79" fill="#9ec5f4"><title>2026-06-05: 5 runs</title></rect>
-<rect x="141.97" y="101.53" width="8.96" height="8.96" rx="1.79" fill="#9ec5f4"><title>2026-06-06: 4 runs</title></rect>
-<rect x="152.89" y="36.00" width="8.96" height="8.96" rx="1.79" fill="#8b929c" opacity="0.2"><title>2026-06-07: 0 runs</title></rect>
-<rect x="152.89" y="46.92" width="8.96" height="8.96" rx="1.79" fill="#8b929c" opacity="0.2"><title>2026-06-08: 0 runs</title></rect>
-<rect x="152.89" y="57.84" width="8.96" height="8.96" rx="1.79" fill="#9ec5f4"><title>2026-06-09: 4 runs</title></rect>
-<rect x="152.89" y="68.76" width="8.96" height="8.96" rx="1.79" fill="#5598e7"><title>2026-06-10: 16 runs</title></rect>
-<rect x="152.89" y="79.68" width="8.96" height="8.96" rx="1.79" fill="#256abf"><title>2026-06-11: 34 runs</title></rect>
-<rect x="152.89" y="90.61" width="8.96" height="8.96" rx="1.79" fill="#256abf"><title>2026-06-12: 44 runs</title></rect>
-<rect x="152.89" y="101.53" width="8.96" height="8.96" rx="1.79" fill="#8b929c" opacity="0.2"><title>2026-06-13: 0 runs</title></rect>
-<rect x="163.82" y="36.00" width="8.96" height="8.96" rx="1.79" fill="#9ec5f4"><title>2026-06-14: 2 runs</title></rect>
-<rect x="163.82" y="46.92" width="8.96" height="8.96" rx="1.79" fill="#5598e7"><title>2026-06-15: 7 runs</title></rect>
-<rect x="163.82" y="57.84" width="8.96" height="8.96" rx="1.79" fill="#256abf"><title>2026-06-16: 66 runs</title></rect>
-<rect x="163.82" y="68.76" width="8.96" height="8.96" rx="1.79" fill="#8b929c" opacity="0.2"><title>2026-06-17: 0 runs</title></rect>
-<rect x="163.82" y="79.68" width="8.96" height="8.96" rx="1.79" fill="#9ec5f4"><title>2026-06-18: 2 runs</title></rect>
-<rect x="163.82" y="90.61" width="8.96" height="8.96" rx="1.79" fill="#8b929c" opacity="0.2"><title>2026-06-19: 0 runs</title></rect>
-<rect x="163.82" y="101.53" width="8.96" height="8.96" rx="1.79" fill="#8b929c" opacity="0.2"><title>2026-06-20: 0 runs</title></rect>
-<rect x="174.74" y="36.00" width="8.96" height="8.96" rx="1.79" fill="#8b929c" opacity="0.2"><title>2026-06-21: 0 runs</title></rect>
-<rect x="174.74" y="46.92" width="8.96" height="8.96" rx="1.79" fill="#256abf"><title>2026-06-22: 29 runs</title></rect>
-<rect x="174.74" y="57.84" width="8.96" height="8.96" rx="1.79" fill="#9ec5f4"><title>2026-06-23: 3 runs</title></rect>
-<rect x="174.74" y="68.76" width="8.96" height="8.96" rx="1.79" fill="#9ec5f4"><title>2026-06-24: 6 runs</title></rect>
-<rect x="174.74" y="79.68" width="8.96" height="8.96" rx="1.79" fill="#8b929c" opacity="0.2"><title>2026-06-25: 0 runs</title></rect>
-<rect x="174.74" y="90.61" width="8.96" height="8.96" rx="1.79" fill="#9ec5f4"><title>2026-06-26: 2 runs</title></rect>
-<rect x="174.74" y="101.53" width="8.96" height="8.96" rx="1.79" fill="#8b929c" opacity="0.2"><title>2026-06-27: 0 runs</title></rect>
-<rect x="185.66" y="36.00" width="8.96" height="8.96" rx="1.79" fill="#8b929c" opacity="0.2"><title>2026-06-28: 0 runs</title></rect>
-<rect x="185.66" y="46.92" width="8.96" height="8.96" rx="1.79" fill="#9ec5f4"><title>2026-06-29: 2 runs</title></rect>
-<rect x="185.66" y="57.84" width="8.96" height="8.96" rx="1.79" fill="#8b929c" opacity="0.2"><title>2026-06-30: 0 runs</title></rect>
-<rect x="185.66" y="68.76" width="8.96" height="8.96" rx="1.79" fill="#8b929c" opacity="0.2"><title>2026-07-01: 0 runs</title></rect>
-<rect x="185.66" y="79.68" width="8.96" height="8.96" rx="1.79" fill="#8b929c" opacity="0.2"><title>2026-07-02: 0 runs</title></rect>
-<rect x="185.66" y="90.61" width="8.96" height="8.96" rx="1.79" fill="#8b929c" opacity="0.2"><title>2026-07-03: 0 runs</title></rect>
-<rect x="185.66" y="101.53" width="8.96" height="8.96" rx="1.79" fill="#8b929c" opacity="0.2"><title>2026-07-04: 0 runs</title></rect>
-<rect x="196.58" y="36.00" width="8.96" height="8.96" rx="1.79" fill="#8b929c" opacity="0.2"><title>2026-07-05: 0 runs</title></rect>
-<rect x="196.58" y="46.92" width="8.96" height="8.96" rx="1.79" fill="#9ec5f4"><title>2026-07-06: 4 runs</title></rect>
-<rect x="196.58" y="57.84" width="8.96" height="8.96" rx="1.79" fill="#8b929c" opacity="0.2"><title>2026-07-07: 0 runs</title></rect>
-<rect x="196.58" y="68.76" width="8.96" height="8.96" rx="1.79" fill="#9ec5f4"><title>2026-07-08: 1 runs</title></rect>
-<rect x="196.58" y="79.68" width="8.96" height="8.96" rx="1.79" fill="#184f95"><title>2026-07-09: 82 runs</title></rect>
-<rect x="196.58" y="90.61" width="8.96" height="8.96" rx="1.79" fill="#8b929c" opacity="0.2"><title>2026-07-10: 0 runs</title></rect>
-<rect x="196.58" y="101.53" width="8.96" height="8.96" rx="1.79" fill="#8b929c" opacity="0.2"><title>2026-07-11: 0 runs</title></rect>
-<rect x="207.50" y="36.00" width="8.96" height="8.96" rx="1.79" fill="#9ec5f4"><title>2026-07-12: 4 runs</title></rect>
-<rect x="207.50" y="46.92" width="8.96" height="8.96" rx="1.79" fill="#8b929c" opacity="0.2"><title>2026-07-13: 0 runs</title></rect>
-<rect x="207.50" y="57.84" width="8.96" height="8.96" rx="1.79" fill="#184f95"><title>2026-07-14: 157 runs</title></rect>
-<rect x="207.50" y="68.76" width="8.96" height="8.96" rx="1.79" fill="#256abf"><title>2026-07-15: 58 runs</title></rect>
-<rect x="207.50" y="79.68" width="8.96" height="8.96" rx="1.79" fill="#256abf"><title>2026-07-16: 37 runs</title></rect>
-<rect x="207.50" y="90.61" width="8.96" height="8.96" rx="1.79" fill="#184f95"><title>2026-07-17: 82 runs</title></rect>
-<rect x="207.50" y="101.53" width="8.96" height="8.96" rx="1.79" fill="#256abf"><title>2026-07-18: 47 runs</title></rect>
-<rect x="218.42" y="36.00" width="8.96" height="8.96" rx="1.79" fill="#5598e7"><title>2026-07-19: 9 runs</title></rect>
-<rect x="218.42" y="46.92" width="8.96" height="8.96" rx="1.79" fill="#9ec5f4"><title>2026-07-20: 6 runs</title></rect>
-<rect x="218.42" y="57.84" width="8.96" height="8.96" rx="1.79" fill="#8b929c" opacity="0.2"><title>2026-07-21: 0 runs</title></rect>
-<rect x="218.42" y="68.76" width="8.96" height="8.96" rx="1.79" fill="#8b929c" opacity="0.2"><title>2026-07-22: 0 runs</title></rect>
-<rect x="218.42" y="79.68" width="8.96" height="8.96" rx="1.79" fill="#5598e7"><title>2026-07-23: 13 runs</title></rect>
-<rect x="218.42" y="90.61" width="8.96" height="8.96" rx="1.79" fill="#9ec5f4"><title>2026-07-24: 1 runs</title></rect>
-<rect x="218.42" y="101.53" width="8.96" height="8.96" rx="1.79" fill="#8b929c" opacity="0.2"><title>2026-07-25: 0 runs</title></rect>
-<rect x="229.34" y="36.00" width="8.96" height="8.96" rx="1.79" fill="#9ec5f4"><title>2026-07-26: 2 runs</title></rect>
-<rect x="229.34" y="46.92" width="8.96" height="8.96" rx="1.79" fill="#9ec5f4"><title>2026-07-27: 1 runs</title></rect>
-<rect x="229.34" y="57.84" width="8.96" height="8.96" rx="1.79" fill="#9ec5f4"><title>2026-07-28: 2 runs</title></rect>
-<rect x="229.34" y="68.76" width="8.96" height="8.96" rx="1.79" fill="#256abf"><title>2026-07-29: 32 runs</title></rect>
-<rect x="229.34" y="79.68" width="8.96" height="8.96" rx="1.79" fill="#8b929c" opacity="0.2"><title>2026-07-30: 0 runs</title></rect>
-<rect x="229.34" y="90.61" width="8.96" height="8.96" rx="1.79" fill="#8b929c" opacity="0.2"><title>2026-07-31: 0 runs</title></rect>
-<rect x="229.34" y="101.53" width="8.96" height="8.96" rx="1.79" fill="#5598e7"><title>2026-08-01: 20 runs</title></rect>
-<rect x="240.26" y="36.00" width="8.96" height="8.96" rx="1.79" fill="#256abf"><title>2026-08-02: 54 runs</title></rect>
-<rect x="240.26" y="46.92" width="8.96" height="8.96" rx="1.79" fill="#184f95"><title>2026-08-03: 233 runs</title></rect>
-<rect x="240.26" y="57.84" width="8.96" height="8.96" rx="1.79" fill="#184f95"><title>2026-08-04: 123 runs</title></rect>
-<rect x="240.26" y="68.76" width="8.96" height="8.96" rx="1.79" fill="#184f95"><title>2026-08-05: 107 runs</title></rect>
-<rect x="240.26" y="79.68" width="8.96" height="8.96" rx="1.79" fill="#8b929c" opacity="0.2"><title>2026-08-06: 0 runs</title></rect>
-<rect x="240.26" y="90.61" width="8.96" height="8.96" rx="1.79" fill="#5598e7"><title>2026-08-07: 26 runs</title></rect>
-<rect x="240.26" y="101.53" width="8.96" height="8.96" rx="1.79" fill="#5598e7"><title>2026-08-08: 14 runs</title></rect>
-<rect x="251.18" y="36.00" width="8.96" height="8.96" rx="1.79" fill="#5598e7"><title>2026-08-09: 8 runs</title></rect>
-<rect x="251.18" y="46.92" width="8.96" height="8.96" rx="1.79" fill="#184f95"><title>2026-08-10: 474 runs</title></rect>
-<rect x="251.18" y="57.84" width="8.96" height="8.96" rx="1.79" fill="#184f95"><title>2026-08-11: 139 runs</title></rect>
-<rect x="251.18" y="68.76" width="8.96" height="8.96" rx="1.79" fill="#184f95"><title>2026-08-12: 291 runs</title></rect>
-<rect x="251.18" y="79.68" width="8.96" height="8.96" rx="1.79" fill="#5598e7"><title>2026-08-13: 20 runs</title></rect>
-<rect x="251.18" y="90.61" width="8.96" height="8.96" rx="1.79" fill="#8b929c" opacity="0.2"><title>2026-08-14: 0 runs</title></rect>
-<rect x="251.18" y="101.53" width="8.96" height="8.96" rx="1.79" fill="#184f95"><title>2026-08-15: 164 runs</title></rect>
-<rect x="262.11" y="36.00" width="8.96" height="8.96" rx="1.79" fill="#184f95"><title>2026-08-16: 175 runs</title></rect>
-<rect x="262.11" y="46.92" width="8.96" height="8.96" rx="1.79" fill="#5598e7"><title>2026-08-17: 14 runs</title></rect>
-<rect x="262.11" y="57.84" width="8.96" height="8.96" rx="1.79" fill="#184f95"><title>2026-08-18: 91 runs</title></rect>
-<rect x="262.11" y="68.76" width="8.96" height="8.96" rx="1.79" fill="#184f95"><title>2026-08-19: 99 runs</title></rect>
-<rect x="262.11" y="79.68" width="8.96" height="8.96" rx="1.79" fill="#9ec5f4"><title>2026-08-20: 4 runs</title></rect>
-<rect x="262.11" y="90.61" width="8.96" height="8.96" rx="1.79" fill="#8b929c" opacity="0.2"><title>2026-08-21: 0 runs</title></rect>
-<rect x="262.11" y="101.53" width="8.96" height="8.96" rx="1.79" fill="#8b929c" opacity="0.2"><title>2026-08-22: 0 runs</title></rect>
-<rect x="273.03" y="36.00" width="8.96" height="8.96" rx="1.79" fill="#8b929c" opacity="0.2"><title>2026-08-23: 0 runs</title></rect>
-<rect x="273.03" y="46.92" width="8.96" height="8.96" rx="1.79" fill="#9ec5f4"><title>2026-08-24: 2 runs</title></rect>
-<rect x="273.03" y="57.84" width="8.96" height="8.96" rx="1.79" fill="#9ec5f4"><title>2026-08-25: 2 runs</title></rect>
-<rect x="273.03" y="68.76" width="8.96" height="8.96" rx="1.79" fill="#8b929c" opacity="0.2"><title>2026-08-26: 0 runs</title></rect>
-<rect x="273.03" y="79.68" width="8.96" height="8.96" rx="1.79" fill="#9ec5f4"><title>2026-08-27: 3 runs</title></rect>
-<rect x="273.03" y="90.61" width="8.96" height="8.96" rx="1.79" fill="#5598e7"><title>2026-08-28: 10 runs</title></rect>
-<rect x="273.03" y="101.53" width="8.96" height="8.96" rx="1.79" fill="#5598e7"><title>2026-08-29: 23 runs</title></rect>
-<rect x="283.95" y="36.00" width="8.96" height="8.96" rx="1.79" fill="#256abf"><title>2026-08-30: 35 runs</title></rect>
-<rect x="283.95" y="46.92" width="8.96" height="8.96" rx="1.79" fill="#184f95"><title>2026-08-31: 101 runs</title></rect>
-<rect x="283.95" y="57.84" width="8.96" height="8.96" rx="1.79" fill="#184f95"><title>2026-09-01: 79 runs</title></rect>
-<rect x="283.95" y="68.76" width="8.96" height="8.96" rx="1.79" fill="#256abf"><title>2026-09-02: 56 runs</title></rect>
-<rect x="283.95" y="79.68" width="8.96" height="8.96" rx="1.79" fill="#5598e7"><title>2026-09-03: 22 runs</title></rect>
-<rect x="283.95" y="90.61" width="8.96" height="8.96" rx="1.79" fill="#256abf"><title>2026-09-04: 41 runs</title></rect>
-<rect x="283.95" y="101.53" width="8.96" height="8.96" rx="1.79" fill="#5598e7"><title>2026-09-05: 20 runs</title></rect>
-<rect x="294.87" y="36.00" width="8.96" height="8.96" rx="1.79" fill="#8b929c" opacity="0.2"><title>2026-09-06: 0 runs</title></rect>
-<rect x="294.87" y="46.92" width="8.96" height="8.96" rx="1.79" fill="#5598e7"><title>2026-09-07: 12 runs</title></rect>
-<rect x="294.87" y="57.84" width="8.96" height="8.96" rx="1.79" fill="#5598e7"><title>2026-09-08: 15 runs</title></rect>
-<rect x="294.87" y="68.76" width="8.96" height="8.96" rx="1.79" fill="#8b929c" opacity="0.2"><title>2026-09-09: 0 runs</title></rect>
-<rect x="294.87" y="79.68" width="8.96" height="8.96" rx="1.79" fill="#8b929c" opacity="0.2"><title>2026-09-10: 0 runs</title></rect>
-<rect x="294.87" y="90.61" width="8.96" height="8.96" rx="1.79" fill="#8b929c" opacity="0.2"><title>2026-09-11: 0 runs</title></rect>
-<rect x="294.87" y="101.53" width="8.96" height="8.96" rx="1.79" fill="#9ec5f4"><title>2026-09-12: 2 runs</title></rect>
-<rect x="305.79" y="36.00" width="8.96" height="8.96" rx="1.79" fill="#8b929c" opacity="0.2"><title>2026-09-13: 0 runs</title></rect>
-<rect x="305.79" y="46.92" width="8.96" height="8.96" rx="1.79" fill="#8b929c" opacity="0.2"><title>2026-09-14: 0 runs</title></rect>
-<rect x="305.79" y="57.84" width="8.96" height="8.96" rx="1.79" fill="#5598e7"><title>2026-09-15: 13 runs</title></rect>
-<rect x="305.79" y="68.76" width="8.96" height="8.96" rx="1.79" fill="#9ec5f4"><title>2026-09-16: 3 runs</title></rect>
-<rect x="305.79" y="79.68" width="8.96" height="8.96" rx="1.79" fill="#9ec5f4"><title>2026-09-17: 3 runs</title></rect>
-<rect x="305.79" y="90.61" width="8.96" height="8.96" rx="1.79" fill="#9ec5f4"><title>2026-09-18: 4 runs</title></rect>
-<rect x="305.79" y="101.53" width="8.96" height="8.96" rx="1.79" fill="#5598e7"><title>2026-09-19: 9 runs</title></rect>
-<rect x="316.71" y="36.00" width="8.96" height="8.96" rx="1.79" fill="#9ec5f4"><title>2026-09-20: 6 runs</title></rect>
-<rect x="316.71" y="46.92" width="8.96" height="8.96" rx="1.79" fill="#256abf"><title>2026-09-21: 40 runs</title></rect>
-<rect x="316.71" y="57.84" width="8.96" height="8.96" rx="1.79" fill="#256abf"><title>2026-09-22: 63 runs</title></rect>
-<rect x="316.71" y="68.76" width="8.96" height="8.96" rx="1.79" fill="#5598e7"><title>2026-09-23: 23 runs</title></rect>
-<rect x="316.71" y="79.68" width="8.96" height="8.96" rx="1.79" fill="#8b929c" opacity="0.2"><title>2026-09-24: 0 runs</title></rect>
-<rect x="316.71" y="90.61" width="8.96" height="8.96" rx="1.79" fill="#256abf"><title>2026-09-25: 41 runs</title></rect>
-<rect x="316.71" y="101.53" width="8.96" height="8.96" rx="1.79" fill="#256abf"><title>2026-09-26: 34 runs</title></rect>
-<rect x="327.63" y="36.00" width="8.96" height="8.96" rx="1.79" fill="#8b929c" opacity="0.2"><title>2026-09-27: 0 runs</title></rect>
-<rect x="327.63" y="46.92" width="8.96" height="8.96" rx="1.79" fill="#184f95"><title>2026-09-28: 142 runs</title></rect>
-<rect x="327.63" y="57.84" width="8.96" height="8.96" rx="1.79" fill="#5598e7"><title>2026-09-29: 19 runs</title></rect>
-<rect x="327.63" y="68.76" width="8.96" height="8.96" rx="1.79" fill="#256abf"><title>2026-09-30: 28 runs</title></rect>
-<rect x="327.63" y="79.68" width="8.96" height="8.96" rx="1.79" fill="#256abf"><title>2026-10-01: 55 runs</title></rect>
-<rect x="327.63" y="90.61" width="8.96" height="8.96" rx="1.79" fill="#256abf"><title>2026-10-02: 39 runs</title></rect>
-<rect x="327.63" y="101.53" width="8.96" height="8.96" rx="1.79" fill="#256abf"><title>2026-10-03: 39 runs</title></rect>
-<rect x="338.55" y="36.00" width="8.96" height="8.96" rx="1.79" fill="#256abf"><title>2026-10-04: 64 runs</title></rect>
-<rect x="338.55" y="46.92" width="8.96" height="8.96" rx="1.79" fill="#5598e7"><title>2026-10-05: 19 runs</title></rect>
-<rect x="338.55" y="57.84" width="8.96" height="8.96" rx="1.79" fill="#184f95"><title>2026-10-06: 110 runs</title></rect>
-<rect x="338.55" y="68.76" width="8.96" height="8.96" rx="1.79" fill="#184f95"><title>2026-10-07: 281 runs</title></rect>
-<rect x="338.55" y="79.68" width="8.96" height="8.96" rx="1.79" fill="#184f95"><title>2026-10-08: 74 runs</title></rect>
-<rect x="338.55" y="90.61" width="8.96" height="8.96" rx="1.79" fill="#5598e7"><title>2026-10-09: 9 runs</title></rect>
-<rect x="338.55" y="101.53" width="8.96" height="8.96" rx="1.79" fill="#256abf"><title>2026-10-10: 33 runs</title></rect>
-<rect x="349.47" y="36.00" width="8.96" height="8.96" rx="1.79" fill="#9ec5f4"><title>2026-10-11: 3 runs</title></rect>
-<rect x="349.47" y="46.92" width="8.96" height="8.96" rx="1.79" fill="#8b929c" opacity="0.2"><title>2026-10-12: 0 runs</title></rect>
-<rect x="349.47" y="57.84" width="8.96" height="8.96" rx="1.79" fill="#8b929c" opacity="0.2"><title>2026-10-13: 0 runs</title></rect>
-<rect x="349.47" y="68.76" width="8.96" height="8.96" rx="1.79" fill="#9ec5f4"><title>2026-10-14: 2 runs</title></rect>
-<rect x="349.47" y="79.68" width="8.96" height="8.96" rx="1.79" fill="#8b929c" opacity="0.2"><title>2026-10-15: 0 runs</title></rect>
-<rect x="349.47" y="90.61" width="8.96" height="8.96" rx="1.79" fill="#5598e7"><title>2026-10-16: 17 runs</title></rect>
-<rect x="349.47" y="101.53" width="8.96" height="8.96" rx="1.79" fill="#9ec5f4"><title>2026-10-17: 6 runs</title></rect>
-<rect x="360.39" y="36.00" width="8.96" height="8.96" rx="1.79" fill="#184f95"><title>2026-10-18: 71 runs</title></rect>
-<rect x="360.39" y="46.92" width="8.96" height="8.96" rx="1.79" fill="#9ec5f4"><title>2026-10-19: 5 runs</title></rect>
-<rect x="360.39" y="57.84" width="8.96" height="8.96" rx="1.79" fill="#256abf"><title>2026-10-20: 49 runs</title></rect>
-<rect x="360.39" y="68.76" width="8.96" height="8.96" rx="1.79" fill="#256abf"><title>2026-10-21: 32 runs</title></rect>
-<rect x="360.39" y="79.68" width="8.96" height="8.96" rx="1.79" fill="#184f95"><title>2026-10-22: 90 runs</title></rect>
-<rect x="360.39" y="90.61" width="8.96" height="8.96" rx="1.79" fill="#8b929c" opacity="0.2"><title>2026-10-23: 0 runs</title></rect>
-<rect x="360.39" y="101.53" width="8.96" height="8.96" rx="1.79" fill="#8b929c" opacity="0.2"><title>2026-10-24: 0 runs</title></rect>
-<rect x="371.32" y="36.00" width="8.96" height="8.96" rx="1.79" fill="#8b929c" opacity="0.2"><title>2026-10-25: 0 runs</title></rect>
-<rect x="371.32" y="46.92" width="8.96" height="8.96" rx="1.79" fill="#8b929c" opacity="0.2"><title>2026-10-26: 0 runs</title></rect>
-<rect x="371.32" y="57.84" width="8.96" height="8.96" rx="1.79" fill="#8b929c" opacity="0.2"><title>2026-10-27: 0 runs</title></rect>
-<rect x="371.32" y="68.76" width="8.96" height="8.96" rx="1.79" fill="#8b929c" opacity="0.2"><title>2026-10-28: 0 runs</title></rect>
-<rect x="371.32" y="79.68" width="8.96" height="8.96" rx="1.79" fill="#8b929c" opacity="0.2"><title>2026-10-29: 0 runs</title></rect>
-<rect x="371.32" y="90.61" width="8.96" height="8.96" rx="1.79" fill="#184f95"><title>2026-10-30: 112 runs</title></rect>
-<rect x="371.32" y="101.53" width="8.96" height="8.96" rx="1.79" fill="#8b929c" opacity="0.2"><title>2026-10-31: 0 runs</title></rect>
-<rect x="382.24" y="36.00" width="8.96" height="8.96" rx="1.79" fill="#8b929c" opacity="0.2"><title>2026-11-01: 0 runs</title></rect>
-<rect x="382.24" y="46.92" width="8.96" height="8.96" rx="1.79" fill="#8b929c" opacity="0.2"><title>2026-11-02: 0 runs</title></rect>
-<rect x="382.24" y="57.84" width="8.96" height="8.96" rx="1.79" fill="#8b929c" opacity="0.2"><title>2026-11-03: 0 runs</title></rect>
-<rect x="382.24" y="68.76" width="8.96" height="8.96" rx="1.79" fill="#8b929c" opacity="0.2"><title>2026-11-04: 0 runs</title></rect>
-<rect x="382.24" y="79.68" width="8.96" height="8.96" rx="1.79" fill="#8b929c" opacity="0.2"><title>2026-11-05: 0 runs</title></rect>
-<rect x="382.24" y="90.61" width="8.96" height="8.96" rx="1.79" fill="#184f95"><title>2026-11-06: 87 runs</title></rect>
-<rect x="382.24" y="101.53" width="8.96" height="8.96" rx="1.79" fill="#8b929c" opacity="0.2"><title>2026-11-07: 0 runs</title></rect>
-<rect x="393.16" y="36.00" width="8.96" height="8.96" rx="1.79" fill="#256abf"><title>2026-11-08: 49 runs</title></rect>
-<rect x="393.16" y="46.92" width="8.96" height="8.96" rx="1.79" fill="#9ec5f4"><title>2026-11-09: 4 runs</title></rect>
-<rect x="393.16" y="57.84" width="8.96" height="8.96" rx="1.79" fill="#256abf"><title>2026-11-10: 54 runs</title></rect>
-<rect x="393.16" y="68.76" width="8.96" height="8.96" rx="1.79" fill="#8b929c" opacity="0.2"><title>2026-11-11: 0 runs</title></rect>
-<rect x="393.16" y="79.68" width="8.96" height="8.96" rx="1.79" fill="#256abf"><title>2026-11-12: 40 runs</title></rect>
-<rect x="393.16" y="90.61" width="8.96" height="8.96" rx="1.79" fill="#9ec5f4"><title>2026-11-13: 6 runs</title></rect>
-<rect x="393.16" y="101.53" width="8.96" height="8.96" rx="1.79" fill="#8b929c" opacity="0.2"><title>2026-11-14: 0 runs</title></rect>
-<rect x="404.08" y="36.00" width="8.96" height="8.96" rx="1.79" fill="#8b929c" opacity="0.2"><title>2026-11-15: 0 runs</title></rect>
-<rect x="404.08" y="46.92" width="8.96" height="8.96" rx="1.79" fill="#8b929c" opacity="0.2"><title>2026-11-16: 0 runs</title></rect>
-<rect x="404.08" y="57.84" width="8.96" height="8.96" rx="1.79" fill="#8b929c" opacity="0.2"><title>2026-11-17: 0 runs</title></rect>
-<rect x="404.08" y="68.76" width="8.96" height="8.96" rx="1.79" fill="#9ec5f4"><title>2026-11-18: 4 runs</title></rect>
-<rect x="404.08" y="79.68" width="8.96" height="8.96" rx="1.79" fill="#8b929c" opacity="0.2"><title>2026-11-19: 0 runs</title></rect>
-<rect x="404.08" y="90.61" width="8.96" height="8.96" rx="1.79" fill="#184f95"><title>2026-11-20: 366 runs</title></rect>
-<rect x="404.08" y="101.53" width="8.96" height="8.96" rx="1.79" fill="#184f95"><title>2026-11-21: 270 runs</title></rect>
-<text x="299.2" y="128.4" font-size="10" fill="#8b929c">Less</text>
-<rect x="325.2" y="120.5" width="8.96" height="8.96" rx="1.79" fill="#8b929c" opacity="0.2"/>
-<rect x="336.2" y="120.5" width="8.96" height="8.96" rx="1.79" fill="#9ec5f4"/>
-<rect x="347.1" y="120.5" width="8.96" height="8.96" rx="1.79" fill="#5598e7"/>
-<rect x="358.1" y="120.5" width="8.96" height="8.96" rx="1.79" fill="#256abf"/>
-<rect x="369.0" y="120.5" width="8.96" height="8.96" rx="1.79" fill="#184f95"/>
-<text x="384.0" y="128.4" font-size="10" fill="#8b929c">More</text>
+<text x="42.6" y="30" font-size="10" fill="#8b929c">Apr</text>
+<text x="85.1" y="30" font-size="10" fill="#8b929c">May</text>
+<text x="138.3" y="30" font-size="10" fill="#8b929c">Jun</text>
+<text x="180.9" y="30" font-size="10" fill="#8b929c">Jul</text>
+<text x="223.5" y="30" font-size="10" fill="#8b929c">Aug</text>
+<text x="276.7" y="30" font-size="10" fill="#8b929c">Sep</text>
+<text x="319.2" y="30" font-size="10" fill="#8b929c">Oct</text>
+<text x="372.4" y="30" font-size="10" fill="#8b929c">Nov</text>
+<rect x="0.00" y="36.00" width="8.73" height="8.73" rx="1.75" fill="#8b929c" opacity="0.2"><title>2026-03-01: 0 runs</title></rect>
+<rect x="0.00" y="46.64" width="8.73" height="8.73" rx="1.75" fill="#8b929c" opacity="0.2"><title>2026-03-02: 0 runs</title></rect>
+<rect x="0.00" y="57.28" width="8.73" height="8.73" rx="1.75" fill="#8b929c" opacity="0.2"><title>2026-03-03: 0 runs</title></rect>
+<rect x="0.00" y="67.92" width="8.73" height="8.73" rx="1.75" fill="#8b929c" opacity="0.2"><title>2026-03-04: 0 runs</title></rect>
+<rect x="0.00" y="78.56" width="8.73" height="8.73" rx="1.75" fill="#8b929c" opacity="0.2"><title>2026-03-05: 0 runs</title></rect>
+<rect x="0.00" y="89.21" width="8.73" height="8.73" rx="1.75" fill="#8b929c" opacity="0.2"><title>2026-03-06: 0 runs</title></rect>
+<rect x="0.00" y="99.85" width="8.73" height="8.73" rx="1.75" fill="#8b929c" opacity="0.2"><title>2026-03-07: 0 runs</title></rect>
+<rect x="10.64" y="36.00" width="8.73" height="8.73" rx="1.75" fill="#8b929c" opacity="0.2"><title>2026-03-08: 0 runs</title></rect>
+<rect x="10.64" y="46.64" width="8.73" height="8.73" rx="1.75" fill="#8b929c" opacity="0.2"><title>2026-03-09: 0 runs</title></rect>
+<rect x="10.64" y="57.28" width="8.73" height="8.73" rx="1.75" fill="#8b929c" opacity="0.2"><title>2026-03-10: 0 runs</title></rect>
+<rect x="10.64" y="67.92" width="8.73" height="8.73" rx="1.75" fill="#5598e7"><title>2026-03-11: 19 runs</title></rect>
+<rect x="10.64" y="78.56" width="8.73" height="8.73" rx="1.75" fill="#5598e7"><title>2026-03-12: 19 runs</title></rect>
+<rect x="10.64" y="89.21" width="8.73" height="8.73" rx="1.75" fill="#8b929c" opacity="0.2"><title>2026-03-13: 0 runs</title></rect>
+<rect x="10.64" y="99.85" width="8.73" height="8.73" rx="1.75" fill="#8b929c" opacity="0.2"><title>2026-03-14: 0 runs</title></rect>
+<rect x="21.28" y="36.00" width="8.73" height="8.73" rx="1.75" fill="#8b929c" opacity="0.2"><title>2026-03-15: 0 runs</title></rect>
+<rect x="21.28" y="46.64" width="8.73" height="8.73" rx="1.75" fill="#256abf"><title>2026-03-16: 60 runs</title></rect>
+<rect x="21.28" y="57.28" width="8.73" height="8.73" rx="1.75" fill="#184f95"><title>2026-03-17: 107 runs</title></rect>
+<rect x="21.28" y="67.92" width="8.73" height="8.73" rx="1.75" fill="#184f95"><title>2026-03-18: 140 runs</title></rect>
+<rect x="21.28" y="78.56" width="8.73" height="8.73" rx="1.75" fill="#184f95"><title>2026-03-19: 90 runs</title></rect>
+<rect x="21.28" y="89.21" width="8.73" height="8.73" rx="1.75" fill="#184f95"><title>2026-03-20: 198 runs</title></rect>
+<rect x="21.28" y="99.85" width="8.73" height="8.73" rx="1.75" fill="#184f95"><title>2026-03-21: 176 runs</title></rect>
+<rect x="31.92" y="36.00" width="8.73" height="8.73" rx="1.75" fill="#256abf"><title>2026-03-22: 48 runs</title></rect>
+<rect x="31.92" y="46.64" width="8.73" height="8.73" rx="1.75" fill="#256abf"><title>2026-03-23: 65 runs</title></rect>
+<rect x="31.92" y="57.28" width="8.73" height="8.73" rx="1.75" fill="#184f95"><title>2026-03-24: 168 runs</title></rect>
+<rect x="31.92" y="67.92" width="8.73" height="8.73" rx="1.75" fill="#5598e7"><title>2026-03-25: 18 runs</title></rect>
+<rect x="31.92" y="78.56" width="8.73" height="8.73" rx="1.75" fill="#184f95"><title>2026-03-26: 267 runs</title></rect>
+<rect x="31.92" y="89.21" width="8.73" height="8.73" rx="1.75" fill="#184f95"><title>2026-03-27: 122 runs</title></rect>
+<rect x="31.92" y="99.85" width="8.73" height="8.73" rx="1.75" fill="#8b929c" opacity="0.2"><title>2026-03-28: 0 runs</title></rect>
+<rect x="42.56" y="36.00" width="8.73" height="8.73" rx="1.75" fill="#8b929c" opacity="0.2"><title>2026-03-29: 0 runs</title></rect>
+<rect x="42.56" y="46.64" width="8.73" height="8.73" rx="1.75" fill="#9ec5f4"><title>2026-03-30: 4 runs</title></rect>
+<rect x="42.56" y="57.28" width="8.73" height="8.73" rx="1.75" fill="#184f95"><title>2026-03-31: 92 runs</title></rect>
+<rect x="42.56" y="67.92" width="8.73" height="8.73" rx="1.75" fill="#256abf"><title>2026-04-01: 70 runs</title></rect>
+<rect x="42.56" y="78.56" width="8.73" height="8.73" rx="1.75" fill="#8b929c" opacity="0.2"><title>2026-04-02: 0 runs</title></rect>
+<rect x="42.56" y="89.21" width="8.73" height="8.73" rx="1.75" fill="#184f95"><title>2026-04-03: 96 runs</title></rect>
+<rect x="42.56" y="99.85" width="8.73" height="8.73" rx="1.75" fill="#184f95"><title>2026-04-04: 1,519 runs</title></rect>
+<rect x="53.21" y="36.00" width="8.73" height="8.73" rx="1.75" fill="#8b929c" opacity="0.2"><title>2026-04-05: 0 runs</title></rect>
+<rect x="53.21" y="46.64" width="8.73" height="8.73" rx="1.75" fill="#256abf"><title>2026-04-06: 29 runs</title></rect>
+<rect x="53.21" y="57.28" width="8.73" height="8.73" rx="1.75" fill="#256abf"><title>2026-04-07: 34 runs</title></rect>
+<rect x="53.21" y="67.92" width="8.73" height="8.73" rx="1.75" fill="#5598e7"><title>2026-04-08: 18 runs</title></rect>
+<rect x="53.21" y="78.56" width="8.73" height="8.73" rx="1.75" fill="#256abf"><title>2026-04-09: 43 runs</title></rect>
+<rect x="53.21" y="89.21" width="8.73" height="8.73" rx="1.75" fill="#256abf"><title>2026-04-10: 46 runs</title></rect>
+<rect x="53.21" y="99.85" width="8.73" height="8.73" rx="1.75" fill="#256abf"><title>2026-04-11: 70 runs</title></rect>
+<rect x="63.85" y="36.00" width="8.73" height="8.73" rx="1.75" fill="#5598e7"><title>2026-04-12: 26 runs</title></rect>
+<rect x="63.85" y="46.64" width="8.73" height="8.73" rx="1.75" fill="#5598e7"><title>2026-04-13: 26 runs</title></rect>
+<rect x="63.85" y="57.28" width="8.73" height="8.73" rx="1.75" fill="#256abf"><title>2026-04-14: 52 runs</title></rect>
+<rect x="63.85" y="67.92" width="8.73" height="8.73" rx="1.75" fill="#5598e7"><title>2026-04-15: 7 runs</title></rect>
+<rect x="63.85" y="78.56" width="8.73" height="8.73" rx="1.75" fill="#9ec5f4"><title>2026-04-16: 3 runs</title></rect>
+<rect x="63.85" y="89.21" width="8.73" height="8.73" rx="1.75" fill="#8b929c" opacity="0.2"><title>2026-04-17: 0 runs</title></rect>
+<rect x="63.85" y="99.85" width="8.73" height="8.73" rx="1.75" fill="#8b929c" opacity="0.2"><title>2026-04-18: 0 runs</title></rect>
+<rect x="74.49" y="36.00" width="8.73" height="8.73" rx="1.75" fill="#8b929c" opacity="0.2"><title>2026-04-19: 0 runs</title></rect>
+<rect x="74.49" y="46.64" width="8.73" height="8.73" rx="1.75" fill="#256abf"><title>2026-04-20: 57 runs</title></rect>
+<rect x="74.49" y="57.28" width="8.73" height="8.73" rx="1.75" fill="#184f95"><title>2026-04-21: 77 runs</title></rect>
+<rect x="74.49" y="67.92" width="8.73" height="8.73" rx="1.75" fill="#256abf"><title>2026-04-22: 70 runs</title></rect>
+<rect x="74.49" y="78.56" width="8.73" height="8.73" rx="1.75" fill="#184f95"><title>2026-04-23: 484 runs</title></rect>
+<rect x="74.49" y="89.21" width="8.73" height="8.73" rx="1.75" fill="#184f95"><title>2026-04-24: 488 runs</title></rect>
+<rect x="74.49" y="99.85" width="8.73" height="8.73" rx="1.75" fill="#5598e7"><title>2026-04-25: 8 runs</title></rect>
+<rect x="85.13" y="36.00" width="8.73" height="8.73" rx="1.75" fill="#8b929c" opacity="0.2"><title>2026-04-26: 0 runs</title></rect>
+<rect x="85.13" y="46.64" width="8.73" height="8.73" rx="1.75" fill="#5598e7"><title>2026-04-27: 15 runs</title></rect>
+<rect x="85.13" y="57.28" width="8.73" height="8.73" rx="1.75" fill="#8b929c" opacity="0.2"><title>2026-04-28: 0 runs</title></rect>
+<rect x="85.13" y="67.92" width="8.73" height="8.73" rx="1.75" fill="#8b929c" opacity="0.2"><title>2026-04-29: 0 runs</title></rect>
+<rect x="85.13" y="78.56" width="8.73" height="8.73" rx="1.75" fill="#8b929c" opacity="0.2"><title>2026-04-30: 0 runs</title></rect>
+<rect x="85.13" y="89.21" width="8.73" height="8.73" rx="1.75" fill="#8b929c" opacity="0.2"><title>2026-05-01: 0 runs</title></rect>
+<rect x="85.13" y="99.85" width="8.73" height="8.73" rx="1.75" fill="#8b929c" opacity="0.2"><title>2026-05-02: 0 runs</title></rect>
+<rect x="95.77" y="36.00" width="8.73" height="8.73" rx="1.75" fill="#8b929c" opacity="0.2"><title>2026-05-03: 0 runs</title></rect>
+<rect x="95.77" y="46.64" width="8.73" height="8.73" rx="1.75" fill="#8b929c" opacity="0.2"><title>2026-05-04: 0 runs</title></rect>
+<rect x="95.77" y="57.28" width="8.73" height="8.73" rx="1.75" fill="#8b929c" opacity="0.2"><title>2026-05-05: 0 runs</title></rect>
+<rect x="95.77" y="67.92" width="8.73" height="8.73" rx="1.75" fill="#5598e7"><title>2026-05-06: 11 runs</title></rect>
+<rect x="95.77" y="78.56" width="8.73" height="8.73" rx="1.75" fill="#256abf"><title>2026-05-07: 47 runs</title></rect>
+<rect x="95.77" y="89.21" width="8.73" height="8.73" rx="1.75" fill="#5598e7"><title>2026-05-08: 13 runs</title></rect>
+<rect x="95.77" y="99.85" width="8.73" height="8.73" rx="1.75" fill="#9ec5f4"><title>2026-05-09: 3 runs</title></rect>
+<rect x="106.41" y="36.00" width="8.73" height="8.73" rx="1.75" fill="#5598e7"><title>2026-05-10: 14 runs</title></rect>
+<rect x="106.41" y="46.64" width="8.73" height="8.73" rx="1.75" fill="#9ec5f4"><title>2026-05-11: 1 runs</title></rect>
+<rect x="106.41" y="57.28" width="8.73" height="8.73" rx="1.75" fill="#9ec5f4"><title>2026-05-12: 2 runs</title></rect>
+<rect x="106.41" y="67.92" width="8.73" height="8.73" rx="1.75" fill="#256abf"><title>2026-05-13: 46 runs</title></rect>
+<rect x="106.41" y="78.56" width="8.73" height="8.73" rx="1.75" fill="#9ec5f4"><title>2026-05-14: 2 runs</title></rect>
+<rect x="106.41" y="89.21" width="8.73" height="8.73" rx="1.75" fill="#8b929c" opacity="0.2"><title>2026-05-15: 0 runs</title></rect>
+<rect x="106.41" y="99.85" width="8.73" height="8.73" rx="1.75" fill="#8b929c" opacity="0.2"><title>2026-05-16: 0 runs</title></rect>
+<rect x="117.05" y="36.00" width="8.73" height="8.73" rx="1.75" fill="#9ec5f4"><title>2026-05-17: 1 runs</title></rect>
+<rect x="117.05" y="46.64" width="8.73" height="8.73" rx="1.75" fill="#9ec5f4"><title>2026-05-18: 3 runs</title></rect>
+<rect x="117.05" y="57.28" width="8.73" height="8.73" rx="1.75" fill="#9ec5f4"><title>2026-05-19: 2 runs</title></rect>
+<rect x="117.05" y="67.92" width="8.73" height="8.73" rx="1.75" fill="#9ec5f4"><title>2026-05-20: 2 runs</title></rect>
+<rect x="117.05" y="78.56" width="8.73" height="8.73" rx="1.75" fill="#5598e7"><title>2026-05-21: 9 runs</title></rect>
+<rect x="117.05" y="89.21" width="8.73" height="8.73" rx="1.75" fill="#8b929c" opacity="0.2"><title>2026-05-22: 0 runs</title></rect>
+<rect x="117.05" y="99.85" width="8.73" height="8.73" rx="1.75" fill="#8b929c" opacity="0.2"><title>2026-05-23: 0 runs</title></rect>
+<rect x="127.69" y="36.00" width="8.73" height="8.73" rx="1.75" fill="#8b929c" opacity="0.2"><title>2026-05-24: 0 runs</title></rect>
+<rect x="127.69" y="46.64" width="8.73" height="8.73" rx="1.75" fill="#8b929c" opacity="0.2"><title>2026-05-25: 0 runs</title></rect>
+<rect x="127.69" y="57.28" width="8.73" height="8.73" rx="1.75" fill="#8b929c" opacity="0.2"><title>2026-05-26: 0 runs</title></rect>
+<rect x="127.69" y="67.92" width="8.73" height="8.73" rx="1.75" fill="#8b929c" opacity="0.2"><title>2026-05-27: 0 runs</title></rect>
+<rect x="127.69" y="78.56" width="8.73" height="8.73" rx="1.75" fill="#8b929c" opacity="0.2"><title>2026-05-28: 0 runs</title></rect>
+<rect x="127.69" y="89.21" width="8.73" height="8.73" rx="1.75" fill="#8b929c" opacity="0.2"><title>2026-05-29: 0 runs</title></rect>
+<rect x="127.69" y="99.85" width="8.73" height="8.73" rx="1.75" fill="#8b929c" opacity="0.2"><title>2026-05-30: 0 runs</title></rect>
+<rect x="138.33" y="36.00" width="8.73" height="8.73" rx="1.75" fill="#8b929c" opacity="0.2"><title>2026-05-31: 0 runs</title></rect>
+<rect x="138.33" y="46.64" width="8.73" height="8.73" rx="1.75" fill="#8b929c" opacity="0.2"><title>2026-06-01: 0 runs</title></rect>
+<rect x="138.33" y="57.28" width="8.73" height="8.73" rx="1.75" fill="#9ec5f4"><title>2026-06-02: 1 runs</title></rect>
+<rect x="138.33" y="67.92" width="8.73" height="8.73" rx="1.75" fill="#8b929c" opacity="0.2"><title>2026-06-03: 0 runs</title></rect>
+<rect x="138.33" y="78.56" width="8.73" height="8.73" rx="1.75" fill="#9ec5f4"><title>2026-06-04: 3 runs</title></rect>
+<rect x="138.33" y="89.21" width="8.73" height="8.73" rx="1.75" fill="#9ec5f4"><title>2026-06-05: 5 runs</title></rect>
+<rect x="138.33" y="99.85" width="8.73" height="8.73" rx="1.75" fill="#9ec5f4"><title>2026-06-06: 4 runs</title></rect>
+<rect x="148.97" y="36.00" width="8.73" height="8.73" rx="1.75" fill="#8b929c" opacity="0.2"><title>2026-06-07: 0 runs</title></rect>
+<rect x="148.97" y="46.64" width="8.73" height="8.73" rx="1.75" fill="#8b929c" opacity="0.2"><title>2026-06-08: 0 runs</title></rect>
+<rect x="148.97" y="57.28" width="8.73" height="8.73" rx="1.75" fill="#9ec5f4"><title>2026-06-09: 4 runs</title></rect>
+<rect x="148.97" y="67.92" width="8.73" height="8.73" rx="1.75" fill="#5598e7"><title>2026-06-10: 16 runs</title></rect>
+<rect x="148.97" y="78.56" width="8.73" height="8.73" rx="1.75" fill="#256abf"><title>2026-06-11: 34 runs</title></rect>
+<rect x="148.97" y="89.21" width="8.73" height="8.73" rx="1.75" fill="#256abf"><title>2026-06-12: 44 runs</title></rect>
+<rect x="148.97" y="99.85" width="8.73" height="8.73" rx="1.75" fill="#8b929c" opacity="0.2"><title>2026-06-13: 0 runs</title></rect>
+<rect x="159.62" y="36.00" width="8.73" height="8.73" rx="1.75" fill="#9ec5f4"><title>2026-06-14: 2 runs</title></rect>
+<rect x="159.62" y="46.64" width="8.73" height="8.73" rx="1.75" fill="#5598e7"><title>2026-06-15: 7 runs</title></rect>
+<rect x="159.62" y="57.28" width="8.73" height="8.73" rx="1.75" fill="#256abf"><title>2026-06-16: 66 runs</title></rect>
+<rect x="159.62" y="67.92" width="8.73" height="8.73" rx="1.75" fill="#8b929c" opacity="0.2"><title>2026-06-17: 0 runs</title></rect>
+<rect x="159.62" y="78.56" width="8.73" height="8.73" rx="1.75" fill="#9ec5f4"><title>2026-06-18: 2 runs</title></rect>
+<rect x="159.62" y="89.21" width="8.73" height="8.73" rx="1.75" fill="#8b929c" opacity="0.2"><title>2026-06-19: 0 runs</title></rect>
+<rect x="159.62" y="99.85" width="8.73" height="8.73" rx="1.75" fill="#8b929c" opacity="0.2"><title>2026-06-20: 0 runs</title></rect>
+<rect x="170.26" y="36.00" width="8.73" height="8.73" rx="1.75" fill="#8b929c" opacity="0.2"><title>2026-06-21: 0 runs</title></rect>
+<rect x="170.26" y="46.64" width="8.73" height="8.73" rx="1.75" fill="#256abf"><title>2026-06-22: 29 runs</title></rect>
+<rect x="170.26" y="57.28" width="8.73" height="8.73" rx="1.75" fill="#9ec5f4"><title>2026-06-23: 3 runs</title></rect>
+<rect x="170.26" y="67.92" width="8.73" height="8.73" rx="1.75" fill="#9ec5f4"><title>2026-06-24: 6 runs</title></rect>
+<rect x="170.26" y="78.56" width="8.73" height="8.73" rx="1.75" fill="#8b929c" opacity="0.2"><title>2026-06-25: 0 runs</title></rect>
+<rect x="170.26" y="89.21" width="8.73" height="8.73" rx="1.75" fill="#9ec5f4"><title>2026-06-26: 2 runs</title></rect>
+<rect x="170.26" y="99.85" width="8.73" height="8.73" rx="1.75" fill="#8b929c" opacity="0.2"><title>2026-06-27: 0 runs</title></rect>
+<rect x="180.90" y="36.00" width="8.73" height="8.73" rx="1.75" fill="#8b929c" opacity="0.2"><title>2026-06-28: 0 runs</title></rect>
+<rect x="180.90" y="46.64" width="8.73" height="8.73" rx="1.75" fill="#9ec5f4"><title>2026-06-29: 2 runs</title></rect>
+<rect x="180.90" y="57.28" width="8.73" height="8.73" rx="1.75" fill="#8b929c" opacity="0.2"><title>2026-06-30: 0 runs</title></rect>
+<rect x="180.90" y="67.92" width="8.73" height="8.73" rx="1.75" fill="#8b929c" opacity="0.2"><title>2026-07-01: 0 runs</title></rect>
+<rect x="180.90" y="78.56" width="8.73" height="8.73" rx="1.75" fill="#8b929c" opacity="0.2"><title>2026-07-02: 0 runs</title></rect>
+<rect x="180.90" y="89.21" width="8.73" height="8.73" rx="1.75" fill="#8b929c" opacity="0.2"><title>2026-07-03: 0 runs</title></rect>
+<rect x="180.90" y="99.85" width="8.73" height="8.73" rx="1.75" fill="#8b929c" opacity="0.2"><title>2026-07-04: 0 runs</title></rect>
+<rect x="191.54" y="36.00" width="8.73" height="8.73" rx="1.75" fill="#8b929c" opacity="0.2"><title>2026-07-05: 0 runs</title></rect>
+<rect x="191.54" y="46.64" width="8.73" height="8.73" rx="1.75" fill="#9ec5f4"><title>2026-07-06: 4 runs</title></rect>
+<rect x="191.54" y="57.28" width="8.73" height="8.73" rx="1.75" fill="#8b929c" opacity="0.2"><title>2026-07-07: 0 runs</title></rect>
+<rect x="191.54" y="67.92" width="8.73" height="8.73" rx="1.75" fill="#9ec5f4"><title>2026-07-08: 1 runs</title></rect>
+<rect x="191.54" y="78.56" width="8.73" height="8.73" rx="1.75" fill="#184f95"><title>2026-07-09: 82 runs</title></rect>
+<rect x="191.54" y="89.21" width="8.73" height="8.73" rx="1.75" fill="#8b929c" opacity="0.2"><title>2026-07-10: 0 runs</title></rect>
+<rect x="191.54" y="99.85" width="8.73" height="8.73" rx="1.75" fill="#8b929c" opacity="0.2"><title>2026-07-11: 0 runs</title></rect>
+<rect x="202.18" y="36.00" width="8.73" height="8.73" rx="1.75" fill="#9ec5f4"><title>2026-07-12: 4 runs</title></rect>
+<rect x="202.18" y="46.64" width="8.73" height="8.73" rx="1.75" fill="#8b929c" opacity="0.2"><title>2026-07-13: 0 runs</title></rect>
+<rect x="202.18" y="57.28" width="8.73" height="8.73" rx="1.75" fill="#184f95"><title>2026-07-14: 157 runs</title></rect>
+<rect x="202.18" y="67.92" width="8.73" height="8.73" rx="1.75" fill="#256abf"><title>2026-07-15: 58 runs</title></rect>
+<rect x="202.18" y="78.56" width="8.73" height="8.73" rx="1.75" fill="#256abf"><title>2026-07-16: 37 runs</title></rect>
+<rect x="202.18" y="89.21" width="8.73" height="8.73" rx="1.75" fill="#184f95"><title>2026-07-17: 82 runs</title></rect>
+<rect x="202.18" y="99.85" width="8.73" height="8.73" rx="1.75" fill="#256abf"><title>2026-07-18: 47 runs</title></rect>
+<rect x="212.82" y="36.00" width="8.73" height="8.73" rx="1.75" fill="#5598e7"><title>2026-07-19: 9 runs</title></rect>
+<rect x="212.82" y="46.64" width="8.73" height="8.73" rx="1.75" fill="#9ec5f4"><title>2026-07-20: 6 runs</title></rect>
+<rect x="212.82" y="57.28" width="8.73" height="8.73" rx="1.75" fill="#8b929c" opacity="0.2"><title>2026-07-21: 0 runs</title></rect>
+<rect x="212.82" y="67.92" width="8.73" height="8.73" rx="1.75" fill="#8b929c" opacity="0.2"><title>2026-07-22: 0 runs</title></rect>
+<rect x="212.82" y="78.56" width="8.73" height="8.73" rx="1.75" fill="#5598e7"><title>2026-07-23: 13 runs</title></rect>
+<rect x="212.82" y="89.21" width="8.73" height="8.73" rx="1.75" fill="#9ec5f4"><title>2026-07-24: 1 runs</title></rect>
+<rect x="212.82" y="99.85" width="8.73" height="8.73" rx="1.75" fill="#8b929c" opacity="0.2"><title>2026-07-25: 0 runs</title></rect>
+<rect x="223.46" y="36.00" width="8.73" height="8.73" rx="1.75" fill="#9ec5f4"><title>2026-07-26: 2 runs</title></rect>
+<rect x="223.46" y="46.64" width="8.73" height="8.73" rx="1.75" fill="#9ec5f4"><title>2026-07-27: 1 runs</title></rect>
+<rect x="223.46" y="57.28" width="8.73" height="8.73" rx="1.75" fill="#9ec5f4"><title>2026-07-28: 2 runs</title></rect>
+<rect x="223.46" y="67.92" width="8.73" height="8.73" rx="1.75" fill="#256abf"><title>2026-07-29: 32 runs</title></rect>
+<rect x="223.46" y="78.56" width="8.73" height="8.73" rx="1.75" fill="#8b929c" opacity="0.2"><title>2026-07-30: 0 runs</title></rect>
+<rect x="223.46" y="89.21" width="8.73" height="8.73" rx="1.75" fill="#8b929c" opacity="0.2"><title>2026-07-31: 0 runs</title></rect>
+<rect x="223.46" y="99.85" width="8.73" height="8.73" rx="1.75" fill="#5598e7"><title>2026-08-01: 20 runs</title></rect>
+<rect x="234.10" y="36.00" width="8.73" height="8.73" rx="1.75" fill="#256abf"><title>2026-08-02: 54 runs</title></rect>
+<rect x="234.10" y="46.64" width="8.73" height="8.73" rx="1.75" fill="#184f95"><title>2026-08-03: 233 runs</title></rect>
+<rect x="234.10" y="57.28" width="8.73" height="8.73" rx="1.75" fill="#184f95"><title>2026-08-04: 123 runs</title></rect>
+<rect x="234.10" y="67.92" width="8.73" height="8.73" rx="1.75" fill="#184f95"><title>2026-08-05: 107 runs</title></rect>
+<rect x="234.10" y="78.56" width="8.73" height="8.73" rx="1.75" fill="#8b929c" opacity="0.2"><title>2026-08-06: 0 runs</title></rect>
+<rect x="234.10" y="89.21" width="8.73" height="8.73" rx="1.75" fill="#5598e7"><title>2026-08-07: 26 runs</title></rect>
+<rect x="234.10" y="99.85" width="8.73" height="8.73" rx="1.75" fill="#5598e7"><title>2026-08-08: 14 runs</title></rect>
+<rect x="244.74" y="36.00" width="8.73" height="8.73" rx="1.75" fill="#5598e7"><title>2026-08-09: 8 runs</title></rect>
+<rect x="244.74" y="46.64" width="8.73" height="8.73" rx="1.75" fill="#184f95"><title>2026-08-10: 474 runs</title></rect>
+<rect x="244.74" y="57.28" width="8.73" height="8.73" rx="1.75" fill="#184f95"><title>2026-08-11: 139 runs</title></rect>
+<rect x="244.74" y="67.92" width="8.73" height="8.73" rx="1.75" fill="#184f95"><title>2026-08-12: 291 runs</title></rect>
+<rect x="244.74" y="78.56" width="8.73" height="8.73" rx="1.75" fill="#5598e7"><title>2026-08-13: 20 runs</title></rect>
+<rect x="244.74" y="89.21" width="8.73" height="8.73" rx="1.75" fill="#8b929c" opacity="0.2"><title>2026-08-14: 0 runs</title></rect>
+<rect x="244.74" y="99.85" width="8.73" height="8.73" rx="1.75" fill="#184f95"><title>2026-08-15: 164 runs</title></rect>
+<rect x="255.38" y="36.00" width="8.73" height="8.73" rx="1.75" fill="#184f95"><title>2026-08-16: 175 runs</title></rect>
+<rect x="255.38" y="46.64" width="8.73" height="8.73" rx="1.75" fill="#5598e7"><title>2026-08-17: 14 runs</title></rect>
+<rect x="255.38" y="57.28" width="8.73" height="8.73" rx="1.75" fill="#184f95"><title>2026-08-18: 91 runs</title></rect>
+<rect x="255.38" y="67.92" width="8.73" height="8.73" rx="1.75" fill="#184f95"><title>2026-08-19: 99 runs</title></rect>
+<rect x="255.38" y="78.56" width="8.73" height="8.73" rx="1.75" fill="#9ec5f4"><title>2026-08-20: 4 runs</title></rect>
+<rect x="255.38" y="89.21" width="8.73" height="8.73" rx="1.75" fill="#8b929c" opacity="0.2"><title>2026-08-21: 0 runs</title></rect>
+<rect x="255.38" y="99.85" width="8.73" height="8.73" rx="1.75" fill="#8b929c" opacity="0.2"><title>2026-08-22: 0 runs</title></rect>
+<rect x="266.03" y="36.00" width="8.73" height="8.73" rx="1.75" fill="#8b929c" opacity="0.2"><title>2026-08-23: 0 runs</title></rect>
+<rect x="266.03" y="46.64" width="8.73" height="8.73" rx="1.75" fill="#9ec5f4"><title>2026-08-24: 2 runs</title></rect>
+<rect x="266.03" y="57.28" width="8.73" height="8.73" rx="1.75" fill="#9ec5f4"><title>2026-08-25: 2 runs</title></rect>
+<rect x="266.03" y="67.92" width="8.73" height="8.73" rx="1.75" fill="#8b929c" opacity="0.2"><title>2026-08-26: 0 runs</title></rect>
+<rect x="266.03" y="78.56" width="8.73" height="8.73" rx="1.75" fill="#9ec5f4"><title>2026-08-27: 3 runs</title></rect>
+<rect x="266.03" y="89.21" width="8.73" height="8.73" rx="1.75" fill="#5598e7"><title>2026-08-28: 10 runs</title></rect>
+<rect x="266.03" y="99.85" width="8.73" height="8.73" rx="1.75" fill="#5598e7"><title>2026-08-29: 23 runs</title></rect>
+<rect x="276.67" y="36.00" width="8.73" height="8.73" rx="1.75" fill="#256abf"><title>2026-08-30: 35 runs</title></rect>
+<rect x="276.67" y="46.64" width="8.73" height="8.73" rx="1.75" fill="#184f95"><title>2026-08-31: 101 runs</title></rect>
+<rect x="276.67" y="57.28" width="8.73" height="8.73" rx="1.75" fill="#184f95"><title>2026-09-01: 79 runs</title></rect>
+<rect x="276.67" y="67.92" width="8.73" height="8.73" rx="1.75" fill="#256abf"><title>2026-09-02: 56 runs</title></rect>
+<rect x="276.67" y="78.56" width="8.73" height="8.73" rx="1.75" fill="#5598e7"><title>2026-09-03: 22 runs</title></rect>
+<rect x="276.67" y="89.21" width="8.73" height="8.73" rx="1.75" fill="#256abf"><title>2026-09-04: 41 runs</title></rect>
+<rect x="276.67" y="99.85" width="8.73" height="8.73" rx="1.75" fill="#5598e7"><title>2026-09-05: 20 runs</title></rect>
+<rect x="287.31" y="36.00" width="8.73" height="8.73" rx="1.75" fill="#8b929c" opacity="0.2"><title>2026-09-06: 0 runs</title></rect>
+<rect x="287.31" y="46.64" width="8.73" height="8.73" rx="1.75" fill="#5598e7"><title>2026-09-07: 12 runs</title></rect>
+<rect x="287.31" y="57.28" width="8.73" height="8.73" rx="1.75" fill="#5598e7"><title>2026-09-08: 15 runs</title></rect>
+<rect x="287.31" y="67.92" width="8.73" height="8.73" rx="1.75" fill="#8b929c" opacity="0.2"><title>2026-09-09: 0 runs</title></rect>
+<rect x="287.31" y="78.56" width="8.73" height="8.73" rx="1.75" fill="#8b929c" opacity="0.2"><title>2026-09-10: 0 runs</title></rect>
+<rect x="287.31" y="89.21" width="8.73" height="8.73" rx="1.75" fill="#8b929c" opacity="0.2"><title>2026-09-11: 0 runs</title></rect>
+<rect x="287.31" y="99.85" width="8.73" height="8.73" rx="1.75" fill="#9ec5f4"><title>2026-09-12: 2 runs</title></rect>
+<rect x="297.95" y="36.00" width="8.73" height="8.73" rx="1.75" fill="#8b929c" opacity="0.2"><title>2026-09-13: 0 runs</title></rect>
+<rect x="297.95" y="46.64" width="8.73" height="8.73" rx="1.75" fill="#8b929c" opacity="0.2"><title>2026-09-14: 0 runs</title></rect>
+<rect x="297.95" y="57.28" width="8.73" height="8.73" rx="1.75" fill="#5598e7"><title>2026-09-15: 13 runs</title></rect>
+<rect x="297.95" y="67.92" width="8.73" height="8.73" rx="1.75" fill="#9ec5f4"><title>2026-09-16: 3 runs</title></rect>
+<rect x="297.95" y="78.56" width="8.73" height="8.73" rx="1.75" fill="#9ec5f4"><title>2026-09-17: 3 runs</title></rect>
+<rect x="297.95" y="89.21" width="8.73" height="8.73" rx="1.75" fill="#9ec5f4"><title>2026-09-18: 4 runs</title></rect>
+<rect x="297.95" y="99.85" width="8.73" height="8.73" rx="1.75" fill="#5598e7"><title>2026-09-19: 9 runs</title></rect>
+<rect x="308.59" y="36.00" width="8.73" height="8.73" rx="1.75" fill="#9ec5f4"><title>2026-09-20: 6 runs</title></rect>
+<rect x="308.59" y="46.64" width="8.73" height="8.73" rx="1.75" fill="#256abf"><title>2026-09-21: 40 runs</title></rect>
+<rect x="308.59" y="57.28" width="8.73" height="8.73" rx="1.75" fill="#256abf"><title>2026-09-22: 63 runs</title></rect>
+<rect x="308.59" y="67.92" width="8.73" height="8.73" rx="1.75" fill="#5598e7"><title>2026-09-23: 23 runs</title></rect>
+<rect x="308.59" y="78.56" width="8.73" height="8.73" rx="1.75" fill="#8b929c" opacity="0.2"><title>2026-09-24: 0 runs</title></rect>
+<rect x="308.59" y="89.21" width="8.73" height="8.73" rx="1.75" fill="#256abf"><title>2026-09-25: 41 runs</title></rect>
+<rect x="308.59" y="99.85" width="8.73" height="8.73" rx="1.75" fill="#256abf"><title>2026-09-26: 34 runs</title></rect>
+<rect x="319.23" y="36.00" width="8.73" height="8.73" rx="1.75" fill="#8b929c" opacity="0.2"><title>2026-09-27: 0 runs</title></rect>
+<rect x="319.23" y="46.64" width="8.73" height="8.73" rx="1.75" fill="#184f95"><title>2026-09-28: 142 runs</title></rect>
+<rect x="319.23" y="57.28" width="8.73" height="8.73" rx="1.75" fill="#5598e7"><title>2026-09-29: 19 runs</title></rect>
+<rect x="319.23" y="67.92" width="8.73" height="8.73" rx="1.75" fill="#256abf"><title>2026-09-30: 28 runs</title></rect>
+<rect x="319.23" y="78.56" width="8.73" height="8.73" rx="1.75" fill="#256abf"><title>2026-10-01: 55 runs</title></rect>
+<rect x="319.23" y="89.21" width="8.73" height="8.73" rx="1.75" fill="#256abf"><title>2026-10-02: 39 runs</title></rect>
+<rect x="319.23" y="99.85" width="8.73" height="8.73" rx="1.75" fill="#256abf"><title>2026-10-03: 39 runs</title></rect>
+<rect x="329.87" y="36.00" width="8.73" height="8.73" rx="1.75" fill="#256abf"><title>2026-10-04: 64 runs</title></rect>
+<rect x="329.87" y="46.64" width="8.73" height="8.73" rx="1.75" fill="#5598e7"><title>2026-10-05: 19 runs</title></rect>
+<rect x="329.87" y="57.28" width="8.73" height="8.73" rx="1.75" fill="#184f95"><title>2026-10-06: 110 runs</title></rect>
+<rect x="329.87" y="67.92" width="8.73" height="8.73" rx="1.75" fill="#184f95"><title>2026-10-07: 281 runs</title></rect>
+<rect x="329.87" y="78.56" width="8.73" height="8.73" rx="1.75" fill="#184f95"><title>2026-10-08: 74 runs</title></rect>
+<rect x="329.87" y="89.21" width="8.73" height="8.73" rx="1.75" fill="#5598e7"><title>2026-10-09: 9 runs</title></rect>
+<rect x="329.87" y="99.85" width="8.73" height="8.73" rx="1.75" fill="#256abf"><title>2026-10-10: 33 runs</title></rect>
+<rect x="340.51" y="36.00" width="8.73" height="8.73" rx="1.75" fill="#9ec5f4"><title>2026-10-11: 3 runs</title></rect>
+<rect x="340.51" y="46.64" width="8.73" height="8.73" rx="1.75" fill="#8b929c" opacity="0.2"><title>2026-10-12: 0 runs</title></rect>
+<rect x="340.51" y="57.28" width="8.73" height="8.73" rx="1.75" fill="#8b929c" opacity="0.2"><title>2026-10-13: 0 runs</title></rect>
+<rect x="340.51" y="67.92" width="8.73" height="8.73" rx="1.75" fill="#9ec5f4"><title>2026-10-14: 2 runs</title></rect>
+<rect x="340.51" y="78.56" width="8.73" height="8.73" rx="1.75" fill="#8b929c" opacity="0.2"><title>2026-10-15: 0 runs</title></rect>
+<rect x="340.51" y="89.21" width="8.73" height="8.73" rx="1.75" fill="#5598e7"><title>2026-10-16: 17 runs</title></rect>
+<rect x="340.51" y="99.85" width="8.73" height="8.73" rx="1.75" fill="#9ec5f4"><title>2026-10-17: 6 runs</title></rect>
+<rect x="351.15" y="36.00" width="8.73" height="8.73" rx="1.75" fill="#184f95"><title>2026-10-18: 71 runs</title></rect>
+<rect x="351.15" y="46.64" width="8.73" height="8.73" rx="1.75" fill="#9ec5f4"><title>2026-10-19: 5 runs</title></rect>
+<rect x="351.15" y="57.28" width="8.73" height="8.73" rx="1.75" fill="#256abf"><title>2026-10-20: 49 runs</title></rect>
+<rect x="351.15" y="67.92" width="8.73" height="8.73" rx="1.75" fill="#256abf"><title>2026-10-21: 32 runs</title></rect>
+<rect x="351.15" y="78.56" width="8.73" height="8.73" rx="1.75" fill="#184f95"><title>2026-10-22: 90 runs</title></rect>
+<rect x="351.15" y="89.21" width="8.73" height="8.73" rx="1.75" fill="#8b929c" opacity="0.2"><title>2026-10-23: 0 runs</title></rect>
+<rect x="351.15" y="99.85" width="8.73" height="8.73" rx="1.75" fill="#8b929c" opacity="0.2"><title>2026-10-24: 0 runs</title></rect>
+<rect x="361.79" y="36.00" width="8.73" height="8.73" rx="1.75" fill="#8b929c" opacity="0.2"><title>2026-10-25: 0 runs</title></rect>
+<rect x="361.79" y="46.64" width="8.73" height="8.73" rx="1.75" fill="#8b929c" opacity="0.2"><title>2026-10-26: 0 runs</title></rect>
+<rect x="361.79" y="57.28" width="8.73" height="8.73" rx="1.75" fill="#8b929c" opacity="0.2"><title>2026-10-27: 0 runs</title></rect>
+<rect x="361.79" y="67.92" width="8.73" height="8.73" rx="1.75" fill="#8b929c" opacity="0.2"><title>2026-10-28: 0 runs</title></rect>
+<rect x="361.79" y="78.56" width="8.73" height="8.73" rx="1.75" fill="#8b929c" opacity="0.2"><title>2026-10-29: 0 runs</title></rect>
+<rect x="361.79" y="89.21" width="8.73" height="8.73" rx="1.75" fill="#184f95"><title>2026-10-30: 112 runs</title></rect>
+<rect x="361.79" y="99.85" width="8.73" height="8.73" rx="1.75" fill="#8b929c" opacity="0.2"><title>2026-10-31: 0 runs</title></rect>
+<rect x="372.44" y="36.00" width="8.73" height="8.73" rx="1.75" fill="#8b929c" opacity="0.2"><title>2026-11-01: 0 runs</title></rect>
+<rect x="372.44" y="46.64" width="8.73" height="8.73" rx="1.75" fill="#8b929c" opacity="0.2"><title>2026-11-02: 0 runs</title></rect>
+<rect x="372.44" y="57.28" width="8.73" height="8.73" rx="1.75" fill="#8b929c" opacity="0.2"><title>2026-11-03: 0 runs</title></rect>
+<rect x="372.44" y="67.92" width="8.73" height="8.73" rx="1.75" fill="#8b929c" opacity="0.2"><title>2026-11-04: 0 runs</title></rect>
+<rect x="372.44" y="78.56" width="8.73" height="8.73" rx="1.75" fill="#8b929c" opacity="0.2"><title>2026-11-05: 0 runs</title></rect>
+<rect x="372.44" y="89.21" width="8.73" height="8.73" rx="1.75" fill="#184f95"><title>2026-11-06: 87 runs</title></rect>
+<rect x="372.44" y="99.85" width="8.73" height="8.73" rx="1.75" fill="#8b929c" opacity="0.2"><title>2026-11-07: 0 runs</title></rect>
+<rect x="383.08" y="36.00" width="8.73" height="8.73" rx="1.75" fill="#256abf"><title>2026-11-08: 49 runs</title></rect>
+<rect x="383.08" y="46.64" width="8.73" height="8.73" rx="1.75" fill="#9ec5f4"><title>2026-11-09: 4 runs</title></rect>
+<rect x="383.08" y="57.28" width="8.73" height="8.73" rx="1.75" fill="#256abf"><title>2026-11-10: 54 runs</title></rect>
+<rect x="383.08" y="67.92" width="8.73" height="8.73" rx="1.75" fill="#8b929c" opacity="0.2"><title>2026-11-11: 0 runs</title></rect>
+<rect x="383.08" y="78.56" width="8.73" height="8.73" rx="1.75" fill="#256abf"><title>2026-11-12: 40 runs</title></rect>
+<rect x="383.08" y="89.21" width="8.73" height="8.73" rx="1.75" fill="#9ec5f4"><title>2026-11-13: 6 runs</title></rect>
+<rect x="383.08" y="99.85" width="8.73" height="8.73" rx="1.75" fill="#8b929c" opacity="0.2"><title>2026-11-14: 0 runs</title></rect>
+<rect x="393.72" y="36.00" width="8.73" height="8.73" rx="1.75" fill="#8b929c" opacity="0.2"><title>2026-11-15: 0 runs</title></rect>
+<rect x="393.72" y="46.64" width="8.73" height="8.73" rx="1.75" fill="#8b929c" opacity="0.2"><title>2026-11-16: 0 runs</title></rect>
+<rect x="393.72" y="57.28" width="8.73" height="8.73" rx="1.75" fill="#8b929c" opacity="0.2"><title>2026-11-17: 0 runs</title></rect>
+<rect x="393.72" y="67.92" width="8.73" height="8.73" rx="1.75" fill="#9ec5f4"><title>2026-11-18: 4 runs</title></rect>
+<rect x="393.72" y="78.56" width="8.73" height="8.73" rx="1.75" fill="#8b929c" opacity="0.2"><title>2026-11-19: 0 runs</title></rect>
+<rect x="393.72" y="89.21" width="8.73" height="8.73" rx="1.75" fill="#184f95"><title>2026-11-20: 366 runs</title></rect>
+<rect x="393.72" y="99.85" width="8.73" height="8.73" rx="1.75" fill="#184f95"><title>2026-11-21: 270 runs</title></rect>
+<text x="300.35" y="126.5" font-size="10" fill="#8b929c">Less</text>
+<rect x="326.35" y="118.8" width="8.73" height="8.73" rx="1.75" fill="#8b929c" opacity="0.2"/>
+<rect x="337.1" y="118.8" width="8.73" height="8.73" rx="1.75" fill="#9ec5f4"/>
+<rect x="347.8" y="118.8" width="8.73" height="8.73" rx="1.75" fill="#5598e7"/>
+<rect x="358.5" y="118.8" width="8.73" height="8.73" rx="1.75" fill="#256abf"/>
+<rect x="369.3" y="118.8" width="8.73" height="8.73" rx="1.75" fill="#184f95"/>
+<text x="384.0" y="126.5" font-size="10" fill="#8b929c">More</text>
 </svg>
